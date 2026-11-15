@@ -1,0 +1,4 @@
+# Configuration locale — ne jamais la versionner
+local.properties
+# macOS
+.DS_Store
