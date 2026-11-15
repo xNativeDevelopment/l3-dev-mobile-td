@@ -1,7 +1,7 @@
 # TD 10 — La Card d'un personnage
 
-Slide : S-10 — Créer un composant : une Card à partir des données d'une API · Dépôt : https://github.com/<COMPTE>/td-10-composant-card
-État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15
+Slide : S-10 — Créer un composant : une Card à partir des données d'une API · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-10-composant-card
+État du build : départ construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
 
@@ -9,8 +9,10 @@ Slide : S-10 — Créer un composant : une Card à partir des données d'une API
 
 ## Point de départ
 
-Ce dépôt contient l'état final du TD 09.
-Ouvrir ce dossier dans Android Studio (pas son dossier parent), attendre la synchronisation Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-10-composant-card` (pas de nouveau clone). Attendre la synchronisation Gradle, puis Run.
+Cette branche reprend l'état final du TD 09 (branche `td-09-version-catalog-solution`).
+La solution est sur la branche `td-10-composant-card-solution`.
+Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
 
 ## Étapes
 
@@ -35,10 +37,9 @@ Ouvrir ce dossier dans Android Studio (pas son dossier parent), attendre la sync
 
 ## Avec le tuteur
 
-Facultatif. Ouvre une séance avec `tuteur-android` sur la sous-compétence S-10
-(« séance tuteur, slide S-10 ») ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
-Le tuteur : https://github.com/<COMPTE>/td-04-tuteur-android/tree/main/tuteur-android
-Sans agent : la routine en quatre temps et l'invite courte du TD 03.
+Facultatif. Colle tout le contenu du fichier `SKILL.md` du tuteur (lien ci-dessous) au début d'une conversation avec l'assistant de ton choix, puis écris « séance tuteur, slide S-10 ». Reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`. Si ton assistant sait charger des skills, tu peux plutôt installer le dossier `tuteur-android/`.
+Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
+Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
 ## Crédits
 
