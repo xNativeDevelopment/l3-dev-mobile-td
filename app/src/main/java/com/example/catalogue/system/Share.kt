@@ -1,7 +1,13 @@
 package com.example.catalogue.system
 
 import android.content.Context
+import android.content.Intent
 
-// TODO TD 17 : construire un Intent de partage et le lancer avec ce Context.
+// Intent implicite : on décrit l'action, Android choisit l'application.
 fun shareText(context: Context, text: String) {
+    val send = Intent(Intent.ACTION_SEND).apply {
+        type = "text/plain"
+        putExtra(Intent.EXTRA_TEXT, text)
+    }
+    context.startActivity(Intent.createChooser(send, null))
 }
