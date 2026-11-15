@@ -6,7 +6,7 @@ Un seul dépôt pour tous les TD : on le clone une fois, puis on change de branc
 
 - Android Studio (version stable récente), avec la plateforme Android 37 installée (SDK Manager).
 - Le JDK fourni avec Android Studio (JDK 21) ; git.
-- Un compte GitHub n'est pas nécessaire pour cloner.
+- Un compte GitHub n'est pas nécessaire pour cloner (il en faut un à partir du TD 02).
 
 ## Cloner une fois
 
