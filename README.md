@@ -9,7 +9,7 @@ Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail · D�
 
 ## Point de départ
 
-Cette branche reprend l'état final du TD 01 (branche `td-01-premier-projet-solution`).
+Cloner une fois, changer de branche (étapes 1-3). Cette branche reprend l'état final du TD 01 (branche `td-01-premier-projet-solution`).
 La solution est sur la branche `td-02-depot-git-solution`.
 
 ## Étapes
