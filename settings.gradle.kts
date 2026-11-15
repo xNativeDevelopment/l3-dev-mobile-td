@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-13-koin"
+rootProject.name = "td-14-packages-lint"
 include(":app")
