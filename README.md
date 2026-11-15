@@ -9,18 +9,19 @@ Slide : S-01 — Créer un projet dans la sandbox et le lancer sur un émulateur
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-01-premier-projet` (pas de nouveau clone). Rien : on part de l'assistant d'Android Studio. Cette branche ne contient que cet énoncé et le fichier de configuration git `.gitignore` ; le projet se crée à la racine du dépôt.
+Cloner une fois, changer de branche : dans un terminal, dans le dossier `l3-dev-mobile-td`, `git switch td-01-premier-projet` (pas de nouveau clone). N'ouvre pas encore ce dossier dans Android Studio : l'assistant de l'étape 2 y crée le projet. Cette branche ne contient que cet énoncé et le fichier de configuration git `.gitignore` ; le projet se crée à la racine du dépôt.
 La solution est sur la branche `td-01-premier-projet-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
 
 ## Étapes
 
 1. Installer Android Studio (version stable) et ouvrir son écran d'accueil.
-2. New Project > Empty Activity : nom `Catalogue`, package `com.example.catalogue`, Minimum SDK API 26, langage de build Kotlin DSL ; choisir ce dossier comme emplacement.
+2. New Project > Empty Activity : nom `Catalogue`, package `com.example.catalogue`, Minimum SDK API 26, langage de build Kotlin DSL ; comme emplacement (*Save location*), choisir le dossier `l3-dev-mobile-td`.
 3. Attendre la fin de la synchronisation Gradle. Si elle échoue (SDK ou JDK manquant), lire le message en entier avant de relancer.
 4. Device Manager > Create Device : un téléphone et une image système récente, puis le démarrer.
 5. Cliquer Run : l'app affiche « Hello Catalogue! ». Ajouter une capture de l'émulateur dans `docs/capture.png` et la décrire dans `docs/NOTE.md`.
-6. Garde ton travail sur ta branche : `git switch -c td-01-mon-travail`, `git add -A`, `git commit -m "feat: finish TD 01"`. Sans ce commit, git refuse de passer au TD suivant.
+6. Présente-toi à git avant ton premier commit, pour ce dépôt seulement (sans `--global`) : `git config user.name "Prénom Nom"`, puis `git config user.email "prenom.nom@exemple.fr"`.
+7. Garde ton travail sur ta branche : `git switch -c td-01-mon-travail`, `git add -A`, `git commit -m "feat: finish TD 01"`. Sans ce commit, git refuse de passer au TD suivant.
 
 ## Critères de réussite
 
