@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-15-cycle-de-vie"
+rootProject.name = "td-16-context"
 include(":app")
