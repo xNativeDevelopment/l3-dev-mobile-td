@@ -5,7 +5,7 @@ Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail · D�
 
 ## Objectif
 
-À la fin, je sais récupérer le dépôt du cours une seule fois, passer d'un TD à l'autre en changeant de branche et versionner mon travail par des commits à mon nom.
+À la fin, je sais cloner le dépôt une fois, changer de branche à chaque TD et commiter à mon nom.
 
 ## Point de départ
 
@@ -14,7 +14,7 @@ La solution est sur la branche `td-02-depot-git-solution`.
 
 ## Étapes
 
-1. Si ce n'est pas déjà fait, récupère le dépôt du cours une seule fois : `git clone <adresse ou dossier donné par l'enseignant>`, puis `cd l3-dev-mobile-td`. Depuis le TD 01 : commite-le d'abord (`td-01-mon-travail`).
+1. Une seule fois, récupère le dépôt du cours : `git clone <adresse ou dossier donné par l'enseignant>`, puis `cd l3-dev-mobile-td`. Depuis le TD 01 : commite-le d'abord (`td-01-mon-travail`).
 2. Passe sur la branche du TD : `git switch td-02-depot-git`.
 3. Ouvre ce dossier dans Android Studio (pas son parent), puis crée ta branche de travail : `git switch -c td-02-mon-travail`. Identité git : celle du TD 01 ; sur un nouveau clone, redonne-la (sans `--global`) :
 
@@ -23,13 +23,13 @@ git config user.name "Prénom Nom"
 git config user.email "prenom.nom@exemple.fr"
 ```
 
-4. Compléter le `.gitignore` avec celui d'Android : `.gradle/`, `build/`, `.kotlin/`, `.idea/`, `local.properties`, `.DS_Store`.
+4. Complète le `.gitignore` avec celui d'Android : `.gradle/`, `build/`, `.kotlin/`, `.idea/`, `local.properties`, `.DS_Store`.
 5. Ajoute à la fin de ce README une ligne « Mon travail : branche `td-02-mon-travail` ».
 6. Vérifie, valide, contrôle ton nom :
 
 ```bash
 git status
-git add .
+git add -A
 git commit -m "feat: finish TD 02"
 git log --oneline -1
 ```
@@ -40,6 +40,8 @@ git log --oneline -1
 git remote add perso <adresse de ton fork>
 git push -u perso td-02-mon-travail
 ```
+
+Au premier `git push`, connecte-toi à GitHub (jeton d'accès personnel si git demande un mot de passe).
 
 Ensuite : un commit par slide terminée, puis `git push`. Ne pousse jamais vers `origin` : c'est le dépôt du cours.
 
