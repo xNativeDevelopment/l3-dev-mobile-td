@@ -1,7 +1,7 @@
 # TD 01 — Premier projet qui démarre
 
-Slide : S-01 — Créer un projet dans la sandbox et le lancer sur un émulateur · Dépôt : https://github.com/<COMPTE>/td-01-premier-projet
-État du build : starter sans projet Gradle · solution construite le 2026-11-15
+Slide : S-01 — Créer un projet dans la sandbox et le lancer sur un émulateur · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-01-premier-projet
+État du build : départ sans projet Gradle · solution construite le 2026-11-15
 
 ## Objectif
 
@@ -9,7 +9,9 @@ Slide : S-01 — Créer un projet dans la sandbox et le lancer sur un émulateur
 
 ## Point de départ
 
-Rien : on part de l'assistant d'Android Studio. Ce dépôt ne contient que cet énoncé et un `.gitignore` ; le projet se crée à sa racine.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-01-premier-projet` (pas de nouveau clone). Rien : on part de l'assistant d'Android Studio. Cette branche ne contient que cet énoncé et des fichiers de configuration git (`.gitignore`, `.gitattributes`) ; le projet se crée à la racine du dépôt.
+La solution est sur la branche `td-01-premier-projet-solution`.
+Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
 
 ## Étapes
 
@@ -31,10 +33,9 @@ Rien : on part de l'assistant d'Android Studio. Ce dépôt ne contient que cet �
 
 ## Avec le tuteur
 
-Facultatif. Ouvre une séance avec `tuteur-android` sur la sous-compétence S-01
-(« séance tuteur, slide S-01 ») ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
-Le tuteur : https://github.com/<COMPTE>/td-04-tuteur-android/tree/main/tuteur-android
-Sans agent : la routine en quatre temps et l'invite courte du TD 03.
+Facultatif. Colle tout le contenu du fichier `SKILL.md` du tuteur (lien ci-dessous) au début d'une conversation avec l'assistant de ton choix, puis écris « séance tuteur, slide S-01 ». Reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`. Si ton assistant sait charger des skills, tu peux plutôt installer le dossier `tuteur-android/`.
+Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
+Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
 ## Crédits
 
