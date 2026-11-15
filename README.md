@@ -1,7 +1,7 @@
 # TD 04 — Réparer avec le tuteur
 
-Slide : S-04 — Installer et utiliser le tuteur `tuteur-android` · Dépôt : https://github.com/<COMPTE>/td-04-tuteur-android
-État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15 · lint non exécuté
+Slide : S-04 — Installer et utiliser le tuteur `tuteur-android` · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android
+État du build : départ construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
 
@@ -9,14 +9,16 @@ Slide : S-04 — Installer et utiliser le tuteur `tuteur-android` · Dépôt : h
 
 ## Point de départ
 
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-04-tuteur-android` (pas de nouveau clone). Attendre la synchronisation Gradle, puis Run.
 Un projet fourni : l'application de base avec un compteur qui repart à zéro quand l'écran tourne.
-Ouvrir ce dossier dans Android Studio (pas son dossier parent), attendre la synchronisation Gradle, puis Run.
+La solution est sur la branche `td-04-tuteur-android-solution`.
+Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
 
 ## Étapes
 
 1. Dans `JOURNAL.md`, écris ta prédiction : que devient le compteur après une rotation de l'émulateur, et pourquoi ?
 2. Lance l'app, monte le compteur à 3, tourne l'émulateur, puis note dans `JOURNAL.md` ce que tu observes.
-3. Installe le tuteur : agent, copie le dossier `tuteur-android/` dans ton dossier de skills ; chatbot, colle le fichier `tuteur-android/SKILL.md` en début de conversation.
+3. Dans une conversation avec l'assistant de ton choix, colle tout le contenu de `tuteur-android/SKILL.md`. Option : si ton assistant charge des skills, copie plutôt le dossier `tuteur-android/`.
 4. Ouvre une séance (« séance tuteur, slide S-04 ») sur la sous-compétence « l'état d'un composable face à la rotation ». Le tuteur ne t'écrit pas le code.
 5. Corrige toi-même `Counter.kt`, relance, tourne l'émulateur, puis commite ta correction.
 6. Dis `save state`, colle le bloc dans `TUTOR-STATE.md`, commite : le nombre de `just tell me` doit y être lisible.
@@ -35,10 +37,9 @@ Ouvrir ce dossier dans Android Studio (pas son dossier parent), attendre la sync
 
 ## Avec le tuteur
 
-Exigé dans ce TD. Ouvre une séance avec `tuteur-android` sur la sous-compétence S-04
-(« séance tuteur, slide S-04 ») ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
-Le tuteur : https://github.com/<COMPTE>/td-04-tuteur-android/tree/main/tuteur-android
-Sans agent : la routine en quatre temps et l'invite courte du TD 03.
+Exigé dans ce TD. Colle tout le contenu du fichier `SKILL.md` du tuteur (lien ci-dessous) au début d'une conversation avec l'assistant de ton choix, puis écris « séance tuteur, slide S-04 ». Reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`. Si ton assistant sait charger des skills, tu peux plutôt installer le dossier `tuteur-android/`.
+Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
+Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
 ## Crédits
 
