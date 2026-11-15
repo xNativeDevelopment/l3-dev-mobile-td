@@ -9,7 +9,7 @@ Slide : S-07 — Lire et ranger le Manifest · Dépôt : https://github.com/xNat
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-07-manifest` (pas de nouveau clone). Attendre la synchronisation Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-07-manifest` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-07-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
 Cette branche reprend l'état final du TD 02 (branche `td-02-depot-git-solution`).
 La solution est sur la branche `td-07-manifest-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
@@ -21,6 +21,9 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 3. Remplacer le nom en dur `Catalogue` de `android:label` par `@string/app_name`.
 4. Commenter chaque bloc : l'application, puis l'activité de lancement et son `intent-filter`.
 5. Afficher les warnings du fichier (Android Studio, Analyze > Inspect Code, ou le panneau Problems) : il ne doit en rester aucun.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 07"`. Sans ce commit, git refuse de passer au TD suivant.
+
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-07-mon-travail`.
 
 ## Critères de réussite
 
