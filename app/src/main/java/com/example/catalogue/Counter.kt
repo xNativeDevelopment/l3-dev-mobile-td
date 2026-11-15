@@ -15,6 +15,8 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun Counter(modifier: Modifier = Modifier) {
+    // La rotation recrée l'Activity : remember repart de zéro, rememberSaveable
+    // range la valeur dans l'état sauvegardé et la restitue.
     var count by rememberSaveable { mutableStateOf(0) }
     Column(
         modifier = modifier.fillMaxSize(),
