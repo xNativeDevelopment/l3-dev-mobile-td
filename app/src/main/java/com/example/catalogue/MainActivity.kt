@@ -17,6 +17,8 @@ import org.koin.android.ext.android.inject
 // 3. Puis MainActivity, la seule Activity, pose l'écran.
 class MainActivity : ComponentActivity() {
     private val catalog: CharacterCatalog by inject()
+    // Le battement suit l'Activity visible : démarré à l'affichage,
+    // arrêté dès qu'elle quitte l'écran (rotation, retour au lanceur).
     private val heartbeat = Heartbeat()
 
     override fun onCreate(savedInstanceState: Bundle?) {
