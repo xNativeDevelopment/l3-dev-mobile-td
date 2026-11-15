@@ -1,51 +1,60 @@
 # TD 02 — Mon dépôt de TD
 
-Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail en privé · Dépôt : https://github.com/<COMPTE>/td-02-depot-git
-État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15
+Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail en privé · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-02-depot-git
+État du build : départ construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
 
-À la fin, je sais récupérer un dossier de TD, en faire mon propre dépôt privé, y pousser mes commits et envoyer le lien dès sa création.
+À la fin, je sais récupérer le dépôt du cours une seule fois, passer d'un TD à l'autre en changeant de branche et versionner mon travail par des commits à mon nom.
 
 ## Point de départ
 
-Ce dépôt contient l'état final du TD 01.
-Ouvrir ce dossier dans Android Studio (pas son dossier parent), attendre la synchronisation Gradle, puis Run.
+Cloner une fois, changer de branche : voir les étapes 1 à 3. Cette branche reprend l'état final du TD 01 (branche `td-01-premier-projet-solution`).
+La solution est sur la branche `td-02-depot-git-solution`.
+Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
 
 ## Étapes
 
-1. Sur la page du dépôt du TD, cliquer « Use this template » > « Create a new repository », visibilité Private ; sans compte GitHub possible, télécharger le zip de la branche `main`.
-2. Cloner ton nouveau dépôt, puis l'ouvrir comme projet dans Android Studio (le dossier du dépôt, pas son parent).
-3. Compléter le `.gitignore` avec celui d'Android : `.gradle/`, `build/`, `.kotlin/`, `.idea/`, `local.properties`, `.DS_Store`.
-4. Ajouter une dernière ligne « Mon dépôt : » suivie de l'adresse de ton dépôt à ce README.
-5. Vérifier, valider et pousser, puis envoyer le lien du dépôt au responsable dès sa création :
+1. Récupère le dépôt du cours une seule fois : `git clone <adresse ou dossier donné par l'enseignant>` (dossier `l3-dev-mobile-td`).
+2. Ouvre ce dossier dans Android Studio (pas son dossier parent).
+3. Passe sur la branche du TD, crée ta branche de travail, puis présente-toi à git pour ce dépôt seulement (sans `--global`) :
+
+```bash
+git switch td-02-depot-git
+git switch -c td-02-mon-travail
+git config user.name "Prénom Nom"
+git config user.email "prenom.nom@exemple.fr"
+```
+
+4. Compléter le `.gitignore` avec celui d'Android : `.gradle/`, `build/`, `.kotlin/`, `.idea/`, `local.properties`, `.DS_Store`.
+5. Ajoute à la fin de ce README une ligne « Mon travail : branche `td-02-mon-travail` ».
+6. Vérifie, valide, puis contrôle ton nom :
 
 ```bash
 git status
 git add .
 git commit -m "feat: finish TD 02"
-git push -u origin main
+git log --oneline -1
 ```
 
-Ensuite : un commit par slide terminée.
+Ensuite : un commit par slide terminée. Pour le TD suivant, refais l'étape 3 avec sa branche. Ne pousse pas vers `origin` : c'est le dépôt du cours.
 
 ## Critères de réussite
 
-- [ ] Mon dépôt est privé et son lien est envoyé.
-- [ ] `git status` ne montre ni `build/` ni `local.properties`.
+- [ ] Je travaille sur ma branche `td-02-mon-travail`, créée depuis `td-02-depot-git`.
+- [ ] `git log` montre mon commit, à mon nom.
+- [ ] `git status` ne montre ni `build/`, ni `.gradle/`, ni `local.properties`.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Lire la page de GitHub sur les liens permanents vers un fichier et en copier un.
-- Essayer `git sparse-checkout` pour ne récupérer qu'un dossier d'un grand dépôt.
+- Mettre ton travail en ligne, si l'enseignant le demande : dépôt privé vide sur GitHub, compte ajouté dans Android Studio (Settings > Version Control > GitHub), `git remote add perso <adresse>`, puis push vers `perso`.
 
 ## Avec le tuteur
 
-Facultatif. Ouvre une séance avec `tuteur-android` sur la sous-compétence S-02
-(« séance tuteur, slide S-02 ») ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
-Le tuteur : https://github.com/<COMPTE>/td-04-tuteur-android/tree/main/tuteur-android
-Sans agent : la routine en quatre temps et l'invite courte du TD 03.
+Facultatif. Colle tout le contenu du fichier `SKILL.md` du tuteur (lien ci-dessous) au début d'une conversation avec l'assistant de ton choix, puis écris « séance tuteur, slide S-02 ». Reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
+Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
 ## Crédits
 
