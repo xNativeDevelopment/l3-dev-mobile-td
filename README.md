@@ -1,7 +1,7 @@
 # TD 04 — Réparer avec le tuteur
 
 Slide : S-04 — Installer et utiliser le tuteur `tuteur-android` · Dépôt : https://github.com/<COMPTE>/td-04-tuteur-android
-État du build : starter non construit : artefact absent hors ligne (androidx.savedstate:savedstate-android:1.3.2 et 6 autres, voir le journal de build) · solution non construit : artefact absent hors ligne (androidx.savedstate:savedstate-android:1.3.2 et 6 autres, voir le journal de build) · lint non exécuté
+État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15 · lint non exécuté
 
 ## Objectif
 
