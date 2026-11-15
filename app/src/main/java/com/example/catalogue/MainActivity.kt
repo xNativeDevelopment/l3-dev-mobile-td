@@ -30,8 +30,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        // TODO TD 16 : quel Context pour compter les lancements ?
-        val launches = countLaunch(this)
+        // Application : aussi durable que le processus, aucune Activity retenue.
+        val launches = countLaunch(applicationContext)
         setContent {
             CatalogueTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
