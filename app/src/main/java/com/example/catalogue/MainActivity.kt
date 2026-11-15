@@ -17,12 +17,11 @@ import org.koin.android.ext.android.inject
 // 3. Puis MainActivity, la seule Activity, pose l'écran.
 class MainActivity : ComponentActivity() {
     private val catalog: CharacterCatalog by inject()
+    private val heartbeat = Heartbeat()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        // TODO TD 15 : ce battement démarre ici et personne ne l'arrête.
-        Heartbeat().start()
         setContent {
             CatalogueTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -33,5 +32,15 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        heartbeat.start()
+    }
+
+    override fun onStop() {
+        heartbeat.stop()
+        super.onStop()
     }
 }
