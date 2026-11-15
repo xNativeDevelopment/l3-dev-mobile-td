@@ -1,7 +1,7 @@
 # TD 18 — Démonter la Card
 
 Slide : S-18 — Découper ses composables en briques LEGO · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-18-lego
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
