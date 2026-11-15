@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.catalogue.domain.CharacterCatalog
+import com.example.catalogue.system.Heartbeat
 import com.example.catalogue.ui.CharacterCard
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.android.ext.android.inject
@@ -20,6 +21,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        // TODO TD 15 : ce battement démarre ici et personne ne l'arrête.
+        Heartbeat().start()
         setContent {
             CatalogueTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

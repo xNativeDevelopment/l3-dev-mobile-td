@@ -1,41 +1,42 @@
-# TD 14 — Une arborescence qui se lit
+# TD 15 — Le bon moment
 
-Slide : S-14 — Nommer ses packages selon une convention et passer Lint · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-14-packages-lint
+Slide : S-15 — Utiliser le cycle de vie à dessein et le commenter · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-15-cycle-de-vie
 État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais nommer mes packages d'une seule façon dans tout le projet et vérifier qu'aucune alerte Lint ne reste.
+À la fin, je sais placer un traitement au bon moment du cycle de vie (Activity ou Compose) et le justifier par un commentaire.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-14-packages-lint` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-14-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 13 (branche `td-13-koin-solution`) : l'application fonctionne, mais ses packages sont nommés de trois façons différentes (`view`, `data_layer`, `ui`).
-La solution est sur la branche `td-14-packages-lint-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-15-cycle-de-vie` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-15-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 14 (branche `td-14-packages-lint-solution`) et y ajoute un battement (`Heartbeat`) lancé dans `onCreate` de `MainActivity`, que personne n'arrête.
+La solution est sur la branche `td-15-cycle-de-vie-solution`.
 
 ## Étapes
 
-1. Dans la vue Project d'Android Studio, passe en mode Packages et repère les packages qui ne suivent pas la même règle (synonyme d'un autre, tiret bas).
-2. Choisis la règle : minuscules, sans tiret bas, un seul mot par niveau, un nom par couche (`ui`, `domain`, `data`, `di`).
-3. Renomme `view` en `ui` et `data_layer` en `data` avec Refactor > Rename (clic droit sur le package). Les imports se corrigent seuls.
-4. Lance Analyze > Inspect Code sur le projet entier, lis la catégorie des conventions de nommage et corrige ce qui reste.
-5. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 14"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Lance l'app, ouvre Logcat avec le filtre `Heartbeat`, puis fais pivoter l'écran trois fois : les « tick » s'accélèrent, car chaque rotation relance un battement sans arrêter l'ancien.
+2. Repère dans la documentation les états de l'Activity : à quel moment l'écran est-il visible, et à quel moment ne l'est-il plus ?
+3. Garde le `Heartbeat` dans un champ de `MainActivity`, démarre-le dans `onStart` et arrête-le dans `onStop`.
+4. Écris au-dessus un commentaire qui dit pourquoi ces deux moments, et pas `onCreate`.
+5. Relance le test de rotation : un seul « tick » par seconde, et plus aucun quand l'app passe en arrière-plan.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 15"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-14-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-15-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Aucun package ne contient de majuscule ni de tiret bas, et chaque couche a un seul nom — `CRIT-DMA-D1-SE-2-M2` nommage des packages.
-- [ ] Le dossier de chaque fichier correspond à sa ligne `package`.
+- [ ] Le battement démarre et s'arrête avec la visibilité de l'écran, pas à la création — `CRIT-DMA-D1-SF-1-M5` cycle de vie judicieux, commenté.
+- [ ] Un commentaire explique le choix des moments.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajouter un package par fonctionnalité sous `ui` (par exemple `ui.catalogue`) en gardant la même règle.
+- Faire la même chose dans un composable avec `DisposableEffect`, et comparer ce qui se passe quand l'app passe en arrière-plan.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-14 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-15 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
