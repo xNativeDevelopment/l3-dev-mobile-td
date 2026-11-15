@@ -1,7 +1,7 @@
 # TD 08 — Gradle lisible
 
 Slide : S-08 — Structurer le build Gradle en sections commentées · Dépôt : https://github.com/<COMPTE>/td-08-gradle
-État du build : starter à vérifier · solution à vérifier
+État du build : starter non construit : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · lint non exécuté
 
 ## Objectif
 
