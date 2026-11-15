@@ -66,3 +66,5 @@ Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 ## Crédits
 
 Aucun contenu tiers.
+
+Mon travail : branche `td-02-mon-travail` (exemple)
