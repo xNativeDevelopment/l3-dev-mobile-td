@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Identité de l'app : nom, icônes, thème. -->
+    <!-- Identité de l'app : nom, icônes, thème.
+         Android lit ce fichier, puis crée l'Application nommée ici. -->
     <application
+        android:name=".CatalogueApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Catalogue">
 
-        <!-- Écran de lancement : seule porte d'entrée. -->
+        <!-- Écran de lancement : seule porte d'entrée, la seule Activity. -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
