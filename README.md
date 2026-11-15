@@ -42,9 +42,9 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 
 ## Où est la solution
 
-Sur la branche `td-<nn>-<slug>-solution`, à ouvrir après avoir essayé. Pour voir ce qui change :
-`git diff td-<nn>-<slug> td-<nn>-<slug>-solution`.
-La branche solution d'un TD apparaît après la séance : `git fetch origin`, puis `git switch td-<nn>-<slug>-solution`.
+Sur la branche `td-<nn>-<slug>-solution`, à ouvrir après avoir essayé. La branche solution d'un TD apparaît après la séance.
+Après un clone : `git fetch origin`, puis `git diff td-<nn>-<slug> origin/td-<nn>-<slug>-solution`.
+Avec le dossier distribué, les branches solution sont déjà là : pas de `fetch`, et `git diff td-<nn>-<slug> td-<nn>-<slug>-solution`.
 
 ## Crédits
 
