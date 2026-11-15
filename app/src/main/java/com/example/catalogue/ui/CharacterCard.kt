@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.catalogue.domain.Character
-import com.example.catalogue.fakeCharacters
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 @Composable
@@ -33,6 +32,6 @@ fun CharacterCard(
 @Composable
 private fun CharacterCardPreview() {
     CatalogueTheme {
-        CharacterCard(fakeCharacters.first())
+        CharacterCard(Character(1, "Rick Sanchez", "Alive", "Human"))
     }
 }
