@@ -65,7 +65,7 @@ Au temps annoncé : la carte, les deux points les plus fragiles, la prochaine so
 
 ## Sous-compétences : les slides du cours
 - S-01 Créer un projet dans la sandbox et le lancer sur un émulateur
-- S-02 Récupérer un TD depuis GitHub et versionner son travail dans un dépôt privé
+- S-02 Récupérer un TD depuis GitHub et versionner son travail
 - S-03 Apprendre avec une IA : la routine en quatre temps
 - S-04 Installer et utiliser le tuteur `tuteur-android`
 - S-05 Écrire ses premières classes et fonctions Kotlin
