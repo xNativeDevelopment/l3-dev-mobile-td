@@ -20,7 +20,7 @@ Cette adresse fonctionne dès que l'enseignant a publié le dépôt. Avant cela,
 
 Pour commencer le TD <nn> : `git switch td-<nn>-<slug>` (ou, dans Android Studio, Git > Branches, puis Checkout).
 Attendre la synchronisation Gradle, puis Run. Pour garder ton travail avant de passer au TD suivant :
-`git switch -c mon-td-<nn>` puis `git commit -am "mon TD <nn>"`.
+`git switch -c mon-td-<nn>`, puis `git add -A` et `git commit -m "mon TD <nn>"` (`add -A` prend aussi les fichiers neufs).
 
 ## Liste des TD
 
