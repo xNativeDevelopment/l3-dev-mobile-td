@@ -18,7 +18,7 @@ Ouvrir ce dossier dans Android Studio (pas son dossier parent), attendre la sync
 2. Chercher dans `app/build.gradle.kts` la dépendance qui porte encore sa version en dur : `material3`.
 3. Dans `[versions]`, ajouter `material3 = "1.4.0"`, puis une ligne dans `[libraries]` avec l'alias `androidx-compose-material3`.
 4. Appeler `libs.androidx.compose.material3` à la place du texte en dur, puis synchroniser.
-5. Vérifier qu'une seule clé `compose` porte la version de `ui`, `ui-tooling` et `ui-tooling-preview`, et commenter chaque clé de `[versions]`.
+5. Vérifier qu'une seule clé `compose` porte la version de `ui`, `ui-tooling` et `ui-tooling-preview`, et commenter les clés `compose` et `material3`.
 
 ## Critères de réussite
 
