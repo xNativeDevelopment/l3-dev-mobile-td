@@ -1,7 +1,7 @@
 # TD 16 — Quel Context ?
 
 Slide : S-16 — Obtenir le Context au bon endroit · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-16-context
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
