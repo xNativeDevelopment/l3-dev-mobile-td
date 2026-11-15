@@ -1,7 +1,7 @@
 # TD 13 — Premier module Koin
 
 Slide : S-13 — Injecter ses dépendances avec Koin : `single` et `factory` · Dépôt : https://github.com/<COMPTE>/td-13-koin
-État du build : à vérifier
+État du build : starter non construit : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · lint non exécuté
 
 ## Objectif
 
