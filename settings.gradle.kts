@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-16-context"
+rootProject.name = "td-17-intent"
 include(":app")
