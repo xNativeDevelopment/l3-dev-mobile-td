@@ -20,7 +20,7 @@ La solution est sur la branche `td-03-routine-ia-solution`.
 3. Écris ton hypothèse sur l'écart.
 4. Copie `invite-courte.md` dans l'assistant de ton choix, sans rien modifier, puis donne-lui ces trois éléments : note la question qu'il te pose, sans lui demander le code.
 5. Annote l'extrait par des commentaires dans `extrait/CharacterStats.kt` : trois points vérifiés, un point faux ou injustifié, avec ta justification.
-6. Compare avec `CORRIGE.md` sur la branche `td-03-routine-ia-solution`, seulement après l'étape 5.
+6. Après l'étape 5, lis le corrigé sans changer de branche : `git show td-03-routine-ia-solution:CORRIGE.md` (après un clone : `origin/td-03-routine-ia-solution:CORRIGE.md`).
 7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 03"`. Sans ce commit, git refuse de passer au TD suivant.
 
 Facultatif, vers ton fork (TD 02) : `git push -u perso td-03-mon-travail`.
