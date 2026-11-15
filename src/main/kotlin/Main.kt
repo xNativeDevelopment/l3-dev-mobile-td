@@ -1,15 +1,26 @@
-// TD 05 : Kotlin en console. Complète chaque TODO, puis lance `./gradlew run`.
+data class Character(
+    val id: Int,
+    val name: String,
+    val status: Status,
+)
 
-// TODO 1 : déclarer `enum class Status` avec ALIVE, DEAD et UNKNOWN.
+enum class Status { ALIVE, DEAD, UNKNOWN }
 
-// TODO 2 : déclarer `data class Character(val id: Int, val name: String, val status: Status)`.
+fun describe(character: Character): String =
+    "${character.name} (#${character.id})"
 
-// TODO 3 : écrire `fun describe(character: Character): String` (corps en expression).
+fun statusLabel(status: Status): String = when (status) {
+    Status.ALIVE -> "vivant"
+    Status.DEAD -> "mort"
+    Status.UNKNOWN -> "inconnu"
+}
 
-// TODO 4 : écrire `fun statusLabel(status: Status): String` avec un `when` exhaustif.
-
-// TODO 5 : écrire `fun isAlive(character: Character): Boolean` (corps en expression).
+fun isAlive(character: Character): Boolean = character.status == Status.ALIVE
 
 fun main() {
-    // TODO 6 : créer deux personnages avec `val`, puis afficher le résultat des trois fonctions.
+    val rick = Character(1, "Rick", Status.ALIVE)
+    val ghost = Character(2, "Fantôme", Status.UNKNOWN)
+    for (character in listOf(rick, ghost)) {
+        println("${describe(character)} : ${statusLabel(character.status)}, vivant ? ${isAlive(character)}")
+    }
 }
