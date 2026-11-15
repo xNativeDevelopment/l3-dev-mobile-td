@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-14-packages-lint"
+rootProject.name = "td-15-cycle-de-vie"
 include(":app")
