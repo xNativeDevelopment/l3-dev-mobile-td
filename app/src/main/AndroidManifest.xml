@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Identité de l'app : nom, icônes, thème. -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -7,13 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Catalogue">
+
+        <!-- Écran de lancement : seule porte d'entrée. -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
+            <!-- Fait apparaître l'activité dans le lanceur d'apps. -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
