@@ -14,4 +14,4 @@ Remplis les temps 1 à 3 avant d'ouvrir l'assistant.
 
 **Mon correctif** (écrit par moi) :
 
-## Séance 2 — au choix : une notion de la slide S-04
+## Séance 2 — au choix : une notion d'une slide de ton choix

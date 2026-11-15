@@ -13,10 +13,10 @@ Un extrait de code fourni, écrit par une IA : `extrait/CharacterStats.kt`. Ce d
 
 ## Étapes
 
-1. Copie `invite-courte.md` dans ton assistant, sans rien modifier.
-2. Dans `JOURNAL.md`, écris ta prédiction : que renvoie `averageEpisodes` pour deux personnages, 3 et 2 épisodes ?
-3. Exécute le raisonnement à la main, puis note le résultat et ton hypothèse sur l'écart.
-4. Donne ces trois éléments à l'assistant : note la question qu'il te pose, sans lui demander le code.
+1. Dans `JOURNAL.md`, écris ta prédiction : que renvoie `averageEpisodes` pour deux personnages, 3 et 2 épisodes ?
+2. Exécute le raisonnement à la main, puis note le résultat.
+3. Écris ton hypothèse sur l'écart.
+4. Copie `invite-courte.md` dans ton assistant, sans rien modifier, puis donne-lui ces trois éléments : note la question qu'il te pose, sans lui demander le code.
 5. Annote l'extrait : trois points vérifiés, un point faux ou injustifié, avec ta justification.
 6. Compare avec `CORRIGE.md` sur la branche `solution`, seulement après l'étape 5.
 
