@@ -22,8 +22,8 @@ Ouvrir ce dossier dans Android Studio (pas son dossier parent), attendre la sync
 
 ## Critères de réussite
 
-- [ ] Le Manifest ne garde que ce que l'app utilise et sa balise `application` ne contient aucun texte en dur — `CRIT-DMA-D1-SE-1-M1` Manifest sans warning, commenté.
-- [ ] Chaque bloc du Manifest porte un commentaire — `CRIT-DMA-D1-SF-1-M1` Manifest propre, sans warning.
+- [ ] Chaque bloc du Manifest porte un commentaire — `CRIT-DMA-D1-SE-1-M1` Manifest sans warning, commenté.
+- [ ] Le Manifest ne garde que ce que l'app utilise et sa balise `application` ne contient aucun texte en dur — `CRIT-DMA-D1-SF-1-M1` Manifest propre, sans warning.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
