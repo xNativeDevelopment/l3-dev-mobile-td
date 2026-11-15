@@ -1,6 +1,6 @@
 # TD 02 — Mon dépôt de TD
 
-Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail en privé · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-02-depot-git
+Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-02-depot-git
 État du build : départ construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
@@ -37,7 +37,14 @@ git commit -m "feat: finish TD 02"
 git log --oneline -1
 ```
 
-Ensuite : un commit par slide terminée ; pour le TD suivant, refais l'étape 3. Ne pousse pas vers `origin` : c'est le dépôt du cours.
+7. Sur GitHub, fais un *Fork* du dépôt du cours (copier `main` seule suffit), puis :
+
+```bash
+git remote add perso <adresse de ton fork>
+git push -u perso td-02-mon-travail
+```
+
+Ensuite : un commit par slide terminée, puis `git push`. Ne pousse jamais vers `origin` : c'est le dépôt du cours.
 
 ## Critères de réussite
 
@@ -48,7 +55,7 @@ Ensuite : un commit par slide terminée ; pour le TD suivant, refais l'étape 3.
 
 ## Pour aller plus loin
 
-- Mettre ton travail en ligne, si l'enseignant le demande : dépôt privé vide sur GitHub, `git remote add perso <adresse>`, puis push vers `perso`.
+- Pour t'exercer au geste : ouvre une pull request de `td-02-mon-travail` (ton fork) vers `td-02-depot-git` (dépôt du cours). Elle ne sera pas fusionnée et personne ne la relit.
 
 ## Avec le tuteur
 
