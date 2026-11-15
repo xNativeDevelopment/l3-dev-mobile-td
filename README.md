@@ -1,7 +1,7 @@
 # TD 11 — L'architecture de mon projet
 
 Slide : S-11 — Découper son projet en couches reliées par des interfaces · Dépôt : https://github.com/<COMPTE>/td-11-couches
-État du build : starter non construit : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · lint non exécuté
+État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
 
