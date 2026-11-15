@@ -9,7 +9,7 @@ Slide : S-09 — Centraliser les versions dans le version catalog · Dépôt : h
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-09-version-catalog` (pas de nouveau clone). Attendre la synchronisation Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-09-version-catalog` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-09-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
 Cette branche reprend l'état final du TD 08 (branche `td-08-gradle-solution`).
 La solution est sur la branche `td-09-version-catalog-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
@@ -21,6 +21,9 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 3. Dans `[versions]`, ajouter `material3 = "1.4.0"`, puis une ligne dans `[libraries]` avec l'alias `androidx-compose-material3`.
 4. Appeler `libs.androidx.compose.material3` à la place du texte en dur, puis synchroniser.
 5. Vérifier qu'une seule clé `compose` porte la version de `ui`, `ui-tooling` et `ui-tooling-preview`, et commenter les clés `compose` et `material3`.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 09"`. Sans ce commit, git refuse de passer au TD suivant.
+
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-09-mon-travail`.
 
 ## Critères de réussite
 
