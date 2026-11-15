@@ -39,20 +39,7 @@ fun CharacterCard(
             Column(Modifier.weight(1f).padding(start = 16.dp)) {
                 Text(character.name)
                 Text(character.species)
-                Surface(
-                    color = if (character.status == "Alive") {
-                        MaterialTheme.colorScheme.primary
-                    } else {
-                        MaterialTheme.colorScheme.error
-                    },
-                    shape = RoundedCornerShape(50),
-                ) {
-                    Text(
-                        character.status,
-                        Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
-                        color = Color.White,
-                    )
-                }
+                StatusBadge(character.status)
             }
             TextButton(onClick = onShare) {
                 Text("Partager")
