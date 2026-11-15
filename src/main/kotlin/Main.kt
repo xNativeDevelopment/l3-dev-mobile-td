@@ -27,16 +27,23 @@ fun forEachCharacter(
     for (character in characters) onEach(character)
 }
 
-// TODO 2 : écrire `originLabel(detail: CharacterDetail): String` avec `?.` et `?:`, sans `!!`.
+fun originLabel(detail: CharacterDetail): String =
+    detail.origin?.uppercase() ?: "origine inconnue"
 
-// TODO 3 : écrire `episodesLabel(detail: CharacterDetail): String` avec `?:`, sans `!!`.
+fun episodesLabel(detail: CharacterDetail): String =
+    "${detail.episodeCount ?: 0} épisode(s)"
 
 fun main() {
-    // TODO 4 : remplacer la boucle ci-dessous par un appel à `forEachCharacter` avec une lambda.
-    // TODO 5 : créer deux `CharacterDetail`, l'un complet, l'autre avec des champs `null`, et les afficher.
     val rick = Character(1, "Rick", Status.ALIVE)
     val ghost = Character(2, "Fantôme", Status.UNKNOWN)
-    for (character in listOf(rick, ghost)) {
-        println("${describe(character)} : ${statusLabel(character.status)}, vivant ? ${isAlive(character)}")
+    forEachCharacter(listOf(rick, ghost)) {
+        println("${describe(it)} : ${statusLabel(it.status)}")
+    }
+    val details = listOf(
+        CharacterDetail("Rick", "Terre", 51),
+        CharacterDetail("Fantôme", null, null),
+    )
+    for (detail in details) {
+        println("${detail.name} : ${originLabel(detail)}, ${episodesLabel(detail)}")
     }
 }
