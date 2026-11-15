@@ -9,7 +9,7 @@ Slide : S-12 — Suivre le chemin de lancement et garder une seule Activity · D
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-12-lancement-single-activity` (pas de nouveau clone). Attendre la synchronisation Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-12-lancement-single-activity` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-12-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
 Cette branche reprend l'état final du TD 11 (branche `td-11-couches-solution`) : `MainActivity` construit elle-même le fournisseur de personnages et il n'existe pas de classe `Application`.
 La solution est sur la branche `td-12-lancement-single-activity-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
@@ -21,6 +21,9 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 3. Dans `MainActivity.kt`, ne plus rien construire : lire le fournisseur dans l'`Application`, puis `setContent`.
 4. Poser un commentaire à chaque étape du lancement : Manifest, `Application`, `MainActivity`.
 5. Vérifier qu'il n'y a qu'une seule balise `<activity>` dans le Manifest, puis lancer l'app.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 12"`. Sans ce commit, git refuse de passer au TD suivant.
+
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-12-mon-travail`.
 
 ## Critères de réussite
 
