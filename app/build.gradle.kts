@@ -29,7 +29,7 @@ android {
 
 // ===== Dépendances =====
 dependencies {
-    // Compose : écran, thème, composants
+    // Compose : écran, thème, composants (material3 : TD 09)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.ui)
     implementation("androidx.compose.material3:material3:1.4.0")
