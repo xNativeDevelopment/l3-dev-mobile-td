@@ -1,7 +1,7 @@
 # TD 03 — Journal d'apprentissage
 
 Slide : S-03 — Apprendre avec une IA : la routine en quatre temps · Dépôt : https://github.com/<COMPTE>/td-03-routine-ia
-État du build : starter à vérifier · solution à vérifier
+État du build : starter sans projet Gradle · solution sans projet Gradle
 
 ## Objectif
 
