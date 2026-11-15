@@ -9,7 +9,7 @@ Slide : S-08 — Structurer le build Gradle en sections commentées · Dépôt :
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-08-gradle` (pas de nouveau clone). Attendre la synchronisation Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-08-gradle` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-08-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
 Cette branche reprend l'état final du TD 07 (branche `td-07-manifest-solution`).
 La solution est sur la branche `td-08-gradle-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
@@ -21,6 +21,9 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 3. Placer au-dessus de chaque bloc un commentaire de section, par exemple `// ===== Plugins =====`.
 4. Dans `dependencies`, regrouper les lignes par rôle et commenter chaque groupe. La ligne de `material3` garde sa version en dur : le TD 09 la déplace.
 5. Lancer Sync Project with Gradle Files : aucun warning dans la sortie.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 08"`. Sans ce commit, git refuse de passer au TD suivant.
+
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-08-mon-travail`.
 
 ## Critères de réussite
 
