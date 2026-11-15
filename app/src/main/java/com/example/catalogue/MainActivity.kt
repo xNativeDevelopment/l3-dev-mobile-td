@@ -11,6 +11,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import com.example.catalogue.domain.CharacterCatalog
 import com.example.catalogue.system.Heartbeat
 import com.example.catalogue.system.appLabel
@@ -35,15 +36,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             CatalogueTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    // Activity, via Compose : thème et langue de l'écran affiché.
+                    val context = LocalContext.current
                     Column(Modifier.padding(innerPadding)) {
                         CharacterCard(catalog.all().first())
-                        // TODO TD 16 : quel Context pour lire le nom de l'app ?
-                        Text(appLabel(this@MainActivity))
+                        Text(appLabel(context))
                         Text("Ouvertures de l'écran : $launches")
                         Button(
                             onClick = {
-                                // TODO TD 16 : quel Context pour le toast ?
-                                showToast(this@MainActivity, "Bonjour")
+                                showToast(context, "Bonjour")
                             },
                         ) {
                             Text("Dire bonjour")
