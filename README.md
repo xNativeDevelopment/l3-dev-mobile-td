@@ -1,7 +1,7 @@
 # TD 05 — Kotlin en console
 
 Slide : S-05 — Écrire ses premières classes et fonctions Kotlin · Dépôt : https://github.com/<COMPTE>/td-05-kotlin-bases
-État du build : starter à vérifier · solution à vérifier
+État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
 
