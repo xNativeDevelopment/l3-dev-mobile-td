@@ -1,7 +1,7 @@
 # TD 09 — Catalogue de versions
 
 Slide : S-09 — Centraliser les versions dans le version catalog · Dépôt : https://github.com/<COMPTE>/td-09-version-catalog
-État du build : starter à vérifier · solution à vérifier
+État du build : starter non construit : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · lint non exécuté
 
 ## Objectif
 
