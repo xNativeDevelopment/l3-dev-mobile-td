@@ -1,7 +1,7 @@
 # TD 06 — Lambdas et nulls
 
 Slide : S-06 — Manier lambdas et nullabilité, comme Compose les emploie · Dépôt : https://github.com/<COMPTE>/td-06-kotlin-lambdas
-État du build : starter à vérifier · solution à vérifier
+État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
 
