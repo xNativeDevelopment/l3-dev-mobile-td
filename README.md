@@ -9,9 +9,9 @@ Slide : S-05 — Écrire ses premières classes et fonctions Kotlin · Dépôt :
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-05-kotlin-bases` (pas de nouveau clone).
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-05-kotlin-bases` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-05-mon-travail`.
 Un projet console fourni : `src/main/kotlin/Main.kt` ne contient que des commentaires `TODO`.
-Ouvrir le dépôt dans Android Studio et attendre la synchronisation Gradle : c'est un projet console, sans émulateur. Lancer `main` avec la flèche verte dans la marge de `Main.kt`. En ligne de commande : `./gradlew run`.
+Ouvrir le dépôt dans Android Studio et synchroniser Gradle quand il le propose : c'est un projet console, sans émulateur. Lancer `main` avec la flèche verte dans la marge de `Main.kt`. En ligne de commande : `./gradlew run`.
 La solution est sur la branche `td-05-kotlin-bases-solution`.
 
 ## Étapes
@@ -21,6 +21,9 @@ La solution est sur la branche `td-05-kotlin-bases-solution`.
 3. Écrire `statusLabel` avec un `when` exhaustif sur `Status`, sans branche `else`.
 4. Dans `main`, créer deux personnages avec `val` et afficher le résultat des trois fonctions. Note d'abord la sortie que tu attends.
 5. Lancer `./gradlew run` : la sortie correspond à ce que tu avais prévu.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 05"`. Sans ce commit, git refuse de passer au TD suivant.
+
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-05-mon-travail`.
 
 ## Critères de réussite
 
