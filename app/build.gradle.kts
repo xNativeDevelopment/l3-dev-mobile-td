@@ -1,0 +1,39 @@
+// ===== Plugins =====
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
+}
+
+// ===== Configuration Android =====
+android {
+    namespace = "com.example.catalogue"
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = "com.example.catalogue"
+        minSdk = 26
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        compose = true
+    }
+}
+
+// ===== Dépendances =====
+dependencies {
+    // Compose : écran, thème, composants (material3 : TD 09)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.ui)
+    implementation("androidx.compose.material3:material3:1.4.0")
+    // Aperçus, seulement pour le développement
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+}
