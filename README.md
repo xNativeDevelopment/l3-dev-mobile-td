@@ -9,7 +9,7 @@ Slide : S-03 — Apprendre avec une IA : la routine en quatre temps · Dépôt :
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-03-routine-ia` (pas de nouveau clone). Ouvre le dossier dans l'éditeur de ton choix, rien à compiler.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-03-routine-ia` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-03-mon-travail`.
 Un extrait de code fourni, écrit par une IA : `extrait/CharacterStats.kt`. Cette branche ne contient aucun projet Gradle : ouvre le dossier dans l'éditeur de ton choix, rien à compiler.
 La solution est sur la branche `td-03-routine-ia-solution`.
 
@@ -21,6 +21,9 @@ La solution est sur la branche `td-03-routine-ia-solution`.
 4. Copie `invite-courte.md` dans l'assistant de ton choix, sans rien modifier, puis donne-lui ces trois éléments : note la question qu'il te pose, sans lui demander le code.
 5. Annote l'extrait par des commentaires dans `extrait/CharacterStats.kt` : trois points vérifiés, un point faux ou injustifié, avec ta justification.
 6. Compare avec `CORRIGE.md` sur la branche `td-03-routine-ia-solution`, seulement après l'étape 5.
+7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 03"`. Sans ce commit, git refuse de passer au TD suivant.
+
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-03-mon-travail`.
 
 ## Critères de réussite
 
