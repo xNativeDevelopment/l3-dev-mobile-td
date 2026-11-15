@@ -1,7 +1,7 @@
 # TD 02 — Mon dépôt de TD
 
 Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail en privé · Dépôt : https://github.com/<COMPTE>/td-02-depot-git
-État du build : starter non construit : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0)
+État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
 
