@@ -1,4 +1,4 @@
-package com.example.catalogue
+package com.example.catalogue.domain
 
 // Les champs que l'API expose pour un personnage, réduits à ceux du TD.
 data class Character(

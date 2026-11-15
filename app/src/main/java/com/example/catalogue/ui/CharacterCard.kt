@@ -1,4 +1,4 @@
-package com.example.catalogue
+package com.example.catalogue.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.catalogue.domain.Character
+import com.example.catalogue.fakeCharacters
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 @Composable
