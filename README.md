@@ -1,7 +1,7 @@
 # TD 17 — Partager un personnage
 
 Slide : S-17 — Ouvrir une autre application avec un Intent · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-17-intent
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
