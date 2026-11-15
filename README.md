@@ -9,14 +9,14 @@ Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail en pr
 
 ## Point de départ
 
-Cloner une fois, changer de branche : voir les étapes 1 à 3. Cette branche reprend l'état final du TD 01 (branche `td-01-premier-projet-solution`).
+Cloner une fois, changer de branche : étapes 1 à 3. Cette branche reprend l'état final du TD 01 (branche `td-01-premier-projet-solution`).
 La solution est sur la branche `td-02-depot-git-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
 
 ## Étapes
 
-1. Récupère le dépôt du cours une seule fois : `git clone <adresse ou dossier donné par l'enseignant>` (dossier `l3-dev-mobile-td`).
-2. Ouvre ce dossier dans Android Studio (pas son dossier parent).
+1. Si ce n'est pas déjà fait, récupère le dépôt du cours une seule fois : `git clone <adresse ou dossier donné par l'enseignant>` (dossier `l3-dev-mobile-td`). Depuis le TD 01 : commite-le d'abord (`td-01-mon-travail`).
+2. Ouvre ce dossier dans Android Studio (pas son parent).
 3. Passe sur la branche du TD, crée ta branche de travail, puis présente-toi à git pour ce dépôt seulement (sans `--global`) :
 
 ```bash
@@ -28,7 +28,7 @@ git config user.email "prenom.nom@exemple.fr"
 
 4. Compléter le `.gitignore` avec celui d'Android : `.gradle/`, `build/`, `.kotlin/`, `.idea/`, `local.properties`, `.DS_Store`.
 5. Ajoute à la fin de ce README une ligne « Mon travail : branche `td-02-mon-travail` ».
-6. Vérifie, valide, puis contrôle ton nom :
+6. Vérifie, valide, contrôle ton nom :
 
 ```bash
 git status
@@ -37,7 +37,7 @@ git commit -m "feat: finish TD 02"
 git log --oneline -1
 ```
 
-Ensuite : un commit par slide terminée. Pour le TD suivant, refais l'étape 3 avec sa branche. Ne pousse pas vers `origin` : c'est le dépôt du cours.
+Ensuite : un commit par slide terminée ; pour le TD suivant, refais l'étape 3. Ne pousse pas vers `origin` : c'est le dépôt du cours.
 
 ## Critères de réussite
 
@@ -48,11 +48,11 @@ Ensuite : un commit par slide terminée. Pour le TD suivant, refais l'étape 3 a
 
 ## Pour aller plus loin
 
-- Mettre ton travail en ligne, si l'enseignant le demande : dépôt privé vide sur GitHub, compte ajouté dans Android Studio (Settings > Version Control > GitHub), `git remote add perso <adresse>`, puis push vers `perso`.
+- Mettre ton travail en ligne, si l'enseignant le demande : dépôt privé vide sur GitHub, `git remote add perso <adresse>`, puis push vers `perso`.
 
 ## Avec le tuteur
 
-Facultatif. Colle tout le contenu du fichier `SKILL.md` du tuteur (lien ci-dessous) au début d'une conversation avec l'assistant de ton choix, puis écris « séance tuteur, slide S-02 ». Reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu du fichier `SKILL.md` du tuteur (lien ci-dessous) au début d'une conversation avec l'assistant de ton choix, puis écris « séance tuteur, slide S-02 ». Reprends avec `resume from:` et `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
