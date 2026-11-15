@@ -9,7 +9,7 @@ Slide : S-04 — Installer et utiliser le tuteur `tuteur-android` · Dépôt : h
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-04-tuteur-android` (pas de nouveau clone). Attendre la synchronisation Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-04-tuteur-android` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-04-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
 Un projet fourni : l'application de base avec un compteur qui repart à zéro quand l'écran tourne.
 La solution est sur la branche `td-04-tuteur-android-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
@@ -23,6 +23,8 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 5. Corrige toi-même `Counter.kt`, relance, tourne l'émulateur, puis commite ta correction.
 6. Dis `save state`, colle le bloc dans `TUTOR-STATE.md`, commite : le nombre de `just tell me` doit y être lisible.
 
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-04-mon-travail`.
+
 ## Critères de réussite
 
 - [ ] Le compteur garde sa valeur après une rotation, grâce à ta correction écrite à la main.
@@ -33,11 +35,10 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 ## Pour aller plus loin
 
 - Fais la même séance sur une autre slide déjà vue, avec `harder`.
-- Reprends ta séance un autre jour avec `resume from:` et ton `TUTOR-STATE.md`.
 
 ## Avec le tuteur
 
-Exigé dans ce TD. Colle tout le contenu du fichier `SKILL.md` du tuteur (lien ci-dessous) au début d'une conversation avec l'assistant de ton choix, puis écris « séance tuteur, slide S-04 ». Reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`. Si ton assistant sait charger des skills, tu peux plutôt installer le dossier `tuteur-android/`.
+Exigé dans ce TD. Colle tout le contenu du fichier `SKILL.md` du tuteur (lien ci-dessous) au début d'une conversation avec l'assistant de ton choix, puis écris « séance tuteur, slide S-04 ». Reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
