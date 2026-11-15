@@ -1,42 +1,42 @@
-# TD 15 — Le bon moment
+# TD 16 — Quel Context ?
 
-Slide : S-15 — Utiliser le cycle de vie à dessein et le commenter · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-15-cycle-de-vie
+Slide : S-16 — Obtenir le Context au bon endroit · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-16-context
 État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais placer un traitement au bon moment du cycle de vie (Activity ou Compose) et le justifier par un commentaire.
+À la fin, je sais d'où vient le Context (Application, Activity, `LocalContext`) et lequel passer à qui.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-15-cycle-de-vie` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-15-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 14 (branche `td-14-packages-lint-solution`) et y ajoute un battement (`Heartbeat`) lancé dans `onCreate` de `MainActivity`, que personne n'arrête.
-La solution est sur la branche `td-15-cycle-de-vie-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-16-context` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-16-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 15 (branche `td-15-cycle-de-vie-solution`). Elle ajoute trois services du système dans `system/Platform.kt` et trois appels dans `MainActivity`, marqués `TODO TD 16`, qui passent tous `this` sans réfléchir.
+La solution est sur la branche `td-16-context-solution`.
 
 ## Étapes
 
-1. Lance l'app, ouvre Logcat avec le filtre `Heartbeat`, puis fais pivoter l'écran trois fois : les « tick » s'accélèrent, car chaque rotation relance un battement sans arrêter l'ancien.
-2. Repère dans la documentation les états de l'Activity : à quel moment l'écran est-il visible, et à quel moment ne l'est-il plus ?
-3. Garde le `Heartbeat` dans un champ de `MainActivity`, démarre-le dans `onStart` et arrête-le dans `onStop`.
-4. Écris au-dessus un commentaire qui dit pourquoi ces deux moments, et pas `onCreate`.
-5. Relance le test de rotation : un seul « tick » par seconde, et plus aucun quand l'app passe en arrière-plan.
-6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 15"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Lis `system/Platform.kt` : repère les trois fonctions et ce que chacune fait du Context (afficher, stocker, lire une ressource).
+2. Pour chaque appel marqué `TODO TD 16`, décide : l'objet vit-il longtemps (Context d'Application) ou sert-il à l'écran affiché (Context de l'Activity) ?
+3. Compter les ouvertures est un travail de stockage : passe `applicationContext`, qui ne retient aucune Activity.
+4. Dans le contenu Compose, récupère le Context avec `LocalContext.current` et passe-le au nom de l'app et au toast.
+5. Remplace chaque `TODO TD 16` par un commentaire qui dit pourquoi ce Context, puis lance l'app et touche le bouton.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 16"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-15-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-16-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Le battement démarre et s'arrête avec la visibilité de l'écran, pas à la création — `CRIT-DMA-D1-SF-1-M5` cycle de vie judicieux, commenté.
-- [ ] Un commentaire explique le choix des moments.
+- [ ] Chaque appel reçoit le Context qui convient, et aucun Context d'Activity n'est stocké dans un objet qui vit plus longtemps qu'elle.
+- [ ] Un commentaire dit pourquoi, au-dessus de chaque appel.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Faire la même chose dans un composable avec `DisposableEffect`, et comparer ce qui se passe quand l'app passe en arrière-plan.
+- Expliquer ce qui arriverait si `showToast` gardait son Context dans un champ d'un objet `single` Koin.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-15 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-16 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
