@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.catalogue.domain.CharacterCatalog
+import com.example.catalogue.ui.CharacterCard
 import com.example.catalogue.ui.theme.CatalogueTheme
-import com.example.catalogue.view.CharacterCard
 import org.koin.android.ext.android.inject
 
 // 3. Puis MainActivity, la seule Activity, pose l'écran.
