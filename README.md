@@ -9,7 +9,7 @@ Slide : S-01 — Créer un projet dans la sandbox et le lancer sur un émulateur
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-01-premier-projet` (pas de nouveau clone). Rien : on part de l'assistant d'Android Studio. Cette branche ne contient que cet énoncé et des fichiers de configuration git (`.gitignore`, `.gitattributes`) ; le projet se crée à la racine du dépôt.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-01-premier-projet` (pas de nouveau clone). Rien : on part de l'assistant d'Android Studio. Cette branche ne contient que cet énoncé et le fichier de configuration git `.gitignore` ; le projet se crée à la racine du dépôt.
 La solution est sur la branche `td-01-premier-projet-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
 
