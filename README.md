@@ -1,7 +1,7 @@
 # TD 15 — Le bon moment
 
 Slide : S-15 — Utiliser le cycle de vie à dessein et le commenter · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-15-cycle-de-vie
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
