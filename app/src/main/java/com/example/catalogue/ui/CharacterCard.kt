@@ -35,14 +35,7 @@ fun CharacterCard(
             Modifier.padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Box(
-                Modifier
-                    .size(48.dp)
-                    .background(MaterialTheme.colorScheme.primaryContainer, CircleShape),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text(character.name.take(1))
-            }
+            CharacterAvatar(character.name)
             Column(Modifier.weight(1f).padding(start = 16.dp)) {
                 Text(character.name)
                 Text(character.species)
