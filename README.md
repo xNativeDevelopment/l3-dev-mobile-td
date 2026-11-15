@@ -9,7 +9,7 @@ Slide : S-13 — Injecter ses dépendances avec Koin : `single` et `factory` · 
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-13-koin` (pas de nouveau clone). Attendre la synchronisation Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-13-koin` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-13-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
 Cette branche reprend l'état final du TD 12 (branche `td-12-lancement-single-activity-solution`) : l'`Application` construit encore le fournisseur de personnages à la main, sans Koin.
 La solution est sur la branche `td-13-koin-solution`.
 Prérequis : la dernière version stable d'Android Studio, avec la plateforme Android API 37 installée (Tools > SDK Manager > SDK Platforms).
@@ -21,6 +21,9 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 3. Écrire `di/AppModule.kt` : `single` pour le fournisseur, `factory` pour le catalogue, avec `get()`.
 4. Dans `CatalogueApplication`, retirer la construction à la main et appeler `startKoin` avec `androidContext` et le module.
 5. Dans `MainActivity`, obtenir le catalogue avec `by inject()`, puis lancer l'app.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 13"`. Sans ce commit, git refuse de passer au TD suivant.
+
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-13-mon-travail`.
 
 ## Critères de réussite
 
