@@ -1,5 +1,6 @@
 package com.example.catalogue.system
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 
@@ -9,5 +10,9 @@ fun shareText(context: Context, text: String) {
         type = "text/plain"
         putExtra(Intent.EXTRA_TEXT, text)
     }
-    context.startActivity(Intent.createChooser(send, null))
+    try {
+        context.startActivity(Intent.createChooser(send, null))
+    } catch (e: ActivityNotFoundException) {
+        showToast(context, "Aucune application pour partager")
+    }
 }
