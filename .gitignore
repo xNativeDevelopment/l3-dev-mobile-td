@@ -1,2 +1,14 @@
-# à compléter : le .gitignore Android complet est demandé par le README
+# Gradle
+.gradle/
 build/
+.kotlin/
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+# Configuration locale — ne jamais la versionner
+local.properties
+# macOS
+.DS_Store
