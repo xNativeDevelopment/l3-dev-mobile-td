@@ -1,7 +1,7 @@
 # TD 07 — Manifest propre
 
 Slide : S-07 — Lire et ranger le Manifest · Dépôt : https://github.com/<COMPTE>/td-07-manifest
-État du build : starter non construit : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · lint non exécuté
+État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15 · lint non exécuté
 
 ## Objectif
 
