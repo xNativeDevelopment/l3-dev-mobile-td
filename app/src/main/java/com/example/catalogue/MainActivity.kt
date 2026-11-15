@@ -16,6 +16,7 @@ import com.example.catalogue.domain.CharacterCatalog
 import com.example.catalogue.system.Heartbeat
 import com.example.catalogue.system.appLabel
 import com.example.catalogue.system.countLaunch
+import com.example.catalogue.system.shareText
 import com.example.catalogue.system.showToast
 import com.example.catalogue.ui.CharacterCard
 import com.example.catalogue.ui.theme.CatalogueTheme
@@ -39,7 +40,11 @@ class MainActivity : ComponentActivity() {
                     // Activity, via Compose : thème et langue de l'écran affiché.
                     val context = LocalContext.current
                     Column(Modifier.padding(innerPadding)) {
-                        CharacterCard(catalog.all().first())
+                        val character = catalog.all().first()
+                        CharacterCard(
+                            character,
+                            onShare = { shareText(context, character.name) },
+                        )
                         Text(appLabel(context))
                         Text("Ouvertures de l'écran : $launches")
                         Button(
