@@ -17,7 +17,7 @@ Ouvrir ce dossier dans Android Studio (pas son dossier parent), attendre la sync
 1. Déclarer l'`enum class Status` (`ALIVE`, `DEAD`, `UNKNOWN`) et la `data class Character` (identifiant, nom, statut). Tout en `val`.
 2. Écrire `describe` et `isAlive` sous forme de fonctions à expression.
 3. Écrire `statusLabel` avec un `when` exhaustif sur `Status`, sans branche `else`.
-4. Dans `main`, créer deux personnages avec `val` et afficher le résultat des trois fonctions.
+4. Dans `main`, créer deux personnages avec `val` et afficher le résultat des trois fonctions. Note d'abord la sortie que tu attends.
 5. Lancer `./gradlew run` : la sortie correspond à ce que tu avais prévu.
 
 ## Critères de réussite
