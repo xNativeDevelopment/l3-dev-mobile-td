@@ -12,15 +12,15 @@ Un seul dépôt pour tous les TD : on le clone une fois, puis on change de branc
 
     git clone https://github.com/xNativeDevelopment/l3-dev-mobile-td.git
 
-Ouvrir le dossier `l3-dev-mobile-td` dans Android Studio, une seule fois pour tout le module.
+Passer d'abord sur la branche du TD (`git switch td-<nn>-<slug>`), puis ouvrir le dossier `l3-dev-mobile-td` dans Android Studio, une seule fois pour tout le module. Seule exception, le TD 01 : son projet se crée dans ce dossier avec l'assistant d'Android Studio.
 
 Cette adresse fonctionne dès que l'enseignant a publié le dépôt. Avant cela, ou si l'adresse ne répond pas, l'autre moyen de l'obtenir est le dossier que l'enseignant distribue : le copier sur sa machine, puis l'ouvrir de la même façon.
 
 ## Changer de branche
 
 Pour commencer le TD <nn> : `git switch td-<nn>-<slug>` (ou, dans Android Studio, Git > Branches, puis Checkout).
-Attendre la synchronisation Gradle, puis Run. Pour garder ton travail avant de passer au TD suivant :
-`git switch -c mon-td-<nn>`, puis `git add -A` et `git commit -m "mon TD <nn>"` (`add -A` prend aussi les fichiers neufs).
+Android Studio propose alors de synchroniser le projet Gradle : accepter, attendre la fin, puis Run. Pour garder ton travail avant de passer au TD suivant :
+`git switch -c td-<nn>-mon-travail`, puis `git add -A` et `git commit -m "feat: finish TD <nn>"` (`add -A` prend aussi les fichiers neufs).
 
 ## Liste des TD
 
@@ -44,6 +44,7 @@ Attendre la synchronisation Gradle, puis Run. Pour garder ton travail avant de p
 
 Sur la branche `td-<nn>-<slug>-solution`, à ouvrir après avoir essayé. Pour voir ce qui change :
 `git diff td-<nn>-<slug> td-<nn>-<slug>-solution`.
+La branche solution d'un TD apparaît après la séance : `git fetch origin`, puis `git switch td-<nn>-<slug>-solution`.
 
 ## Crédits
 
