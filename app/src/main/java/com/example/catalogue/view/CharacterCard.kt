@@ -1,4 +1,4 @@
-package com.example.catalogue.ui
+package com.example.catalogue.view
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

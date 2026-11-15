@@ -1,4 +1,4 @@
-package com.example.catalogue.data
+package com.example.catalogue.data_layer
 
 import com.example.catalogue.domain.Character
 import com.example.catalogue.domain.CharacterProvider
