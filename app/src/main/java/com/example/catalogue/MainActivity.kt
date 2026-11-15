@@ -8,21 +8,23 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import com.example.catalogue.domain.CharacterCatalog
 import com.example.catalogue.ui.CharacterCard
 import com.example.catalogue.ui.theme.CatalogueTheme
+import org.koin.android.ext.android.inject
 
 // 3. Puis MainActivity, la seule Activity, pose l'écran.
 class MainActivity : ComponentActivity() {
+    private val catalog: CharacterCatalog by inject()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val app = application as CatalogueApplication
-        val provider = app.provider
         setContent {
             CatalogueTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     CharacterCard(
-                        provider.characters().first(),
+                        catalog.all().first(),
                         Modifier.padding(innerPadding),
                     )
                 }
