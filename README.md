@@ -15,11 +15,11 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 
 ## Étapes
 
-1. Installer Android Studio (version stable) et ouvrir son écran d'accueil.
-2. New Project > Empty Activity : nom `Catalogue`, package `com.example.catalogue`, Minimum SDK API 26, langage de build Kotlin DSL ; comme emplacement (*Save location*), choisir le dossier `l3-dev-mobile-td`.
-3. Attendre la fin de la synchronisation Gradle. Si elle échoue (SDK ou JDK manquant), lire le message en entier avant de relancer.
-4. Device Manager > Create Device : un téléphone et une image système récente, puis le démarrer.
-5. Cliquer Run : l'app affiche « Hello Catalogue! ». Ajouter une capture de l'émulateur dans `docs/capture.png` et la décrire dans `docs/NOTE.md`.
+1. Installe Android Studio (version stable) et ouvre son écran d'accueil.
+2. New Project > Empty Activity : nom `Catalogue`, package `com.example.catalogue`, Minimum SDK API 26, langage de build Kotlin DSL ; comme emplacement (*Save location*), choisis le dossier `l3-dev-mobile-td`.
+3. Attends la fin de la synchronisation Gradle. Si elle échoue (SDK ou JDK manquant), lis le message en entier avant de relancer.
+4. Device Manager > Create Device : un téléphone et une image système récente, puis démarre-le.
+5. Clique sur Run : l'app affiche « Hello Catalogue! ». Ajoute une capture de l'émulateur dans `docs/capture.png` et décris-la dans `docs/NOTE.md`.
 6. Présente-toi à git avant ton premier commit, pour ce dépôt seulement (sans `--global`) : `git config user.name "Prénom Nom"`, puis `git config user.email "prenom.nom@exemple.fr"`.
 7. Garde ton travail sur ta branche : `git switch -c td-01-mon-travail`, `git add -A`, `git commit -m "feat: finish TD 01"`. Sans ce commit, git refuse de passer au TD suivant.
 
