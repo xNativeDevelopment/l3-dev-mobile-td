@@ -20,6 +20,7 @@ Prérequis : la dernière version stable d'Android Studio, avec la plateforme An
 3. Attendre la fin de la synchronisation Gradle. Si elle échoue (SDK ou JDK manquant), lire le message en entier avant de relancer.
 4. Device Manager > Create Device : un téléphone et une image système récente, puis le démarrer.
 5. Cliquer Run : l'app affiche « Hello Catalogue! ». Ajouter une capture de l'émulateur dans `docs/capture.png` et la décrire dans `docs/NOTE.md`.
+6. Garde ton travail sur ta branche : `git switch -c td-01-mon-travail`, `git add -A`, `git commit -m "feat: finish TD 01"`. Sans ce commit, git refuse de passer au TD suivant.
 
 ## Critères de réussite
 
