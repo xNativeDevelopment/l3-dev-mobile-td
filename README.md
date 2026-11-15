@@ -1,7 +1,7 @@
 # TD 12 — Une Application, une Activity
 
 Slide : S-12 — Suivre le chemin de lancement et garder une seule Activity · Dépôt : https://github.com/<COMPTE>/td-12-lancement-single-activity
-État du build : starter non construit : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · lint non exécuté
+État du build : starter construit le 2026-11-15 · solution construite le 2026-11-15
 
 ## Objectif
 
