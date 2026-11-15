@@ -1,7 +1,7 @@
 # TD 14 — Une arborescence qui se lit
 
 Slide : S-14 — Nommer ses packages selon une convention et passer Lint · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-14-packages-lint
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite · lint non exécuté
 
 ## Objectif
 
