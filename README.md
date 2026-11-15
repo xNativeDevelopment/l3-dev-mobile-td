@@ -1,7 +1,7 @@
 # TD 10 — La Card d'un personnage
 
 Slide : S-10 — Créer un composant : une Card à partir des données d'une API · Dépôt : https://github.com/<COMPTE>/td-10-composant-card
-État du build : à vérifier
+État du build : starter non construit : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0) · lint non exécuté
 
 ## Objectif
 
