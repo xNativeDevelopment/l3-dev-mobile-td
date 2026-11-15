@@ -9,12 +9,12 @@ Slide : S-02 — Récupérer un TD depuis GitHub et versionner son travail · D�
 
 ## Point de départ
 
-Cloner une fois, changer de branche : étapes 1 à 3. Cette branche reprend l'état final du TD 01 (branche `td-01-premier-projet-solution`).
+Cette branche reprend l'état final du TD 01 (branche `td-01-premier-projet-solution`).
 La solution est sur la branche `td-02-depot-git-solution`.
 
 ## Étapes
 
-1. Si ce n'est pas déjà fait, récupère le dépôt du cours une seule fois : `git clone <adresse ou dossier donné par l'enseignant>` , puis `cd l3-dev-mobile-td`. Depuis le TD 01 : commite-le d'abord (`td-01-mon-travail`).
+1. Si ce n'est pas déjà fait, récupère le dépôt du cours une seule fois : `git clone <adresse ou dossier donné par l'enseignant>`, puis `cd l3-dev-mobile-td`. Depuis le TD 01 : commite-le d'abord (`td-01-mon-travail`).
 2. Passe sur la branche du TD : `git switch td-02-depot-git`.
 3. Ouvre ce dossier dans Android Studio (pas son parent), puis crée ta branche de travail : `git switch -c td-02-mon-travail`. Identité git : celle du TD 01 ; sur un nouveau clone, redonne-la (sans `--global`) :
 
