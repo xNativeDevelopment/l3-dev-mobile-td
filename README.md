@@ -1,7 +1,7 @@
 # TD 01 — Premier projet qui démarre
 
 Slide : S-01 — Créer un projet dans la sandbox et le lancer sur un émulateur · Dépôt : https://github.com/<COMPTE>/td-01-premier-projet
-État du build : starter sans projet Gradle · solution non construite : dépendance absente du cache local (androidx.compose.foundation:foundation-android:1.10.0)
+État du build : starter sans projet Gradle · solution construite le 2026-11-15
 
 ## Objectif
 
