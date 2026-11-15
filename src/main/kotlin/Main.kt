@@ -20,7 +20,12 @@ fun isAlive(character: Character): Boolean = character.status == Status.ALIVE
 // TD 06 : lambdas et nullabilité.
 data class CharacterDetail(val name: String, val origin: String?, val episodeCount: Int?)
 
-// TODO 1 : écrire `forEachCharacter(characters: List<Character>, onEach: (Character) -> Unit)`.
+fun forEachCharacter(
+    characters: List<Character>,
+    onEach: (Character) -> Unit,
+) {
+    for (character in characters) onEach(character)
+}
 
 // TODO 2 : écrire `originLabel(detail: CharacterDetail): String` avec `?.` et `?:`, sans `!!`.
 
