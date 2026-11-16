@@ -1,7 +1,7 @@
 # TD 26 — La liste des personnages
 
 Slide : S-26 — Afficher une liste avec LazyColumn · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-26-liste
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
