@@ -14,5 +14,5 @@ val appModule = module {
     factory { CharacterCatalog(get()) }
     single { BackStackNavigator() }
     single<Navigator> { get<BackStackNavigator>() }
-    viewModel { CharacterListViewModel(get()) }
+    viewModel { CharacterListViewModel(get(), get()) }
 }
