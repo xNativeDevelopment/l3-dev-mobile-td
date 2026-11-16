@@ -18,7 +18,7 @@ La solution est sur la branche `td-25-ui-action-solution`.
 1. Écris `CharacterListUiAction`, une `sealed interface` avec une action par intention : `OnFilterChanged(text)` et `OnCharacterClicked(id)`. Nomme chaque action d'après ce que veut l'utilisateur, pas d'après le widget.
 2. Ajoute `filter` à `CharacterListUiState`, et une propriété `visibleCharacters` : les personnages dont le nom contient le filtre, sans tenir compte des majuscules.
 3. Dans `CharacterListViewModel`, reçois le `Navigator` par le constructeur (mets `appModule` à jour) et écris `onAction(action)` : un `when` qui met à jour l'état pour le filtre et appelle `goToDetail` pour le clic.
-4. Dans `CharacterListContent`, remplace les lambdas par un seul `onAction`. Le champ envoie `OnFilterChanged`, la carte envoie `OnCharacterClicked`.
+4. Dans `CharacterListContent`, remplace `onOpenDetail` par un seul `onAction`. Le champ envoie `OnFilterChanged`, la carte envoie `OnCharacterClicked`. Le partage garde sa lambda `onShare`.
 5. Retire le `Navigator` de `CharacterListScreen`. Lance l'app : taper « mor » ne laisse que Morty, et un clic ouvre toujours le détail.
 6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 25"`. Sans ce commit, git refuse de passer au TD suivant.
 
@@ -26,7 +26,7 @@ Facultatif, vers ton fork (TD 02) : `git push -u perso td-25-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Chaque geste passe par une action nommée d'après l'intention, traitée dans `onAction` — `CRIT-DMA-D1-SE-3-M5` actions du ViewModel bien nommées.
+- [ ] Chaque geste de la liste (filtre, clic sur une carte) passe par une action nommée d'après l'intention, traitée dans `onAction` — `CRIT-DMA-D1-SE-3-M5` actions du ViewModel bien nommées.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
