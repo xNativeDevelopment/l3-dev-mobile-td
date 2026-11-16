@@ -1,7 +1,7 @@
 # TD 34 — Mes couleurs
 
 Slide : S-34 — Architecturer `colors.xml` : palette, couleurs métier, couleurs de composants · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-34-couleurs
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
