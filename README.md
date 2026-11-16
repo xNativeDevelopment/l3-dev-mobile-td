@@ -1,42 +1,43 @@
-# TD 28 — Message une seule fois
+# TD 29 — Trois modèles
 
-Slide : S-28 — Émettre un événement ponctuel depuis le ViewModel · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-28-evenement-ponctuel
-État du build : départ construit · solution construite
+Slide : S-29 — Modéliser le domaine à part du DTO et du UiState · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-29-domaine
+État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais faire afficher un message ou déclencher une navigation une seule fois à partir du ViewModel.
+À la fin, je sais écrire un modèle de domaine (sealed interface si besoin) distinct de ce que renvoie l'API et de ce qu'affiche l'écran.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-28-evenement-ponctuel` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-28-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 27 (branche `td-27-viewmodel-detail-solution`) et ajoute un bouton « Recharger » dont l'échec est simulé. Le message d'erreur est rangé dans `errorMessage`, dans l'état : lance l'app, appuie sur « Recharger », puis fais pivoter l'écran. Le message revient à chaque rotation.
-La solution est sur la branche `td-28-evenement-ponctuel-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-29-domaine` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-29-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 28 (branche `td-28-evenement-ponctuel-solution`) : une seule classe `Character` sert à la fois aux données, au métier et à l'écran.
+La solution est sur la branche `td-29-domaine-solution`.
 
 ## Étapes
 
-1. Repère dans `CharacterListScreen` l'effet `LaunchedEffect(uiState.errorMessage)` : il affiche le message, mais personne ne le retire de l'état.
-2. Ajoute à `CharacterListUiAction` l'action `OnErrorShown`, nommée d'après l'intention : « le message a été montré ».
-3. Dans `onAction` du ViewModel, traite-la en remettant `errorMessage` à `null`.
-4. Dans `CharacterListContent`, envoie `OnErrorShown` juste après `showSnackbar` : l'événement est consommé.
-5. Lance l'app, appuie sur « Recharger », attends que le message disparaisse, fais pivoter l'écran : il ne revient plus. Un second appui sur « Recharger » l'affiche de nouveau.
-6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 28"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Dans `data`, écris `CharacterDto` : ce que l'API renverrait (`id`, `name`, `status`, `species`, `image`). `FakeCharacterProvider` le construit, puis `toDomain()` le convertit en `Character`.
+2. Dans `ui`, écris `CharacterUiState` : ce que l'écran affiche. Ajoute `Character.toUiState()` : les ViewModels convertissent, les écrans ne voient plus que des `CharacterUiState`.
+3. Dans `domain`, transforme `Character` en `sealed interface` : `Preview` pour la liste, `Details` (avec `image`) pour le détail. `toDomain()` produit un `Details`, `CharacterCatalog.all()` rend des `Preview`.
+4. Dans `toUiState()`, traite les deux cas avec un `when` sans `else` : un cas oublié ne compile pas.
+5. Lance l'app : la liste et le détail s'affichent comme avant.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 29"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-28-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-29-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Le message d'erreur s'affiche une fois après « Recharger », et pas à la rotation.
-- [ ] Un second échec réaffiche le message.
+- [ ] Aucun fichier de `domain` n'importe `data` ni `ui` — `CRIT-DMA-D1-SF-2-M4` couche domaine démontrée.
+- [ ] Chaque couche a son modèle : `CharacterDto` dans `data`, `Character` dans `domain`, `CharacterUiState` dans `ui` — `CRIT-DMA-D1-SE-2-M4` couches nettes.
+- [ ] `CharacterUiState` est immuable et construit par un mapper, jamais à la main dans un écran — `CRIT-DMA-D1-SE-3-M6` State bien formé.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajoute un second événement ponctuel : une fois le rechargement réussi, un message « Liste à jour ».
+- Ajoute un troisième cas à `Character` et lis l'erreur du compilateur.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-28 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-29 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
