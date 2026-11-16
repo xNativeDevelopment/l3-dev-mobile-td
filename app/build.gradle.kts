@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
+    // Documentation : ./gradlew dokkaGenerate, résultat dans app/build/dokka/html
+    alias(libs.plugins.dokka)
 }
 
 // ===== Configuration Android =====

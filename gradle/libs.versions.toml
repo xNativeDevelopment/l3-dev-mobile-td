@@ -12,6 +12,7 @@ kotlinxSerialization = "1.11.0"
 lifecycle = "2.11.0"
 coroutines = "1.11.0"
 ktor = "3.6.0"
+dokka = "2.3.0"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
@@ -37,3 +38,5 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 # Indispensable aux clés @Serializable : c'est lui qu'on oublie
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+# Génère la documentation HTML à partir des en-têtes KDoc
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
