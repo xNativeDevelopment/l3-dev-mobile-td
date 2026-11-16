@@ -3,6 +3,7 @@ package com.example.catalogue.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -27,6 +28,7 @@ fun CharacterDetailScreen(
         .collectAsStateWithLifecycle()
     CharacterDetailContent(
         character = uiState.character,
+        isLoading = uiState.isLoading,
         onBack = { viewModel.onAction(CharacterDetailUiAction.OnBackClicked) },
         modifier = modifier,
     )
@@ -35,11 +37,14 @@ fun CharacterDetailScreen(
 @Composable
 private fun CharacterDetailContent(
     character: CharacterUiState?,
+    isLoading: Boolean,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier.padding(16.dp)) {
-        if (character == null) {
+        if (isLoading) {
+            CircularProgressIndicator()
+        } else if (character == null) {
             Text("Personnage introuvable")
         } else {
             CharacterInfo(
@@ -60,6 +65,7 @@ private fun CharacterDetailPreview() {
     CatalogueTheme {
         CharacterDetailContent(
             character = CharacterUiState(2, "Morty Smith", "Alive", "Human"),
+            isLoading = false,
             onBack = {},
         )
     }
