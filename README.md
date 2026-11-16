@@ -50,6 +50,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 22 | Mon Navigator | [`td-22-navigator`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-22-navigator) | [`td-22-navigator-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-22-navigator-solution) |
 | 23 | Chargement sans gel | [`td-23-coroutines`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-23-coroutines) | [`td-23-coroutines-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-23-coroutines-solution) |
 | 24 | Screen et ViewModel | [`td-24-screen-viewmodel`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-24-screen-viewmodel) | [`td-24-screen-viewmodel-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-24-screen-viewmodel-solution) |
+| 25 | Actions de l'écran | [`td-25-ui-action`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-25-ui-action) | [`td-25-ui-action-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-25-ui-action-solution) |
 
 ## Où est la solution
 
@@ -60,5 +61,5 @@ Avec le dossier distribué, les branches solution sont déjà là : pas de `fetc
 ## Crédits
 
 - TD 03 et TD 04 : le tuteur s'inspire de `socratic-tutor` (Jane Street), sous licence MIT : voir `NOTICE-socratic-tutor.md` sur ces branches.
-- TD 10 à TD 13 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
+- TD 10 à TD 25 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
 - Autres TD : aucun contenu tiers.
