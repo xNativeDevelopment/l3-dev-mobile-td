@@ -11,13 +11,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.catalogue.domain.Character
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 // La Card n'assemble plus que ses briques : données et lambdas, rien d'autre.
 @Composable
 fun CharacterCard(
-    character: Character,
+    character: CharacterUiState,
     modifier: Modifier = Modifier,
     onShare: () -> Unit = {},
 ) {
@@ -44,6 +43,6 @@ fun CharacterCard(
 @Composable
 private fun CharacterCardPreview() {
     CatalogueTheme {
-        CharacterCard(Character(1, "Rick Sanchez", "Alive", "Human"))
+        CharacterCard(CharacterUiState(1, "Rick Sanchez", "Alive", "Human"))
     }
 }

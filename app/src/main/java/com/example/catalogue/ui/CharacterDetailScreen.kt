@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.catalogue.domain.Character
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
@@ -35,7 +34,7 @@ fun CharacterDetailScreen(
 
 @Composable
 private fun CharacterDetailContent(
-    character: Character?,
+    character: CharacterUiState?,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -60,7 +59,7 @@ private fun CharacterDetailContent(
 private fun CharacterDetailPreview() {
     CatalogueTheme {
         CharacterDetailContent(
-            character = Character(2, "Morty Smith", "Alive", "Human"),
+            character = CharacterUiState(2, "Morty Smith", "Alive", "Human"),
             onBack = {},
         )
     }

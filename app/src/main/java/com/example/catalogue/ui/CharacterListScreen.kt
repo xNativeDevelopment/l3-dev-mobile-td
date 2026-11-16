@@ -24,7 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.catalogue.domain.Character
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -33,7 +32,7 @@ import org.koin.compose.viewmodel.koinViewModel
 // le Navigator : c'est le ViewModel qui décide où aller.
 @Composable
 fun CharacterListScreen(
-    onShare: (Character) -> Unit,
+    onShare: (CharacterUiState) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: CharacterListViewModel = koinViewModel(),
 ) {
@@ -52,7 +51,7 @@ fun CharacterListScreen(
 private fun CharacterListContent(
     uiState: CharacterListUiState,
     onAction: (CharacterListUiAction) -> Unit,
-    onShare: (Character) -> Unit,
+    onShare: (CharacterUiState) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
@@ -112,8 +111,8 @@ private fun CharacterListPreview() {
         CharacterListContent(
             uiState = CharacterListUiState(
                 characters = listOf(
-                    Character(1, "Rick Sanchez", "Alive", "Human"),
-                    Character(2, "Morty Smith", "Alive", "Human"),
+                    CharacterUiState(1, "Rick Sanchez", "Alive", "Human"),
+                    CharacterUiState(2, "Morty Smith", "Alive", "Human"),
                 ),
             ),
             onAction = {},
