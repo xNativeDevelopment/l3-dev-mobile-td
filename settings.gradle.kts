@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-39-kdoc-composant"
+rootProject.name = "td-40-manager"
 include(":app")
