@@ -10,15 +10,15 @@ Slide : S-19 — Créer un écran : `xScreen.kt` avec Screen public, Content et 
 ## Point de départ
 
 Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-19-ecran` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-19-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 18 (branche `td-18-lego-solution`) : la Card est découpée en briques, mais `MainActivity` n'affiche qu'un seul personnage et aucun fichier d'écran n'existe.
+Cette branche reprend l'état final du TD 18 (branche `td-18-lego-solution`) : la Card est découpée en briques, mais `MainActivity` n'affiche qu'un personnage.
 La solution est sur la branche `td-19-ecran-solution`.
 
 ## Étapes
 
 1. Crée `ui/CharacterListScreen.kt`. Le nom dit le rôle : un écran, qui montre une liste de personnages.
-2. Écris `CharacterListContent(characters, onShare, modifier)`, **privée** : elle reçoit les données, affiche une `Column` de `CharacterCard`, et ne décide rien d'autre.
-3. Écris `CharacterListScreen(characters, onShare, modifier)`, **publique** : elle appelle `CharacterListContent`. C'est ici que le ViewModel viendra se brancher plus tard.
-4. Écris `CharacterListPreview`, **privée**, avec `@Preview` et des personnages fictifs : l'écran s'affiche dans Android Studio sans lancer l'app.
+2. Écris `CharacterListContent(characters, onShare, modifier)`, **privée** : elle affiche une `Column` de `CharacterCard`, sans rien décider.
+3. Écris `CharacterListScreen(characters, onShare, modifier)`, **publique** : elle appelle `CharacterListContent`. Le ViewModel viendra s'y brancher.
+4. Écris `CharacterListPreview`, **privée**, avec `@Preview` et des personnages fictifs : l'écran s'affiche sans lancer l'app.
 5. Dans `MainActivity`, remplace la Card seule par `CharacterListScreen(catalog.all(), …)`. Le partage du TD 17 doit toujours marcher.
 6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 19"`. Sans ce commit, git refuse de passer au TD suivant.
 
@@ -34,7 +34,7 @@ Facultatif, vers ton fork (TD 02) : `git push -u perso td-19-mon-travail`.
 
 ## Pour aller plus loin
 
-- Ajouter un titre en haut de l'écran, uniquement dans `CharacterListContent`, et vérifier que l'aperçu le montre.
+- Ajouter un titre dans `CharacterListContent` et le voir dans l'aperçu.
 
 ## Avec le tuteur
 
