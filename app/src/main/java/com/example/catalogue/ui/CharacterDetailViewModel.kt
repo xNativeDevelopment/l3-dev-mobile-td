@@ -23,7 +23,7 @@ class CharacterDetailViewModel(
         _uiState.asStateFlow()
 
     init {
-        // Le repository est suspend : on le lit hors du thread principal.
+        // Le repository est suspend : on l'attend sans bloquer le thread principal.
         viewModelScope.launch {
             val character = repository.getCharacter(id)?.toUiState()
             _uiState.update {
