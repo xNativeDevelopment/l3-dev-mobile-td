@@ -9,6 +9,8 @@ import com.example.catalogue.navigation.BackStackNavigator
 import com.example.catalogue.navigation.Navigator
 import com.example.catalogue.system.AndroidDeviceManager
 import com.example.catalogue.system.DeviceManager
+import com.example.catalogue.system.FusedLocationManager
+import com.example.catalogue.system.LocationManager
 import com.example.catalogue.system.SoundManager
 import com.example.catalogue.system.SoundPoolSoundManager
 import com.example.catalogue.ui.CharacterDetailViewModel
@@ -45,6 +47,10 @@ val appModule = module {
     // Même règle pour le son : un seul Manager, le Context de l'Application.
     single<SoundManager> {
         SoundPoolSoundManager(androidContext())
+    }
+    // Même règle pour la position : un seul Manager, le Context de l'Application.
+    single<LocationManager> {
+        FusedLocationManager(androidContext())
     }
     single { BackStackNavigator() }
     single<Navigator> { get<BackStackNavigator>() }
