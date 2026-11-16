@@ -2,7 +2,6 @@ package com.example.catalogue.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -13,6 +12,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.catalogue.R
+import com.example.catalogue.ui.designsystem.AppButton
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
@@ -59,9 +59,10 @@ private fun CharacterDetailContent(
                 character.status,
             )
         }
-        Button(onClick = onBack) {
-            Text(stringResource(R.string.detail_back))
-        }
+        AppButton(
+            text = stringResource(R.string.detail_back),
+            onClick = onBack,
+        )
     }
 }
 

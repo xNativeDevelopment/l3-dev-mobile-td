@@ -9,12 +9,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -26,6 +23,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.catalogue.R
+import com.example.catalogue.ui.designsystem.AppButton
+import com.example.catalogue.ui.designsystem.AppTextField
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -68,15 +67,16 @@ private fun CharacterListContent(
     }
     Box(modifier) {
         Column(Modifier.padding(dimensionResource(R.dimen.screen_padding))) {
-            OutlinedTextField(
+            AppTextField(
                 value = uiState.filter,
                 onValueChange = { onAction(CharacterListUiAction.OnFilterChanged(it)) },
-                label = { Text(stringResource(R.string.list_filter_label)) },
+                label = stringResource(R.string.list_filter_label),
                 modifier = Modifier.fillMaxWidth(),
             )
-            Button(onClick = { onAction(CharacterListUiAction.OnReloadClicked) }) {
-                Text(stringResource(R.string.list_reload))
-            }
+            AppButton(
+                text = stringResource(R.string.list_reload),
+                onClick = { onAction(CharacterListUiAction.OnReloadClicked) },
+            )
             if (uiState.isLoading) {
                 CircularProgressIndicator()
             }
