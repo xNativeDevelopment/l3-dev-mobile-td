@@ -1,7 +1,7 @@
 # TD 40 — Mon premier Manager
 
 Slide : S-40 — Encapsuler une capacité native dans un Manager · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-40-manager
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
