@@ -19,4 +19,8 @@
     <string name="error_reload_failed">Could not reload, try again later.</string>
     <string name="error_network">Network unavailable: check your connection.</string>
     <string name="share_no_app">No app available to share</string>
+    <string name="list_about">About</string>
+    <string name="about_title">About the catalogue</string>
+    <string name="about_body">A character catalogue, built in layers: screen, ViewModel, repository, service.</string>
+    <string name="about_back">Back</string>
 </resources>
