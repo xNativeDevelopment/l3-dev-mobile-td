@@ -19,7 +19,7 @@ La solution est sur la branche `td-32-json-dto-solution`.
 2. Dans `data`, marque `CharacterDto` avec `@Serializable`. Écris `CharactersPageDto` : `info` (`count`, `pages`, `next` et `prev` nullables) et `results`. Garde `toDomain()`.
 3. Dans `AppModule`, configure `HttpClient(Android)` : `install(ContentNegotiation)` avec `json(Json { ignoreUnknownKeys = true })`, et `expectSuccess = true`.
 4. `CharacterService` rend maintenant des DTO avec `body()`, plus du texte.
-5. Remplace le texte brut dans le repository : retire `getRawPage` et `getRawCharacter`, supprime `FakeCharacterRepository`. `ApiCharacterRepository` appelle le service puis `toDomain()` ; un personnage inconnu (erreur 404) donne `null`.
+5. Remplace le texte brut dans le repository : retire `getRawPage` et `getRawCharacter`, supprime `FakeCharacterRepository`. `ApiCharacterRepository` appelle le service puis `toDomain()` ; un personnage inconnu (erreur 404, `catch (e: ClientRequestException)`) donne `null`.
 6. Dans les ViewModels et les écrans, retire le texte brut et affiche un message si le réseau manque. Lance l'app : les vrais personnages s'affichent.
 7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 32"`. Sans ce commit, git refuse de passer au TD suivant.
 
