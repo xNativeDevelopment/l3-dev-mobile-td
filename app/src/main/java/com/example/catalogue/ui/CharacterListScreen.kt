@@ -54,7 +54,7 @@ private fun CharacterListContent(
             Button(onClick = onLoad) {
                 Text("Charger")
             }
-            // Si l'écran est gelé, ce cercle s'arrête de tourner.
+            // Ce cercle n'apparaît que si le thread principal reste libre pendant le chargement.
             if (isLoading) {
                 CircularProgressIndicator(Modifier.padding(start = 16.dp))
             }

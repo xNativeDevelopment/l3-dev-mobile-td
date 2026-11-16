@@ -16,14 +16,17 @@ class LoadViewModel : ViewModel() {
     var isLoaded by mutableStateOf(false)
         private set
 
+    // L'attente simulée (un réseau lent) part sur Dispatchers.IO : le thread
+    // principal reste libre. Une fonction suspend ne s'appelle que depuis une coroutine.
+    private suspend fun slowCall() = withContext(Dispatchers.IO) { Thread.sleep(2_000) }
+
     // La coroutine vit dans viewModelScope : elle est annulée toute seule
-    // quand le ViewModel disparaît. L'attente simulée (un réseau lent)
-    // part sur Dispatchers.IO, le thread principal reste libre.
+    // quand le ViewModel disparaît.
     fun load() {
         if (isLoading) return
         viewModelScope.launch {
             isLoading = true
-            withContext(Dispatchers.IO) { Thread.sleep(2_000) }
+            slowCall()
             isLoading = false
             isLoaded = true
         }
