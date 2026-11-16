@@ -10,15 +10,15 @@ Slide : S-23 — Lancer un travail hors du thread principal avec les coroutines 
 ## Point de départ
 
 Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-23-coroutines` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-23-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 22 (branche `td-22-navigator-solution`) et y ajoute un ViewModel minimal, `LoadViewModel`, et un bouton « Charger » sur l'écran de liste. Son chargement simulé dure 2 secondes et bloque le thread principal : appuie sur le bouton, le cercle de chargement se fige et l'écran ne répond plus.
+Cette branche reprend l'état final du TD 22 (branche `td-22-navigator-solution`) et y ajoute un ViewModel minimal, `LoadViewModel`, et un bouton « Charger » sur l'écran de liste. Son chargement simulé dure 2 secondes et bloque le thread principal : appuie sur le bouton : rien ne bouge pendant 2 secondes (aucun cercle), puis « Chargé » apparaît d'un coup.
 La solution est sur la branche `td-23-coroutines-solution`.
 
 ## Étapes
 
 1. Ajoute la bibliothèque des coroutines dans `gradle/libs.versions.toml` (`kotlinx-coroutines-android`, version 1.11.0, clé `coroutines`), puis dans `app/build.gradle.kts`.
-2. Dans `LoadViewModel`, lance le travail avec `viewModelScope.launch` : la fonction `load()` rend aussitôt la main à l'écran.
-3. Envoie l'attente simulée (`Thread.sleep`) sur `Dispatchers.IO` avec `withContext`, puis remets l'état à jour à la fin.
-4. Ignore un appui sur « Charger » quand un chargement est déjà en cours.
+2. Dans `LoadViewModel`, lance le travail avec `viewModelScope.launch` : `load()` rend aussitôt la main.
+3. Écris l'attente simulée (`Thread.sleep`) dans une fonction `suspend` (`slowCall`) qui passe sur `Dispatchers.IO` avec `withContext` ; appelle-la depuis `launch`, puis remets l'état à jour.
+4. Ignore un appui sur « Charger » quand un chargement est en cours.
 5. Lance l'app, appuie sur « Charger » : le cercle tourne pendant 2 secondes, puis « Chargé » apparaît. Tourne l'écran en plein chargement : le ViewModel survit à la rotation.
 6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 23"`. Sans ce commit, git refuse de passer au TD suivant.
 
