@@ -7,7 +7,7 @@ import kotlinx.coroutines.delay
 
 // Données en mémoire au format de The Rick and Morty API.
 class FakeCharacterRepository : CharacterRepository {
-    private val fakeCharacters = listOf(
+    private val dtos = listOf(
         CharacterDto(1, "Rick Sanchez", "Alive", "Human", avatar(1)),
         CharacterDto(2, "Morty Smith", "Alive", "Human", avatar(2)),
         CharacterDto(3, "Summer Smith", "Alive", "Human", avatar(3)),
@@ -25,12 +25,14 @@ class FakeCharacterRepository : CharacterRepository {
     // L'attente d'un réseau lent est ici, derrière le repository.
     override suspend fun getCharacters(): List<Character.Preview> {
         delay(2_000)
-        return fakeCharacters.map { it.toDomain().toPreview() }
+        return dtos.map { it.toDomain().toPreview() }
     }
 
-    override suspend fun getCharacter(id: Int): Character.Details? {
+    override suspend fun getCharacter(
+        id: Int,
+    ): Character.Details? {
         delay(500)
-        return fakeCharacters.firstOrNull { it.id == id }?.toDomain()
+        return dtos.firstOrNull { it.id == id }?.toDomain()
     }
 
     private fun avatar(id: Int) =
