@@ -10,17 +10,17 @@ Slide : S-31 — Appeler une API par un service Ktor derrière le repository · 
 ## Point de départ
 
 Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-31-service-ktor` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-31-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 30 (branche `td-30-repository-solution`) : le repository lit des données en mémoire, rien ne sort de l'appareil.
+Cette branche reprend l'état final du TD 30 (`td-30-repository-solution`) : le repository lit des données en mémoire, sans réseau.
 La solution est sur la branche `td-31-service-ktor-solution`.
 
 ## Étapes
 
-1. Dans `gradle/libs.versions.toml`, déclare la version `ktor = "3.6.0"` et les bibliothèques `ktor-client-core` et `ktor-client-android` ; ajoute-les dans `app/build.gradle.kts`.
+1. Dans `gradle/libs.versions.toml`, déclare la version `ktor = "3.6.0"` et les bibliothèques `io.ktor:ktor-client-core` et `io.ktor:ktor-client-android` ; ajoute-les dans `app/build.gradle.kts`.
 2. Dans `AndroidManifest.xml`, ajoute la permission `INTERNET` : sans elle, toute requête échoue.
 3. Dans `data`, écris `CharacterService` : une fonction `suspend` par endpoint, `fetchPage(page)` pour `/api/character?page=N` et `fetchCharacter(id)` pour `/api/character/{id}`. Chacune rend la réponse brute avec `bodyAsText()`.
 4. Dans `AppModule`, fournis `HttpClient(Android)` et `CharacterService` avec `single`.
 5. Ajoute `getRawPage()` et `getRawCharacter(id)` à `CharacterRepository` ; `FakeCharacterRepository` rend un texte fixe. Écris `ApiCharacterRepository`, qui appelle le service et garde la liste en mémoire pour le reste ; lie-le dans `AppModule`.
-6. Les ViewModels lisent ces textes, l'état les garde et les écrans les affichent. Ils ne connaissent jamais le service.
+6. Les ViewModels lisent ces textes dans un `try` ; `catch (e: IOException)` donne un message. L'état les garde et les écrans les affichent.
 7. Lance l'app sur un émulateur : le texte JSON s'affiche. Coupe le réseau : un message remplace le texte.
 8. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 31"`. Sans ce commit, git refuse de passer au TD suivant.
 
