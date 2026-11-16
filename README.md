@@ -1,42 +1,47 @@
-# TD 35 — Une échelle d'espacements
+# TD 36 — Jour et nuit
 
-Slide : S-35 — Ranger ses dimensions dans `dimens.xml` · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-35-dimens
+Slide : S-36 — Poser un thème clair et sombre · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-36-theme-clair-sombre
 État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais déclarer mes marges, tailles et rayons dans `dimens.xml`, nommés par rôle, et les lire en Compose.
+À la fin, je sais définir deux schémas de couleurs Material 3 et laisser l'app suivre le mode du téléphone.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-35-dimens` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-35-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 34 (branche `td-34-couleurs-solution`) : les couleurs sont rangées, mais les marges et les tailles sont encore des `16.dp` et des `8.dp` écrits dans les écrans.
-La solution est sur la branche `td-35-dimens-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-36-theme-clair-sombre` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-36-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 35 (branche `td-35-dimens-solution`) : le thème n'a qu'un schéma clair, lu dans les couleurs métier de `colors.xml`.
+La solution est sur la branche `td-36-theme-clair-sombre-solution`.
 
 ## Étapes
 
-1. Cherche `.dp` dans `app/src/main/java` : note chaque valeur et le rôle qu'elle joue (marge d'écran, espace entre cartes, taille de l'avatar, marges du badge).
-2. Crée `app/src/main/res/values/dimens.xml` et déclare une dimension par rôle, par exemple `screen_padding` ou `list_item_spacing`. Un nom dit à quoi sert la valeur, jamais combien elle vaut.
-3. Dans `CharacterListScreen` et `CharacterDetailScreen`, remplace chaque `.dp` par `dimensionResource(R.dimen.…)`.
-4. Fais de même dans `CharacterCard`, `CharacterAvatar` et `StatusBadge`, puis supprime les imports de `dp` devenus inutiles.
-5. Cherche `.dp` une dernière fois : l'écran liste n'en contient plus.
-6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 35"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Dans `colors.xml`, ajoute au niveau métier une variante sombre de chaque couleur (`brand_primary_dark`, `on_brand_dark`, …), qui pointe sur de nouvelles teintes plus claires de la palette.
+2. Dans `Theme.kt`, remets le paramètre `darkTheme: Boolean = isSystemInDarkTheme()`.
+3. Écris `darkColorScheme`, alimenté par les couleurs métier sombres avec `colorResource`, et choisis entre les deux schémas avec `darkTheme`.
+4. Vérifie que tes composables lisent `MaterialTheme.colorScheme`, jamais `R.color.palette_…` : sinon ils ne changent pas en mode sombre.
+5. Lance l'app, bascule le téléphone en mode sombre (Réglages > Affichage), puis fais une capture de chaque mode : `docs/clair.png` et `docs/sombre.png`, qui s'affichent ci-dessous.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 36"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-35-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-36-mon-travail`.
+
+![L'app en mode clair](docs/clair.png)
+
+![L'app en mode sombre](docs/sombre.png)
 
 ## Critères de réussite
 
-- [ ] Chaque dimension de `dimens.xml` porte le nom d'un rôle, pas d'une valeur — `CRIT-DMA-D1-SE-1-M4` nommage des ressources conventionnel.
-- [ ] Les marges, tailles et espacements viennent tous de `dimens.xml` — `CRIT-DMA-D1-SF-1-M4` ressources systématiques.
+- [ ] L'app suit le mode du téléphone, clair comme sombre — `CRIT-DMA-D1-SF-1-M4` ressources systématiques, avec une variante.
+- [ ] Aucun composable ne lit la palette brute : tout passe par le thème — `CRIT-DMA-D1-SF-3-M3` design system intégré.
+- [ ] Les deux captures sont dans `docs/` et s'affichent ci-dessus.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Change `screen_padding` : un seul endroit, tous les écrans suivent.
+- Ajoute un aperçu `@Preview` en mode sombre pour la carte d'un personnage.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-35 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-36 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
