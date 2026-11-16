@@ -1,7 +1,7 @@
 # TD 25 — Actions de l'écran
 
 Slide : S-25 — Nommer et traiter les actions de l'écran (UiAction) en flux unidirectionnel · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-25-ui-action
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
