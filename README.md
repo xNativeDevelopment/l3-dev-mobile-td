@@ -39,6 +39,11 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 11 | L'architecture de mon projet | [`td-11-couches`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-11-couches) | [`td-11-couches-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-11-couches-solution) |
 | 12 | Une Application, une Activity | [`td-12-lancement-single-activity`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-12-lancement-single-activity) | [`td-12-lancement-single-activity-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-12-lancement-single-activity-solution) |
 | 13 | Premier module Koin | [`td-13-koin`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-13-koin) | [`td-13-koin-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-13-koin-solution) |
+| 14 | Une arborescence qui se lit | [`td-14-packages-lint`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-14-packages-lint) | [`td-14-packages-lint-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-14-packages-lint-solution) |
+| 15 | Le bon moment | [`td-15-cycle-de-vie`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-15-cycle-de-vie) | [`td-15-cycle-de-vie-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-15-cycle-de-vie-solution) |
+| 16 | Quel Context ? | [`td-16-context`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-16-context) | [`td-16-context-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-16-context-solution) |
+| 17 | Partager un personnage | [`td-17-intent`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-17-intent) | [`td-17-intent-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-17-intent-solution) |
+| 18 | Démonter la Card | [`td-18-lego`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-18-lego) | [`td-18-lego-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-18-lego-solution) |
 
 ## Où est la solution
 
