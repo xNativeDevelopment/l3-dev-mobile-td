@@ -10,4 +10,6 @@ sealed interface CharacterListUiAction {
     data class OnCharacterClicked(
         val id: Int,
     ) : CharacterListUiAction
+
+    data object OnReloadClicked : CharacterListUiAction
 }

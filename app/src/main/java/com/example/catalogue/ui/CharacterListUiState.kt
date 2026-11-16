@@ -8,6 +8,7 @@ data class CharacterListUiState(
     val characters: List<Character> = emptyList(),
     val filter: String = "",
     val isLoading: Boolean = false,
+    val errorMessage: String? = null,
 ) {
     // Dérivée de l'état : le ViewModel ne la stocke pas.
     val visibleCharacters: List<Character>

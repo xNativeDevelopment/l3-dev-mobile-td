@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.catalogue.domain.CharacterCatalog
 import com.example.catalogue.navigation.Navigator
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -34,6 +35,21 @@ class CharacterListViewModel(
                 _uiState.update { it.copy(filter = action.text) }
             is CharacterListUiAction.OnCharacterClicked ->
                 navigator.goToDetail(action.id)
+            CharacterListUiAction.OnReloadClicked -> reload()
+        }
+    }
+
+    // Échec simulé : le rechargement échoue toujours après une seconde.
+    private fun reload() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+            delay(1_000)
+            _uiState.update {
+                it.copy(
+                    isLoading = false,
+                    errorMessage = "Rechargement impossible, réessaie plus tard.",
+                )
+            }
         }
     }
 

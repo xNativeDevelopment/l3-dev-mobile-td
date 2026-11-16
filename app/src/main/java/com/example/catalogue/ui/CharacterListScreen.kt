@@ -2,16 +2,23 @@ package com.example.catalogue.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -47,34 +54,49 @@ private fun CharacterListContent(
     onShare: (Character) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Column(modifier.padding(16.dp)) {
-        OutlinedTextField(
-            value = uiState.filter,
-            onValueChange = { onAction(CharacterListUiAction.OnFilterChanged(it)) },
-            label = { Text("Filtrer par nom") },
-            modifier = Modifier.fillMaxWidth(),
-        )
-        if (uiState.isLoading) {
-            CircularProgressIndicator()
-        }
-        // LazyColumn ne compose que les cartes visibles ; la clé garde
-        // l'identité d'une carte quand le filtre change sa position.
-        LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            items(
-                items = uiState.visibleCharacters,
-                key = { it.id },
-            ) { character ->
-                CharacterCard(
-                    character,
-                    Modifier.clickable {
-                        onAction(CharacterListUiAction.OnCharacterClicked(character.id))
-                    },
-                    onShare = { onShare(character) },
-                )
+    val snackbarHostState = remember { SnackbarHostState() }
+    // Le message est dans l'état : l'effet l'affiche à chaque entrée
+    // dans la composition, donc aussi après une rotation.
+    LaunchedEffect(uiState.errorMessage) {
+        uiState.errorMessage?.let { snackbarHostState.showSnackbar(it) }
+    }
+    Box(modifier) {
+        Column(Modifier.padding(16.dp)) {
+            OutlinedTextField(
+                value = uiState.filter,
+                onValueChange = { onAction(CharacterListUiAction.OnFilterChanged(it)) },
+                label = { Text("Filtrer par nom") },
+                modifier = Modifier.fillMaxWidth(),
+            )
+            Button(onClick = { onAction(CharacterListUiAction.OnReloadClicked) }) {
+                Text("Recharger")
+            }
+            if (uiState.isLoading) {
+                CircularProgressIndicator()
+            }
+            // LazyColumn ne compose que les cartes visibles ; la clé garde
+            // l'identité d'une carte quand le filtre change sa position.
+            LazyColumn(
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                items(
+                    items = uiState.visibleCharacters,
+                    key = { it.id },
+                ) { character ->
+                    CharacterCard(
+                        character,
+                        Modifier.clickable {
+                            onAction(CharacterListUiAction.OnCharacterClicked(character.id))
+                        },
+                        onShare = { onShare(character) },
+                    )
+                }
             }
         }
+        SnackbarHost(
+            snackbarHostState,
+            Modifier.align(Alignment.BottomCenter),
+        )
     }
 }
 
