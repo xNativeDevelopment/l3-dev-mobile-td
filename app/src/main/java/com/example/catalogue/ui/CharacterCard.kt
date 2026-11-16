@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.catalogue.R
 import com.example.catalogue.ui.theme.CatalogueTheme
@@ -36,7 +37,7 @@ fun CharacterCard(
                 ),
             )
             TextButton(onClick = onShare) {
-                Text("Partager")
+                Text(stringResource(R.string.card_share))
             }
         }
     }

@@ -3,6 +3,7 @@ package com.example.catalogue.system
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
+import com.example.catalogue.R
 
 // Intent implicite : on décrit l'action, Android choisit l'application.
 fun shareText(context: Context, text: String) {
@@ -13,6 +14,6 @@ fun shareText(context: Context, text: String) {
     try {
         context.startActivity(Intent.createChooser(send, null))
     } catch (e: ActivityNotFoundException) {
-        showToast(context, "Aucune application pour partager")
+        showToast(context, context.getString(R.string.share_no_app))
     }
 }
