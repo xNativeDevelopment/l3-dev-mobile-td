@@ -57,6 +57,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 29 | Trois modèles | [`td-29-domaine`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-29-domaine) | [`td-29-domaine-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-29-domaine-solution) |
 | 30 | Mon repository | [`td-30-repository`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-30-repository) | [`td-30-repository-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-30-repository-solution) |
 | 31 | Le service réseau | [`td-31-service-ktor`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-31-service-ktor) | [`td-31-service-ktor-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-31-service-ktor-solution) |
+| 32 | Du JSON au domaine | [`td-32-json-dto`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-32-json-dto) | [`td-32-json-dto-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-32-json-dto-solution) |
 
 ## Où est la solution
 
