@@ -1,43 +1,45 @@
-# TD 37 — Deux langues
+# TD 38 — Mon design system
 
-Slide : S-37 — Externaliser ses textes et ajouter une variante de langue · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-37-textes-langue
+Slide : S-38 — Construire un petit design system : boutons, champs, composants brandés · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-38-design-system
 État du build : à vérifier
 
 ## Objectif
 
-À la fin, je sais mettre tous mes textes dans `strings.xml`, les traduire dans `values-en` et vérifier l'app dans les deux langues.
+À la fin, je sais créer mes propres composants de base, rangés dans un package reconnaissable de la couche UI.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-37-textes-langue` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-37-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 36 (branche `td-36-theme-clair-sombre-solution`) : les textes sont écrits en dur dans le code, et `strings.xml` ne contient que le nom de l'app.
-La solution est sur la branche `td-37-textes-langue-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-38-design-system` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-38-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 37 (branche `td-37-textes-langue-solution`) : les écrans utilisent directement les composants Material `Button`, `OutlinedTextField`, `Card` et `TextButton`.
+La solution est sur la branche `td-38-design-system-solution`.
 
 ## Étapes
 
-1. Dans `res/values/strings.xml`, écris en français une clé par texte visible : filtre, rechargement, partage, retour, « introuvable », messages d'erreur.
-2. Crée `res/values-en/strings.xml` avec les mêmes clés, traduites en anglais.
-3. Dans `ui/`, remplace chaque texte par `stringResource(R.string.…)`.
-4. Dans les ViewModels, l'état porte un `@StringRes Int` (`errorMessage`, `networkError`) que l'écran résout. Dans `Share.kt`, utilise `context.getString`.
-5. Laisse les noms de personnages, `Alive` et les aperçus : ce sont des données d'exemple.
-6. Passe l'émulateur en anglais (Réglages > Système > Langues) et vérifie qu'aucun texte ne reste en français.
-7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 37"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Crée le package `ui/designsystem`. Dans `dimens.xml`, ajoute deux dimensions nommées par rôle : `button_corner_radius` et `component_corner_radius`.
+2. Écris `AppButton` : un texte, un clic et deux styles (plein ou texte). Sa forme vient de `dimens.xml`, ses couleurs de `MaterialTheme`.
+3. Écris `AppTextField` : une valeur, un libellé et une forme brandée, sur le modèle de `OutlinedTextField`.
+4. Écris `AppCard`, la Card brandée : coins arrondis, couleur de fond lue dans le thème, contenu libre.
+5. Ajoute une `@Preview` par composant, dans son fichier, entourée de `CatalogueTheme`.
+6. Dans `CharacterListScreen`, `CharacterDetailScreen` et `CharacterCard`, remplace `Button`, `TextButton`, `OutlinedTextField` et `Card` par tes composants.
+7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 38"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-37-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-38-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Aucun texte n'est écrit en dur dans `ui/` ; en anglais, rien ne reste en français — `CRIT-DMA-D1-SF-1-M4` ressources systématiques, avec une variante.
-- [ ] Les deux `strings.xml` ont les mêmes clés, nommées par rôle — `CRIT-DMA-D1-SE-1-M4` nommage des ressources.
+- [ ] `AppButton`, `AppTextField` et `AppCard` vivent dans `ui/designsystem` et lisent le thème — `CRIT-DMA-D1-SF-3-M3` design system intégré à l'UI.
+- [ ] Aucun écran n'appelle plus `Button`, `OutlinedTextField`, `Card` ni `TextButton` — `CRIT-DMA-D1-SE-3-M3` composants au bon endroit.
+- [ ] Chaque composant a un aperçu qui s'affiche dans Android Studio.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajoute une troisième langue dans `values-xx/strings.xml`.
+- Ajoute un style « contour » à `AppButton`.
+- Affiche l'aperçu de la Card en mode sombre.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-37 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-38 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
