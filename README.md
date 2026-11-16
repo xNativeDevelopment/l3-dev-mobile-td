@@ -1,7 +1,7 @@
 # TD 35 — Une échelle d'espacements
 
 Slide : S-35 — Ranger ses dimensions dans `dimens.xml` · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-35-dimens
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
