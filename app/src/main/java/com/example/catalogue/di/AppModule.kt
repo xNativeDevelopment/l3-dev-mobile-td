@@ -9,6 +9,8 @@ import com.example.catalogue.navigation.BackStackNavigator
 import com.example.catalogue.navigation.Navigator
 import com.example.catalogue.system.AndroidDeviceManager
 import com.example.catalogue.system.DeviceManager
+import com.example.catalogue.system.SoundManager
+import com.example.catalogue.system.SoundPoolSoundManager
 import com.example.catalogue.ui.CharacterDetailViewModel
 import com.example.catalogue.ui.CharacterListViewModel
 import io.ktor.client.HttpClient
@@ -39,6 +41,10 @@ val appModule = module {
     // l'Application (androidContext), jamais celui d'une Activity.
     single<DeviceManager> {
         AndroidDeviceManager(androidContext())
+    }
+    // Même règle pour le son : un seul Manager, le Context de l'Application.
+    single<SoundManager> {
+        SoundPoolSoundManager(androidContext())
     }
     single { BackStackNavigator() }
     single<Navigator> { get<BackStackNavigator>() }
