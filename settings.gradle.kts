@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-37-textes-langue"
+rootProject.name = "td-38-design-system"
 include(":app")
