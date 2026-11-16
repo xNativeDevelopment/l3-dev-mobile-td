@@ -12,7 +12,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.catalogue.ui.Format_title
+import com.example.catalogue.ui.model.label_source
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CatalogueTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(name = "Catalogue", modifier = Modifier.padding(innerPadding))
+                    home_page(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -30,16 +33,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun home_page(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(text = "Hello $name!")
+        Text(text = Format_title(label_source(stringResource(R.string.Hello_Message))))
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun GreetingPreview() {
+private fun preview_home() {
     CatalogueTheme {
-        Greeting(name = "Catalogue")
+        home_page()
     }
 }
