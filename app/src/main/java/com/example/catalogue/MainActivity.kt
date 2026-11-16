@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.example.catalogue.domain.CharacterCatalog
 import com.example.catalogue.navigation.AppNavigation
 import com.example.catalogue.navigation.BackStackNavigator
 import com.example.catalogue.system.Heartbeat
@@ -19,7 +18,6 @@ import org.koin.android.ext.android.inject
 
 // MainActivity, la seule Activity, pose l'écran et rien d'autre.
 class MainActivity : ComponentActivity() {
-    private val catalog: CharacterCatalog by inject()
     private val navigator: BackStackNavigator by inject()
     // Le battement suit l'Activity visible : démarré à l'affichage,
     // arrêté dès qu'elle quitte l'écran (rotation, retour au lanceur).
@@ -34,7 +32,6 @@ class MainActivity : ComponentActivity() {
                     val context = LocalContext.current
                     AppNavigation(
                         navigator = navigator,
-                        catalog = catalog,
                         onShare = { shareText(context, it) },
                         modifier = Modifier.padding(innerPadding),
                     )
