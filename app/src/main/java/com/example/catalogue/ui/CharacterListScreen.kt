@@ -59,8 +59,9 @@ private fun CharacterListContent(
     val snackbarHostState = remember { SnackbarHostState() }
     // L'événement est consommé : une fois montré, l'écran le retire de
     // l'état, et une rotation ne le rejoue plus.
+    val errorText = uiState.errorMessage?.let { stringResource(it) }
     LaunchedEffect(uiState.errorMessage) {
-        uiState.errorMessage?.let {
+        errorText?.let {
             snackbarHostState.showSnackbar(it)
             onAction(CharacterListUiAction.OnErrorShown)
         }

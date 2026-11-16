@@ -2,6 +2,7 @@ package com.example.catalogue.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.catalogue.R
 import com.example.catalogue.domain.CharacterRepository
 import com.example.catalogue.navigation.Navigator
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,7 +36,7 @@ class CharacterDetailViewModel(
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        networkError = "Réseau indisponible : vérifie la connexion.",
+                        networkError = R.string.error_network,
                     )
                 }
             }
