@@ -42,6 +42,8 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     // ViewModel : l'état de l'écran survit à la rotation
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    // Coroutines : lancer un travail sans bloquer le thread principal
+    implementation(libs.kotlinx.coroutines.android)
     // Aperçus, seulement pour le développement
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)
