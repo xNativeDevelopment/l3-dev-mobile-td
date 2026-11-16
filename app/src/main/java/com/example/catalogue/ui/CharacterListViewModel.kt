@@ -53,6 +53,7 @@ class CharacterListViewModel(
             CharacterListUiAction.OnErrorShown ->
                 _uiState.update { it.copy(errorMessage = null) }
             CharacterListUiAction.OnManagerClicked -> checkManager()
+            CharacterListUiAction.OnAboutClicked -> navigator.goToAbout()
             CharacterListUiAction.OnLocateClicked -> locate()
             is CharacterListUiAction.OnPermissionAnswered ->
                 _uiState.update {

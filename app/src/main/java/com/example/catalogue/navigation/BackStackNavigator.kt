@@ -17,6 +17,10 @@ class BackStackNavigator : Navigator {
         backStack.add(DetailKey(id))
     }
 
+    override fun goToAbout() {
+        backStack.add(AboutKey)
+    }
+
     override fun back() {
         // La liste reste toujours en bas : on ne vide jamais la pile.
         if (backStack.size > 1) backStack.removeAt(backStack.lastIndex)

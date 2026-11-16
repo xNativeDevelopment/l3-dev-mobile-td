@@ -13,6 +13,7 @@ import com.example.catalogue.system.FusedLocationManager
 import com.example.catalogue.system.LocationManager
 import com.example.catalogue.system.SoundManager
 import com.example.catalogue.system.SoundPoolSoundManager
+import com.example.catalogue.ui.AboutViewModel
 import com.example.catalogue.ui.CharacterDetailViewModel
 import com.example.catalogue.ui.CharacterListViewModel
 import io.ktor.client.HttpClient
@@ -59,4 +60,6 @@ val appModule = module {
     viewModel { params ->
         CharacterDetailViewModel(params.get(), get(), get())
     }
+    // Le squelette répliqué : un viewModel, le Navigator seul en dépendance.
+    viewModel { AboutViewModel(get()) }
 }
