@@ -15,6 +15,11 @@ sealed interface CharacterListUiAction {
 
     data object OnManagerClicked : CharacterListUiAction
 
+    // L'écran devient visible, puis il ne l'est plus : le son suit.
+    data object OnStarted : CharacterListUiAction
+
+    data object OnStopped : CharacterListUiAction
+
     // La réponse du système à la demande de position.
     data class OnPermissionAnswered(
         val granted: Boolean,
