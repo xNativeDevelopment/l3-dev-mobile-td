@@ -4,6 +4,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 // Un ViewModel minimal : il garde l'état du chargement, l'écran l'affiche.
 class LoadViewModel : ViewModel() {
@@ -12,12 +16,16 @@ class LoadViewModel : ViewModel() {
     var isLoaded by mutableStateOf(false)
         private set
 
-    // Appel bloquant simulé (un réseau lent). Lancé tel quel depuis le
-    // thread principal, il gèle l'écran pendant 2 secondes.
+    // La coroutine vit dans viewModelScope : elle est annulée toute seule
+    // quand le ViewModel disparaît. L'attente simulée (un réseau lent)
+    // part sur Dispatchers.IO, le thread principal reste libre.
     fun load() {
-        isLoading = true
-        Thread.sleep(2_000)
-        isLoading = false
-        isLoaded = true
+        if (isLoading) return
+        viewModelScope.launch {
+            isLoading = true
+            withContext(Dispatchers.IO) { Thread.sleep(2_000) }
+            isLoading = false
+            isLoaded = true
+        }
     }
 }
