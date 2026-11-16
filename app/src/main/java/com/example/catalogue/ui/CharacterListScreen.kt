@@ -1,9 +1,8 @@
 package com.example.catalogue.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,7 +25,7 @@ fun CharacterListScreen(
 ) {
     CharacterListContent(
         characters = characters,
-        onOpenDetail = { backStack.add(DetailKey) },
+        onOpenDetail = { id -> backStack.add(DetailKey(id)) },
         onShare = onShare,
         modifier = modifier,
     )
@@ -36,17 +35,15 @@ fun CharacterListScreen(
 @Composable
 private fun CharacterListContent(
     characters: List<Character>,
-    onOpenDetail: () -> Unit,
+    onOpenDetail: (Int) -> Unit,
     onShare: (Character) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier.padding(16.dp)) {
-        Button(onClick = onOpenDetail) {
-            Text("Ouvrir le détail")
-        }
         characters.forEach { character ->
             CharacterCard(
                 character,
+                Modifier.clickable { onOpenDetail(character.id) },
                 onShare = { onShare(character) },
             )
         }

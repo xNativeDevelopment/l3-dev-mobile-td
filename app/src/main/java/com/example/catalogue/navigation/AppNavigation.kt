@@ -29,8 +29,9 @@ fun AppNavigation(
                     onShare = { onShare(it.name) },
                 )
             }
-            entry<DetailKey> {
+            entry<DetailKey> { key ->
                 CharacterDetailScreen(
+                    character = catalog.byId(key.id),
                     onBack = { backStack.removeLastOrNull() },
                 )
             }
