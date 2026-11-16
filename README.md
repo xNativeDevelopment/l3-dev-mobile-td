@@ -1,7 +1,7 @@
 # TD 27 — Le détail pense seul
 
 Slide : S-27 — Donner au détail son ViewModel sans le lier à l'entrée de navigation · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-27-viewmodel-detail
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
