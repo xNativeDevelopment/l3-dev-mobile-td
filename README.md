@@ -9,17 +9,17 @@ Slide : S-36 — Poser un thème clair et sombre · Dépôt : https://github.com
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-36-theme-clair-sombre` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-36-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert, `git switch td-36-theme-clair-sombre`. Crée ta branche de travail : `git switch -c td-36-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
 Cette branche reprend l'état final du TD 35 (branche `td-35-dimens-solution`) : le thème n'a qu'un schéma clair, lu dans les couleurs métier de `colors.xml`.
 La solution est sur la branche `td-36-theme-clair-sombre-solution`.
 
 ## Étapes
 
-1. Dans `colors.xml`, ajoute au niveau métier une variante sombre de chaque couleur (`brand_primary_dark`, `on_brand_dark`, …), qui pointe sur de nouvelles teintes plus claires de la palette.
+1. Ajoute à la palette de `values/colors.xml` les teintes du mode sombre, puis crée `values-night/colors.xml`, qui redéfinit chaque couleur métier (`brand_primary`, `on_brand`, …) sur ces teintes.
 2. Dans `Theme.kt`, remets le paramètre `darkTheme: Boolean = isSystemInDarkTheme()`.
-3. Écris `darkColorScheme`, alimenté par les couleurs métier sombres avec `colorResource`, et choisis entre les deux schémas avec `darkTheme`.
+3. Écris `darkColorScheme`, alimenté par les mêmes couleurs métier avec `colorResource`, et choisis entre les deux schémas avec `darkTheme`.
 4. Vérifie que tes composables lisent `MaterialTheme.colorScheme`, jamais `R.color.palette_…` : sinon ils ne changent pas en mode sombre.
-5. Lance l'app, bascule le téléphone en mode sombre (Réglages > Affichage), puis fais une capture de chaque mode : `docs/clair.png` et `docs/sombre.png`, qui s'affichent ci-dessous.
+5. Lance l'app, bascule le téléphone en mode sombre (Paramètres > Affichage), crée le dossier `docs/` à la racine, puis fais une capture de chaque mode : `docs/clair.png` et `docs/sombre.png`, qui s'affichent ci-dessous.
 6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 36"`. Sans ce commit, git refuse de passer au TD suivant.
 
 Facultatif, vers ton fork (TD 02) : `git push -u perso td-36-mon-travail`.
