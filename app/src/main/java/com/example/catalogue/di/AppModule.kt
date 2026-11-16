@@ -28,6 +28,7 @@ val appModule = module {
             }
         }
     }
+    // Sans réseau : MockCharacterService() à la place.
     single<CharacterService> { KtorCharacterService(get()) }
     // Un seul repository pour toute l'app : les ViewModels le reçoivent.
     single<CharacterRepository> { ApiCharacterRepository(get()) }
