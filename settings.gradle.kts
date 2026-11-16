@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-26-liste"
+rootProject.name = "td-27-viewmodel-detail"
 include(":app")
