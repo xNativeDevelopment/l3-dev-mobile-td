@@ -1,43 +1,43 @@
-# TD 22 — Mon Navigator
+# TD 23 — Chargement sans gel
 
-Slide : S-22 — Centraliser la navigation dans un Navigator commenté · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-22-navigator
-État du build : départ construit · solution construite
+Slide : S-23 — Lancer un travail hors du thread principal avec les coroutines · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-23-coroutines
+État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais isoler la back stack derrière un Navigator dont les écrans n'appellent que des intentions (`goToDetail`, `back`).
+À la fin, je sais lancer une coroutine dans `viewModelScope` et envoyer le travail lourd sur `Dispatchers.IO`.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-22-navigator` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-22-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 21 (branche `td-21-argument-type-solution`) : la navigation marche, mais l'écran de liste reçoit la back stack et la modifie lui-même.
-La solution est sur la branche `td-22-navigator-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-23-coroutines` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-23-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 22 (branche `td-22-navigator-solution`) et y ajoute un ViewModel minimal, `LoadViewModel`, et un bouton « Charger » sur l'écran de liste. Son chargement simulé dure 2 secondes et bloque le thread principal : appuie sur le bouton, le cercle de chargement se fige et l'écran ne répond plus.
+La solution est sur la branche `td-23-coroutines-solution`.
 
 ## Étapes
 
-1. Crée `navigation/Navigator.kt` : une interface `Navigator` avec `goToDetail(id: Int)` et `back()`. Écris son KDoc : à quoi sert-elle, qui l'appelle.
-2. Dans le même dossier, écris `BackStackNavigator`, qui **possède** la back stack (`mutableStateListOf<NavKey>(ListKey)`) et implémente `Navigator`. Commente la classe : ce qu'elle garde, ce qu'elle cache. La pile n'est plus sauvegardée : elle survit à la rotation, pas à la mort du processus.
-3. Déclare-la dans `appModule` : un `single`, et le même objet sous le type `Navigator`.
-4. Change les écrans : `CharacterListScreen` et `CharacterDetailScreen` reçoivent un `Navigator` et appellent `goToDetail` et `back`.
-5. `AppNavigation` affiche `navigator.backStack` et branche `onBack` sur `back()`. `MainActivity` récupère le `BackStackNavigator` avec `by inject<BackStackNavigator>()`.
-6. Vérifie : cherche `NavBackStack` dans le dossier `ui`, il ne doit plus y en avoir. L'app navigue comme avant.
-7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 22"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Ajoute la bibliothèque des coroutines dans `gradle/libs.versions.toml` (`kotlinx-coroutines-android`, version 1.11.0, clé `coroutines`), puis dans `app/build.gradle.kts`.
+2. Dans `LoadViewModel`, lance le travail avec `viewModelScope.launch` : la fonction `load()` rend aussitôt la main à l'écran.
+3. Envoie l'attente simulée (`Thread.sleep`) sur `Dispatchers.IO` avec `withContext`, puis remets l'état à jour à la fin.
+4. Ignore un appui sur « Charger » quand un chargement est déjà en cours.
+5. Lance l'app, appuie sur « Charger » : le cercle tourne pendant 2 secondes, puis « Chargé » apparaît. Tourne l'écran en plein chargement : le ViewModel survit à la rotation.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 23"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-22-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-23-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Aucun écran ne touche la back stack : ils n'appellent que `goToDetail` et `back` — `CRIT-DMA-D1-SF-3-M2` navigation par un Navigator.
-- [ ] Le Navigator est fourni par Koin et son KDoc dit son rôle — `CRIT-DMA-D1-SE-3-M1` Navigator clairement commenté.
+- [ ] Pendant le chargement de 2 secondes, le cercle tourne et l'écran reste utilisable.
+- [ ] Le travail bloquant s'exécute sur `Dispatchers.IO`, lancé dans `viewModelScope`.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajouter une intention `goToSettings()` au Navigator avec une troisième clé, sans modifier aucun écran existant.
+- Remplace `Thread.sleep` par `delay(2_000)` et compare : que devient le besoin de `Dispatchers.IO` ?
+- Ajoute un bouton « Annuler » qui arrête le chargement en cours.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-22 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-23 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 

@@ -40,6 +40,8 @@ dependencies {
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.kotlinx.serialization.json)
+    // ViewModel : l'état de l'écran survit à la rotation
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     // Aperçus, seulement pour le développement
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)
