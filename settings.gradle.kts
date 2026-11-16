@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-44-extension-context"
+rootProject.name = "td-45-corpus"
 include(":app")
