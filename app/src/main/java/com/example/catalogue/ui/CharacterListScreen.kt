@@ -40,10 +40,17 @@ fun CharacterListScreen(
 ) {
     val uiState by viewModel.uiState
         .collectAsStateWithLifecycle()
+    // Le lanceur vit dans l'écran : il a besoin de l'Activity, pas le ViewModel.
+    val requestLocation = rememberLocationRequest { granted, canAskAgain ->
+        viewModel.onAction(
+            CharacterListUiAction.OnPermissionAnswered(granted, canAskAgain),
+        )
+    }
     CharacterListContent(
         uiState = uiState,
         onAction = viewModel::onAction,
         onShare = onShare,
+        onLocationClick = requestLocation,
         modifier = modifier,
     )
 }
@@ -54,6 +61,7 @@ private fun CharacterListContent(
     uiState: CharacterListUiState,
     onAction: (CharacterListUiAction) -> Unit,
     onShare: (CharacterUiState) -> Unit,
+    onLocationClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
@@ -83,6 +91,13 @@ private fun CharacterListContent(
                 onClick = { onAction(CharacterListUiAction.OnManagerClicked) },
             )
             uiState.managerMessage?.let { Text(stringResource(it)) }
+            // On explique avant de demander : le système, lui, ne dit rien.
+            Text(stringResource(R.string.location_why))
+            AppButton(
+                text = stringResource(R.string.list_location),
+                onClick = onLocationClick,
+            )
+            uiState.permissionMessage?.let { Text(stringResource(it)) }
             if (uiState.isLoading) {
                 CircularProgressIndicator()
             }
@@ -126,6 +141,7 @@ private fun CharacterListPreview() {
             ),
             onAction = {},
             onShare = {},
+            onLocationClick = {},
         )
     }
 }

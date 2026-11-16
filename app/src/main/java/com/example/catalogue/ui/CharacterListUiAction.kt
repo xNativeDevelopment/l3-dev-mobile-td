@@ -15,6 +15,12 @@ sealed interface CharacterListUiAction {
 
     data object OnManagerClicked : CharacterListUiAction
 
+    // La réponse du système à la demande de position.
+    data class OnPermissionAnswered(
+        val granted: Boolean,
+        val canAskAgain: Boolean,
+    ) : CharacterListUiAction
+
     // L'écran a montré le message : il peut sortir de l'état.
     data object OnErrorShown : CharacterListUiAction
 }

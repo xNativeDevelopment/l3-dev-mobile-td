@@ -10,6 +10,7 @@ data class CharacterListUiState(
     val isLoading: Boolean = false,
     @StringRes val errorMessage: Int? = null,
     @StringRes val managerMessage: Int? = null,
+    @StringRes val permissionMessage: Int? = null,
 ) {
     // Dérivée de l'état : le ViewModel ne la stocke pas.
     val visibleCharacters: List<CharacterUiState>

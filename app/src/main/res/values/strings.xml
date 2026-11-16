@@ -5,6 +5,11 @@
     <string name="list_manager">Tester le Manager</string>
     <string name="manager_ready">Le Manager répond.</string>
     <string name="manager_not_ready">Le Manager n\'est pas prêt.</string>
+    <string name="location_why">La position approximative sert à situer l\'app près de toi : la précision GPS n\'est pas demandée.</string>
+    <string name="list_location">Autoriser la position</string>
+    <string name="permission_granted">Position approximative autorisée.</string>
+    <string name="permission_denied">Refusée : touche le bouton pour réessayer.</string>
+    <string name="permission_denied_for_good">Refusée pour de bon : autorise la position dans les réglages de l\'app.</string>
     <string name="card_share">Partager</string>
     <string name="detail_not_found">Personnage introuvable</string>
     <string name="detail_back">Retour</string>
