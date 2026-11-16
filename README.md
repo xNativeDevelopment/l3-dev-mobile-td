@@ -1,47 +1,43 @@
-# TD 36 — Jour et nuit
+# TD 37 — Deux langues
 
-Slide : S-36 — Poser un thème clair et sombre · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-36-theme-clair-sombre
-État du build : départ construit · solution construite
+Slide : S-37 — Externaliser ses textes et ajouter une variante de langue · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-37-textes-langue
+État du build : à vérifier
 
 ## Objectif
 
-À la fin, je sais définir deux schémas de couleurs Material 3 et laisser l'app suivre le mode du téléphone.
+À la fin, je sais mettre tous mes textes dans `strings.xml`, les traduire dans `values-en` et vérifier l'app dans les deux langues.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-36-theme-clair-sombre` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-36-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 35 (branche `td-35-dimens-solution`) : le thème n'a qu'un schéma clair, lu dans les couleurs métier de `colors.xml`.
-La solution est sur la branche `td-36-theme-clair-sombre-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-37-textes-langue` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-37-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 36 (branche `td-36-theme-clair-sombre-solution`) : les textes sont écrits en dur dans le code, et `strings.xml` ne contient que le nom de l'app.
+La solution est sur la branche `td-37-textes-langue-solution`.
 
 ## Étapes
 
-1. Dans `colors.xml`, ajoute au niveau métier une variante sombre de chaque couleur (`brand_primary_dark`, `on_brand_dark`, …), qui pointe sur de nouvelles teintes plus claires de la palette.
-2. Dans `Theme.kt`, remets le paramètre `darkTheme: Boolean = isSystemInDarkTheme()`.
-3. Écris `darkColorScheme`, alimenté par les couleurs métier sombres avec `colorResource`, et choisis entre les deux schémas avec `darkTheme`.
-4. Vérifie que tes composables lisent `MaterialTheme.colorScheme`, jamais `R.color.palette_…` : sinon ils ne changent pas en mode sombre.
-5. Lance l'app, bascule le téléphone en mode sombre (Réglages > Affichage), puis fais une capture de chaque mode : `docs/clair.png` et `docs/sombre.png`, qui s'affichent ci-dessous.
-6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 36"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Dans `res/values/strings.xml`, écris en français une clé par texte visible : filtre, rechargement, partage, retour, « introuvable », messages d'erreur.
+2. Crée `res/values-en/strings.xml` avec les mêmes clés, traduites en anglais.
+3. Dans `ui/`, remplace chaque texte par `stringResource(R.string.…)`.
+4. Dans les ViewModels, l'état porte un `@StringRes Int` (`errorMessage`, `networkError`) que l'écran résout. Dans `Share.kt`, utilise `context.getString`.
+5. Laisse les noms de personnages, `Alive` et les aperçus : ce sont des données d'exemple.
+6. Passe l'émulateur en anglais (Réglages > Système > Langues) et vérifie qu'aucun texte ne reste en français.
+7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 37"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-36-mon-travail`.
-
-![L'app en mode clair](docs/clair.png)
-
-![L'app en mode sombre](docs/sombre.png)
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-37-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] L'app suit le mode du téléphone, clair comme sombre — `CRIT-DMA-D1-SF-1-M4` ressources systématiques, avec une variante.
-- [ ] Aucun composable ne lit la palette brute : tout passe par le thème — `CRIT-DMA-D1-SF-3-M3` design system intégré.
-- [ ] Les deux captures sont dans `docs/` et s'affichent ci-dessus.
+- [ ] Aucun texte n'est écrit en dur dans `ui/` ; en anglais, rien ne reste en français — `CRIT-DMA-D1-SF-1-M4` ressources systématiques, avec une variante.
+- [ ] Les deux `strings.xml` ont les mêmes clés, nommées par rôle — `CRIT-DMA-D1-SE-1-M4` nommage des ressources.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajoute un aperçu `@Preview` en mode sombre pour la carte d'un personnage.
+- Ajoute une troisième langue dans `values-xx/strings.xml`.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-36 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-37 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
