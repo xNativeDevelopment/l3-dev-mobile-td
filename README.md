@@ -52,6 +52,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 24 | Screen et ViewModel | [`td-24-screen-viewmodel`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-24-screen-viewmodel) | [`td-24-screen-viewmodel-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-24-screen-viewmodel-solution) |
 | 25 | Actions de l'écran | [`td-25-ui-action`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-25-ui-action) | [`td-25-ui-action-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-25-ui-action-solution) |
 | 26 | La liste des personnages | [`td-26-liste`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-26-liste) | [`td-26-liste-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-26-liste-solution) |
+| 27 | Le détail pense seul | [`td-27-viewmodel-detail`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-27-viewmodel-detail) | [`td-27-viewmodel-detail-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-27-viewmodel-detail-solution) |
 
 ## Où est la solution
 
