@@ -9,6 +9,13 @@ data class CharacterUiState(
     val name: String,
     val status: String,
     val species: String,
+    val imageUrl: String? = null,
 )
 
-fun Character.toUiState() = CharacterUiState(id, name, status, species)
+// Pas de `else` : un cas du domaine oublié ne compile pas.
+fun Character.toUiState() = when (this) {
+    is Character.Preview ->
+        CharacterUiState(id, name, status, species)
+    is Character.Details ->
+        CharacterUiState(id, name, status, species, image)
+}

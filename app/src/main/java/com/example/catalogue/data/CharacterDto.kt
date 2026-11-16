@@ -12,5 +12,5 @@ data class CharacterDto(
     val image: String,
 )
 
-// Le domaine garde ce dont le métier a besoin : l'image reste ici.
-fun CharacterDto.toDomain() = Character(id, name, status, species)
+fun CharacterDto.toDomain() =
+    Character.Details(id, name, status, species, image)
