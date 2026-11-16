@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-32-json-dto"
+rootProject.name = "td-33-mock"
 include(":app")
