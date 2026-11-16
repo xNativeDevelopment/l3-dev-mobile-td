@@ -15,13 +15,13 @@ fun CatalogueTheme(
 ) {
     val colorScheme = if (darkTheme) {
         darkColorScheme(
-            primary = colorResource(R.color.brand_primary_dark),
-            onPrimary = colorResource(R.color.on_brand_dark),
-            primaryContainer = colorResource(R.color.brand_container_dark),
-            secondary = colorResource(R.color.brand_secondary_dark),
-            tertiary = colorResource(R.color.brand_tertiary_dark),
-            error = colorResource(R.color.alert_dark),
-            onError = colorResource(R.color.on_brand_dark),
+            primary = colorResource(R.color.brand_primary),
+            onPrimary = colorResource(R.color.on_brand),
+            primaryContainer = colorResource(R.color.brand_container),
+            secondary = colorResource(R.color.brand_secondary),
+            tertiary = colorResource(R.color.brand_tertiary),
+            error = colorResource(R.color.alert),
+            onError = colorResource(R.color.on_brand),
         )
     } else {
         lightColorScheme(
