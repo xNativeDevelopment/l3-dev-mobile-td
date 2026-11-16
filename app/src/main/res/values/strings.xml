@@ -10,6 +10,9 @@
     <string name="permission_granted">Position approximative autorisée.</string>
     <string name="permission_denied">Refusée : touche le bouton pour réessayer.</string>
     <string name="permission_denied_for_good">Refusée pour de bon : autorise la position dans les réglages de l\'app.</string>
+    <string name="list_locate">Où suis-je ?</string>
+    <string name="location_position">Position : %1$.4f, %2$.4f</string>
+    <string name="location_unavailable">Position indisponible : autorise la position, puis réessaie.</string>
     <string name="card_share">Partager</string>
     <string name="detail_not_found">Personnage introuvable</string>
     <string name="detail_back">Retour</string>
