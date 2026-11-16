@@ -1,7 +1,7 @@
 # TD 24 — Screen et ViewModel
 
 Slide : S-24 — Brancher un écran sur son ViewModel avec un UiState · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-24-screen-viewmodel
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
