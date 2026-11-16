@@ -51,6 +51,9 @@ dependencies {
     // Réseau : le client Ktor et son moteur pour Android
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.android)
+    // Décoder le JSON reçu : le plugin Ktor et son format kotlinx
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
     // Aperçus, seulement pour le développement
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)
