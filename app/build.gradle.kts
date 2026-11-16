@@ -48,6 +48,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose)
     // Coroutines : lancer un travail sans bloquer le thread principal
     implementation(libs.kotlinx.coroutines.android)
+    // Réseau : le client Ktor et son moteur pour Android
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.android)
     // Aperçus, seulement pour le développement
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)

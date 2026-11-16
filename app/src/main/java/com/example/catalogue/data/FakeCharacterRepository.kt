@@ -35,6 +35,15 @@ class FakeCharacterRepository : CharacterRepository {
         return dtos.firstOrNull { it.id == id }?.toDomain()
     }
 
+    // Pas de réseau ici : seul ApiCharacterRepository appelle le service.
+    override suspend fun getRawPage(): String = NO_NETWORK
+
+    override suspend fun getRawCharacter(id: Int): String = NO_NETWORK
+
     private fun avatar(id: Int) =
         "https://rickandmortyapi.com/api/character/avatar/$id.jpeg"
+
+    private companion object {
+        const val NO_NETWORK = "Données en mémoire : aucun appel réseau."
+    }
 }
