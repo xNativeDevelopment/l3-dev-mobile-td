@@ -1,41 +1,42 @@
-# TD 25 — Actions de l'écran
+# TD 26 — La liste des personnages
 
-Slide : S-25 — Nommer et traiter les actions de l'écran (UiAction) en flux unidirectionnel · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-25-ui-action
-État du build : départ construit · solution construite
+Slide : S-26 — Afficher une liste avec LazyColumn · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-26-liste
+État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais envoyer chaque geste de l'utilisateur au ViewModel par une action bien nommée.
+À la fin, je sais afficher une liste issue du UiState avec `LazyColumn` et des clés stables.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-25-ui-action` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-25-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 24 (branche `td-24-screen-viewmodel-solution`) et ajoute un champ « Filtrer par nom » qui ne fait encore rien. Le clic sur une carte, lui, appelle le Navigator depuis l'écran : le ViewModel n'en sait rien.
-La solution est sur la branche `td-25-ui-action-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-26-liste` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-26-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 25 (branche `td-25-ui-action-solution`) avec douze personnages au lieu de cinq. La liste est une `Column` : lance l'app en mode paysage, les dernières cartes sont coupées et on ne peut pas faire défiler.
+La solution est sur la branche `td-26-liste-solution`.
 
 ## Étapes
 
-1. Écris `CharacterListUiAction`, une `sealed interface` avec une action par intention : `OnFilterChanged(text)` et `OnCharacterClicked(id)`. Nomme chaque action d'après ce que veut l'utilisateur, pas d'après le widget.
-2. Ajoute `filter` à `CharacterListUiState`, et une propriété `visibleCharacters` : les personnages dont le nom contient le filtre, sans tenir compte des majuscules.
-3. Dans `CharacterListViewModel`, reçois le `Navigator` par le constructeur (mets `appModule` à jour) et écris `onAction(action)` : un `when` qui met à jour l'état pour le filtre et appelle `goToDetail` pour le clic.
-4. Dans `CharacterListContent`, remplace `onOpenDetail` par un seul `onAction`. Le champ envoie `OnFilterChanged`, la carte envoie `OnCharacterClicked`. Le partage garde sa lambda `onShare`.
-5. Retire le `Navigator` de `CharacterListScreen`. Lance l'app : taper « mor » ne laisse que Morty, et un clic ouvre toujours le détail.
-6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 25"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Dans `CharacterListContent`, remplace la boucle `forEach` par un `LazyColumn` placé sous le champ de filtre. Lance l'app en paysage : la liste défile.
+2. Alimente-le avec `items(uiState.visibleCharacters)` : le filtre du TD 25 continue de fonctionner, car la liste vient toujours du `UiState`.
+3. Donne à chaque élément une clé stable : `key = { it.id }`. Une clé identifie un élément même quand sa position change.
+4. Espace les cartes avec `verticalArrangement = Arrangement.spacedBy(8.dp)`.
+5. Vérifie le clic : il envoie toujours `OnCharacterClicked(id)` au ViewModel, qui appelle le Navigator du TD 22. Le détail s'ouvre, le retour te ramène à la liste.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 26"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-25-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-26-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Chaque geste de la liste (filtre, clic sur une carte) passe par une action nommée d'après l'intention, traitée dans `onAction` — `CRIT-DMA-D1-SE-3-M5` actions du ViewModel bien nommées.
+- [ ] La liste est un `LazyColumn` alimenté par `visibleCharacters`, chaque élément porte la clé `it.id`, et la liste défile — `CRIT-DMA-D1-SF-3-M4` Screen.kt – ViewModel.kt + UiState.
+- [ ] Le filtre et le clic sur une carte fonctionnent comme au TD 25.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajoute une action `OnFilterCleared` et un bouton qui efface le champ.
+- Affiche un texte « Aucun personnage » quand le filtre ne trouve personne.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-25 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-26 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 

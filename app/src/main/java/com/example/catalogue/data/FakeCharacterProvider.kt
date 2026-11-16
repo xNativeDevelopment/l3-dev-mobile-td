@@ -11,6 +11,13 @@ class FakeCharacterProvider : CharacterProvider {
         Character(3, "Summer Smith", "Alive", "Human"),
         Character(4, "Beth Smith", "Alive", "Human"),
         Character(5, "Jerry Smith", "Alive", "Human"),
+        Character(6, "Abradolf Lincler", "Unknown", "Human"),
+        Character(7, "Birdperson", "Dead", "Alien"),
+        Character(8, "Squanchy", "Alive", "Alien"),
+        Character(9, "Mr. Meeseeks", "Alive", "Humanoid"),
+        Character(10, "Evil Morty", "Alive", "Human"),
+        Character(11, "Pickle Rick", "Alive", "Human"),
+        Character(12, "Scary Terry", "Alive", "Alien"),
     )
 
     override fun characters() = fakeCharacters
