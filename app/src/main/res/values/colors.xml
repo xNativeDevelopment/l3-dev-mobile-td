@@ -11,6 +11,12 @@
     <color name="palette_violet_700">#6A1B9A</color>
     <color name="palette_grey_50">#FAFAFA</color>
     <color name="palette_grey_700">#616161</color>
+    <color name="palette_grey_300">#E0E0E0</color>
+    <color name="palette_grey_900">#212121</color>
+    <color name="palette_green_200">#A5D6A7</color>
+    <color name="palette_green_900">#1B5E20</color>
+    <color name="palette_orange_200">#FFCC80</color>
+    <color name="palette_red_200">#EF9A9A</color>
 
     <!-- Niveau 2 : les couleurs métier, elles pointent sur la palette. -->
     <color name="brand_primary">@color/palette_green_700</color>
@@ -19,6 +25,12 @@
     <color name="brand_container">@color/palette_green_100</color>
     <color name="on_brand">@color/palette_grey_50</color>
     <color name="alert">@color/palette_red_700</color>
+    <color name="brand_primary_dark">@color/palette_green_200</color>
+    <color name="brand_secondary_dark">@color/palette_grey_300</color>
+    <color name="brand_tertiary_dark">@color/palette_orange_200</color>
+    <color name="brand_container_dark">@color/palette_green_900</color>
+    <color name="on_brand_dark">@color/palette_grey_900</color>
+    <color name="alert_dark">@color/palette_red_200</color>
 
     <!-- Niveau 3 : les couleurs de composants, elles pointent sur le métier. -->
     <color name="ic_launcher_background">@color/brand_primary</color>
