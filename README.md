@@ -68,6 +68,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 40 | Mon premier Manager | [`td-40-manager`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-40-manager) | [`td-40-manager-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-40-manager-solution) |
 | 41 | Oui, non, plus tard | [`td-41-permissions`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-41-permissions) | [`td-41-permissions-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-41-permissions-solution) |
 | 42 | Le son du clic | [`td-42-son`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-42-son) | [`td-42-son-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-42-son-solution) |
+| 43 | Où suis-je ? | [`td-43-gps`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-43-gps) | [`td-43-gps-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-43-gps-solution) |
 
 ## Où est la solution
 
