@@ -5,4 +5,6 @@ package com.example.catalogue.ui
 data class CharacterDetailUiState(
     val character: CharacterUiState? = null,
     val isLoading: Boolean = false,
+    // Le texte JSON reçu du réseau, avant tout décodage.
+    val rawResponse: String = "",
 )

@@ -7,6 +7,8 @@ data class CharacterListUiState(
     val filter: String = "",
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
+    // Le texte JSON reçu du réseau, avant tout décodage.
+    val rawResponse: String = "",
 ) {
     // Dérivée de l'état : le ViewModel ne la stocke pas.
     val visibleCharacters: List<CharacterUiState>
