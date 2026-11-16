@@ -1,7 +1,7 @@
 # TD 38 — Mon design system
 
 Slide : S-38 — Construire un petit design system : boutons, champs, composants brandés · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-38-design-system
-État du build : à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
