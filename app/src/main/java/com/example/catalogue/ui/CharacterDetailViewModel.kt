@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.io.IOException
 
 // Un ViewModel par personnage affiché : l'identifiant est son paramètre,
 // il ne vient pas de l'entrée de navigation.
@@ -26,8 +27,17 @@ class CharacterDetailViewModel(
         // Le repository est suspend : on l'attend sans bloquer le thread principal.
         viewModelScope.launch {
             val character = repository.getCharacter(id)?.toUiState()
+            val raw = try {
+                repository.getRawCharacter(id)
+            } catch (e: IOException) {
+                "Réseau indisponible : vérifie la connexion."
+            }
             _uiState.update {
-                it.copy(character = character, isLoading = false)
+                it.copy(
+                    character = character,
+                    isLoading = false,
+                    rawResponse = raw,
+                )
             }
         }
     }

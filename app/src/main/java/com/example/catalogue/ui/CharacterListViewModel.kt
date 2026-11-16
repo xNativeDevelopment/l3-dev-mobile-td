@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.io.IOException
 
 // Le ViewModel écrit l'état ; l'écran ne peut que le lire.
 // Il reçoit le Navigator par son constructeur : l'écran n'y touche plus.
@@ -61,8 +62,17 @@ class CharacterListViewModel(
             // dans le repository. Le ViewModel convertit en UiState.
             val characters = repository.getCharacters().map { it.toUiState() }
             // On remplace l'état avec copy : le flux voit un nouvel objet.
+            val raw = try {
+                repository.getRawPage()
+            } catch (e: IOException) {
+                "Réseau indisponible : vérifie la connexion."
+            }
             _uiState.update {
-                it.copy(characters = characters, isLoading = false)
+                it.copy(
+                    characters = characters,
+                    isLoading = false,
+                    rawResponse = raw,
+                )
             }
         }
     }

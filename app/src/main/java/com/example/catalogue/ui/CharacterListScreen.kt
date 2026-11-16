@@ -77,6 +77,8 @@ private fun CharacterListContent(
             if (uiState.isLoading) {
                 CircularProgressIndicator()
             }
+            // Réponse brute du réseau, tronquée : on la décodera au TD 32.
+            Text(uiState.rawResponse.take(300), maxLines = 6)
             // LazyColumn ne compose que les cartes visibles ; la clé garde
             // l'identité d'une carte quand le filtre change sa position.
             LazyColumn(
