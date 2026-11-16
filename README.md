@@ -1,7 +1,7 @@
 # TD 43 — Où suis-je ?
 
 Slide : S-43 — Deuxième capacité : lire la position GPS · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-43-gps
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
