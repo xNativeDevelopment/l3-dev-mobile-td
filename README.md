@@ -49,6 +49,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 21 | Vers le détail | [`td-21-argument-type`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-21-argument-type) | [`td-21-argument-type-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-21-argument-type-solution) |
 | 22 | Mon Navigator | [`td-22-navigator`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-22-navigator) | [`td-22-navigator-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-22-navigator-solution) |
 | 23 | Chargement sans gel | [`td-23-coroutines`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-23-coroutines) | [`td-23-coroutines-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-23-coroutines-solution) |
+| 24 | Screen et ViewModel | [`td-24-screen-viewmodel`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-24-screen-viewmodel) | [`td-24-screen-viewmodel-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-24-screen-viewmodel-solution) |
 
 ## Où est la solution
 
