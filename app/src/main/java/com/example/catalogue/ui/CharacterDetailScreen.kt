@@ -41,7 +41,7 @@ fun CharacterDetailScreen(
 private fun CharacterDetailContent(
     character: CharacterUiState?,
     isLoading: Boolean,
-    networkError: String?,
+    networkError: Int?,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -49,7 +49,7 @@ private fun CharacterDetailContent(
         if (isLoading) {
             CircularProgressIndicator()
         } else if (networkError != null) {
-            Text(networkError)
+            Text(stringResource(networkError))
         } else if (character == null) {
             Text(stringResource(R.string.detail_not_found))
         } else {

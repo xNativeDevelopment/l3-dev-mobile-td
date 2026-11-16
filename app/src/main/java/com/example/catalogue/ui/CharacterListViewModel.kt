@@ -3,6 +3,7 @@ package com.example.catalogue.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.catalogue.R
 import com.example.catalogue.domain.CharacterRepository
 import com.example.catalogue.navigation.Navigator
 import kotlinx.coroutines.delay
@@ -49,7 +50,7 @@ class CharacterListViewModel(
             _uiState.update {
                 it.copy(
                     isLoading = false,
-                    errorMessage = "Rechargement impossible, réessaie plus tard.",
+                    errorMessage = R.string.error_reload_failed,
                 )
             }
         }
@@ -71,7 +72,7 @@ class CharacterListViewModel(
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        errorMessage = "Réseau indisponible : vérifie la connexion.",
+                        errorMessage = R.string.error_network,
                     )
                 }
             }
