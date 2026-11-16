@@ -29,6 +29,7 @@ fun CharacterDetailScreen(
     CharacterDetailContent(
         character = uiState.character,
         isLoading = uiState.isLoading,
+        networkError = uiState.networkError,
         onBack = { viewModel.onAction(CharacterDetailUiAction.OnBackClicked) },
         modifier = modifier,
     )
@@ -38,12 +39,15 @@ fun CharacterDetailScreen(
 private fun CharacterDetailContent(
     character: CharacterUiState?,
     isLoading: Boolean,
+    networkError: String?,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier.padding(16.dp)) {
         if (isLoading) {
             CircularProgressIndicator()
+        } else if (networkError != null) {
+            Text(networkError)
         } else if (character == null) {
             Text("Personnage introuvable")
         } else {
@@ -66,6 +70,7 @@ private fun CharacterDetailPreview() {
         CharacterDetailContent(
             character = CharacterUiState(2, "Morty Smith", "Alive", "Human"),
             isLoading = false,
+            networkError = null,
             onBack = {},
         )
     }
