@@ -15,7 +15,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.catalogue.R
 import com.example.catalogue.ui.theme.CatalogueTheme
 
-// La Card brandée : coins arrondis et fond lus dans le thème et dimens.xml.
+/**
+ * Card aux couleurs de la marque : coins et fond du thème.
+ *
+ * À utiliser à la place de [Card] pour tout bloc encadré : on
+ * change l'habillage ici, une seule fois, pas dans chaque écran.
+ *
+ * @param modifier Fourni par l'appelant, qui règle la taille
+ *   (`Modifier.fillMaxWidth()`) : la Card n'impose rien.
+ * @param content Contenu en colonne. Il gère son espacement
+ *   intérieur : la Card n'ajoute aucune marge.
+ * @see AppButton
+ * @see androidx.compose.material3.Card
+ */
 @Composable
 fun AppCard(
     modifier: Modifier = Modifier,
