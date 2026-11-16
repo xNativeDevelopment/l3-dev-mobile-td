@@ -7,4 +7,6 @@
     <dimen name="avatar_size">48dp</dimen>
     <dimen name="badge_padding_horizontal">8dp</dimen>
     <dimen name="badge_padding_vertical">2dp</dimen>
+    <dimen name="button_corner_radius">24dp</dimen>
+    <dimen name="component_corner_radius">12dp</dimen>
 </resources>
