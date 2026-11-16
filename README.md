@@ -1,7 +1,7 @@
 # TD 19 — Mon premier écran
 
 Slide : S-19 — Créer un écran : `xScreen.kt` avec Screen public, Content et Preview privés · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-19-ecran
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
