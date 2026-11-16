@@ -1,7 +1,7 @@
 # TD 39 — Documenter la Card
 
 Slide : S-39 — Couronner un composant complexe d'un en-tête KDoc · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-39-kdoc-composant
-État du build : à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
