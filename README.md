@@ -1,7 +1,7 @@
 # TD 32 — Du JSON au domaine
 
 Slide : S-32 — Décoder la réponse JSON en DTO et la convertir en domaine · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-32-json-dto
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
