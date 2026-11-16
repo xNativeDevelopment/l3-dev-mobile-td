@@ -36,6 +36,8 @@ class CharacterListViewModel(
             is CharacterListUiAction.OnCharacterClicked ->
                 navigator.goToDetail(action.id)
             CharacterListUiAction.OnReloadClicked -> reload()
+            CharacterListUiAction.OnErrorShown ->
+                _uiState.update { it.copy(errorMessage = null) }
         }
     }
 
