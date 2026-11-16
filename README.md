@@ -45,4 +45,5 @@ Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
 ## Crédits
 
-Bibliothèque : `play-services-location` 21.4.0 (Google).Données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
+Bibliothèque : `play-services-location` 21.4.0 (Google).
+Données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
