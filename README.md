@@ -67,6 +67,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 39 | Documenter la Card | [`td-39-kdoc-composant`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-39-kdoc-composant) | [`td-39-kdoc-composant-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-39-kdoc-composant-solution) |
 | 40 | Mon premier Manager | [`td-40-manager`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-40-manager) | [`td-40-manager-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-40-manager-solution) |
 | 41 | Oui, non, plus tard | [`td-41-permissions`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-41-permissions) | [`td-41-permissions-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-41-permissions-solution) |
+| 42 | Le son du clic | [`td-42-son`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-42-son) | [`td-42-son-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-42-son-solution) |
 
 ## Où est la solution
 
@@ -77,5 +78,5 @@ Avec le dossier distribué, les branches solution sont déjà là : pas de `fetc
 ## Crédits
 
 - TD 03 et TD 04 : le tuteur s'inspire de `socratic-tutor` (Jane Street), sous licence MIT : voir `NOTICE-socratic-tutor.md` sur ces branches.
-- TD 10 à TD 39 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
+- TD 10 à TD 42 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
 - Autres TD : aucun contenu tiers.
