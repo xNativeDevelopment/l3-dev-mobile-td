@@ -1,7 +1,7 @@
 # TD 42 — Le son du clic
 
 Slide : S-42 — Première capacité : émettre un son au clic, et libérer le lecteur au bon moment · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-42-son
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
