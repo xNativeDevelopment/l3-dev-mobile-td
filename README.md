@@ -1,7 +1,7 @@
 # TD 41 — Oui, non, plus tard
 
 Slide : S-41 — Demander une permission à l'exécution · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-41-permissions
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
