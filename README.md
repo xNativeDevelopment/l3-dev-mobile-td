@@ -19,7 +19,7 @@ La solution est sur la branche `td-16-context-solution`.
 2. Pour chaque appel marqué `TODO TD 16`, décide : l'objet vit-il longtemps (Context d'Application) ou sert-il à l'écran affiché (Context de l'Activity) ?
 3. Compter les ouvertures est un travail de stockage : passe `applicationContext`, qui ne retient aucune Activity.
 4. Dans le contenu Compose, récupère le Context avec `LocalContext.current` et passe-le au nom de l'app et au toast.
-5. Remplace chaque `TODO TD 16` par un commentaire qui dit pourquoi ce Context, puis lance l'app et touche le bouton.
+5. Remplace les `TODO TD 16` par un commentaire par Context choisi, qui dit pourquoi ce Context, puis lance l'app et touche le bouton.
 6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 16"`. Sans ce commit, git refuse de passer au TD suivant.
 
 Facultatif, vers ton fork (TD 02) : `git push -u perso td-16-mon-travail`.
@@ -27,7 +27,7 @@ Facultatif, vers ton fork (TD 02) : `git push -u perso td-16-mon-travail`.
 ## Critères de réussite
 
 - [ ] Chaque appel reçoit le Context qui convient, et aucun Context d'Activity n'est stocké dans un objet qui vit plus longtemps qu'elle.
-- [ ] Un commentaire dit pourquoi, au-dessus de chaque appel.
+- [ ] Pour chaque Context choisi, un commentaire dit pourquoi.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
