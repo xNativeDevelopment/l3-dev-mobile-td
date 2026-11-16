@@ -58,6 +58,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 30 | Mon repository | [`td-30-repository`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-30-repository) | [`td-30-repository-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-30-repository-solution) |
 | 31 | Le service réseau | [`td-31-service-ktor`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-31-service-ktor) | [`td-31-service-ktor-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-31-service-ktor-solution) |
 | 32 | Du JSON au domaine | [`td-32-json-dto`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-32-json-dto) | [`td-32-json-dto-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-32-json-dto-solution) |
+| 33 | Le mock de secours | [`td-33-mock`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-33-mock) | [`td-33-mock-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-33-mock-solution) |
 
 ## Où est la solution
 
@@ -68,5 +69,5 @@ Avec le dossier distribué, les branches solution sont déjà là : pas de `fetc
 ## Crédits
 
 - TD 03 et TD 04 : le tuteur s'inspire de `socratic-tutor` (Jane Street), sous licence MIT : voir `NOTICE-socratic-tutor.md` sur ces branches.
-- TD 10 à TD 30 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
+- TD 10 à TD 33 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
 - Autres TD : aucun contenu tiers.
