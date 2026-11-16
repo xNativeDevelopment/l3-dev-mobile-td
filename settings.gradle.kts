@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-25-ui-action"
+rootProject.name = "td-26-liste"
 include(":app")
