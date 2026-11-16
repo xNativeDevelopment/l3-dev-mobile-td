@@ -61,6 +61,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 33 | Le mock de secours | [`td-33-mock`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-33-mock) | [`td-33-mock-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-33-mock-solution) |
 | 34 | Des couleurs rangées | [`td-34-couleurs`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-34-couleurs) | [`td-34-couleurs-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-34-couleurs-solution) |
 | 35 | Une échelle d'espacements | [`td-35-dimens`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-35-dimens) | [`td-35-dimens-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-35-dimens-solution) |
+| 36 | Jour et nuit | [`td-36-theme-clair-sombre`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-36-theme-clair-sombre) | [`td-36-theme-clair-sombre-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-36-theme-clair-sombre-solution) |
 
 ## Où est la solution
 
@@ -71,5 +72,5 @@ Avec le dossier distribué, les branches solution sont déjà là : pas de `fetc
 ## Crédits
 
 - TD 03 et TD 04 : le tuteur s'inspire de `socratic-tutor` (Jane Street), sous licence MIT : voir `NOTICE-socratic-tutor.md` sur ces branches.
-- TD 10 à TD 33 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
+- TD 10 à TD 36 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
 - Autres TD : aucun contenu tiers.
