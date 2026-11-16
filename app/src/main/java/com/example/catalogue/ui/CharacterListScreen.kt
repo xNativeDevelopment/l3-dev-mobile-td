@@ -55,10 +55,13 @@ private fun CharacterListContent(
     modifier: Modifier = Modifier,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
-    // Le message est dans l'état : l'effet l'affiche à chaque entrée
-    // dans la composition, donc aussi après une rotation.
+    // L'événement est consommé : une fois montré, l'écran le retire de
+    // l'état, et une rotation ne le rejoue plus.
     LaunchedEffect(uiState.errorMessage) {
-        uiState.errorMessage?.let { snackbarHostState.showSnackbar(it) }
+        uiState.errorMessage?.let {
+            snackbarHostState.showSnackbar(it)
+            onAction(CharacterListUiAction.OnErrorShown)
+        }
     }
     Box(modifier) {
         Column(Modifier.padding(16.dp)) {
