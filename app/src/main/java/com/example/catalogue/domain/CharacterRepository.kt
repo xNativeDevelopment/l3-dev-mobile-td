@@ -5,8 +5,4 @@ package com.example.catalogue.domain
 interface CharacterRepository {
     suspend fun getCharacters(): List<Character.Preview>
     suspend fun getCharacter(id: Int): Character.Details?
-
-    // Étape intermédiaire : le texte JSON de l'API, pas encore décodé.
-    suspend fun getRawPage(): String
-    suspend fun getRawCharacter(id: Int): String
 }

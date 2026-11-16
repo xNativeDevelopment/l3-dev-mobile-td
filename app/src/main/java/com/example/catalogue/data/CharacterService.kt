@@ -2,20 +2,20 @@
 package com.example.catalogue.data
 
 import io.ktor.client.HttpClient
+import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import io.ktor.client.statement.bodyAsText
 
 // Le seul fichier qui sait qu'il y a un réseau : une fonction par endpoint.
-// Pour l'instant, il rend la réponse brute, telle que l'API l'envoie.
+// Le client décode le JSON : le service rend des DTO, plus du texte.
 class CharacterService(private val client: HttpClient) {
-    suspend fun fetchPage(page: Int): String =
+    suspend fun fetchPage(page: Int): CharactersPageDto =
         client.get("$BASE_URL/character") {
             parameter("page", page)
-        }.bodyAsText()
+        }.body()
 
-    suspend fun fetchCharacter(id: Int): String =
-        client.get("$BASE_URL/character/$id").bodyAsText()
+    suspend fun fetchCharacter(id: Int): CharacterDto =
+        client.get("$BASE_URL/character/$id").body()
 
     private companion object {
         const val BASE_URL = "https://rickandmortyapi.com/api"

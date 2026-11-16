@@ -29,7 +29,6 @@ fun CharacterDetailScreen(
     CharacterDetailContent(
         character = uiState.character,
         isLoading = uiState.isLoading,
-        rawResponse = uiState.rawResponse,
         onBack = { viewModel.onAction(CharacterDetailUiAction.OnBackClicked) },
         modifier = modifier,
     )
@@ -39,7 +38,6 @@ fun CharacterDetailScreen(
 private fun CharacterDetailContent(
     character: CharacterUiState?,
     isLoading: Boolean,
-    rawResponse: String,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -55,8 +53,6 @@ private fun CharacterDetailContent(
                 character.status,
             )
         }
-        // Réponse brute du réseau, tronquée : on la décodera au TD 32.
-        Text(rawResponse.take(300), maxLines = 6)
         Button(onClick = onBack) {
             Text("Retour")
         }
@@ -70,7 +66,6 @@ private fun CharacterDetailPreview() {
         CharacterDetailContent(
             character = CharacterUiState(2, "Morty Smith", "Alive", "Human"),
             isLoading = false,
-            rawResponse = "{\"id\":2,\"name\":\"Morty Smith\"}",
             onBack = {},
         )
     }
