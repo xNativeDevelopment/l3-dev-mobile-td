@@ -102,6 +102,10 @@ private fun CharacterListContent(
                 text = stringResource(R.string.list_manager),
                 onClick = { onAction(CharacterListUiAction.OnManagerClicked) },
             )
+            AppButton(
+                text = stringResource(R.string.list_about),
+                onClick = { onAction(CharacterListUiAction.OnAboutClicked) },
+            )
             uiState.managerMessage?.let { Text(stringResource(it)) }
             // On explique avant de demander : le système, lui, ne dit rien.
             Text(stringResource(R.string.location_why))

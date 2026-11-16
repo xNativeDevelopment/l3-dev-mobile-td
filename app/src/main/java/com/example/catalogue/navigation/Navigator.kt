@@ -10,6 +10,9 @@ interface Navigator {
     /** Ouvre le détail du personnage dont l'identifiant est [id]. */
     fun goToDetail(id: Int)
 
+    /** Ouvre l'écran À propos. */
+    fun goToAbout()
+
     /** Revient à l'écran précédent ; sans effet depuis la liste. */
     fun back()
 }

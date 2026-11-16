@@ -11,3 +11,7 @@ data object ListKey : NavKey
 // Seul l'identifiant voyage dans la clé : le détail recharge le reste.
 @Serializable
 data class DetailKey(val id: Int) : NavKey
+
+// L'écran À propos n'a pas d'argument : un objet suffit, comme pour la liste.
+@Serializable
+data object AboutKey : NavKey

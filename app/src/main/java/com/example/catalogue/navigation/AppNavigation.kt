@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
+import com.example.catalogue.ui.AboutScreen
 import com.example.catalogue.ui.CharacterDetailScreen
 import com.example.catalogue.ui.CharacterListScreen
 
@@ -26,6 +27,9 @@ fun AppNavigation(
             }
             entry<DetailKey> { key ->
                 CharacterDetailScreen(id = key.id)
+            }
+            entry<AboutKey> {
+                AboutScreen()
             }
         },
     )

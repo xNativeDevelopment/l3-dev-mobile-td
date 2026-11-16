@@ -15,6 +15,8 @@ sealed interface CharacterListUiAction {
 
     data object OnManagerClicked : CharacterListUiAction
 
+    data object OnAboutClicked : CharacterListUiAction
+
     // L'écran devient visible, puis il ne l'est plus : le son suit.
     data object OnStarted : CharacterListUiAction
 
