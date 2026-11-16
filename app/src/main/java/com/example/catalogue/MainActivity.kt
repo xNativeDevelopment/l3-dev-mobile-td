@@ -14,8 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.catalogue.ui.Format_title
-import com.example.catalogue.ui.model.label_source
+import com.example.catalogue.ui.formatTitle
+import com.example.catalogue.ui.model.LabelSource
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun home_page(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(text = Format_title(label_source(stringResource(R.string.Hello_Message))))
+        Text(text = formatTitle(LabelSource(stringResource(R.string.Hello_Message))))
     }
 }
 

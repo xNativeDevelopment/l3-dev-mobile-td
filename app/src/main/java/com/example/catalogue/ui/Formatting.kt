@@ -1,8 +1,8 @@
 package com.example.catalogue.ui
 
-import com.example.catalogue.ui.model.label_source
+import com.example.catalogue.ui.model.LabelSource
 
-fun Format_title(source: label_source): String {
-    val trimmed = source.Raw_text.trim()
+fun formatTitle(source: LabelSource): String {
+    val trimmed = source.rawText.trim()
     return trimmed.replaceFirstChar { it.uppercase() }
 }
