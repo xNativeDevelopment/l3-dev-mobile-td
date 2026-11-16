@@ -7,6 +7,7 @@ import com.example.catalogue.R
 import com.example.catalogue.domain.CharacterRepository
 import com.example.catalogue.navigation.Navigator
 import com.example.catalogue.system.DeviceManager
+import com.example.catalogue.system.SoundManager
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -22,6 +23,7 @@ class CharacterListViewModel(
     private val repository: CharacterRepository,
     private val navigator: Navigator,
     private val deviceManager: DeviceManager,
+    private val soundManager: SoundManager,
 ) : ViewModel() {
     private val _uiState =
         MutableStateFlow(CharacterListUiState())
@@ -37,8 +39,14 @@ class CharacterListViewModel(
         when (action) {
             is CharacterListUiAction.OnFilterChanged ->
                 _uiState.update { it.copy(filter = action.text) }
-            is CharacterListUiAction.OnCharacterClicked ->
+            is CharacterListUiAction.OnCharacterClicked -> {
+                soundManager.play()
                 navigator.goToDetail(action.id)
+            }
+            // Le chargement et la libération suivent la vie de l'écran :
+            // c'est l'écran qui le dit, le Manager ne connaît pas Compose.
+            CharacterListUiAction.OnStarted -> soundManager.load()
+            CharacterListUiAction.OnStopped -> soundManager.release()
             CharacterListUiAction.OnReloadClicked -> reload()
             CharacterListUiAction.OnErrorShown ->
                 _uiState.update { it.copy(errorMessage = null) }

@@ -22,6 +22,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.catalogue.R
 import com.example.catalogue.ui.designsystem.AppButton
@@ -40,6 +42,16 @@ fun CharacterListScreen(
 ) {
     val uiState by viewModel.uiState
         .collectAsStateWithLifecycle()
+    // Pas onDestroy : il peut ne jamais être appelé.
+    // onStop l'est toujours avant que le système tue le processus.
+    // Charger à l'affichage et libérer à l'arrêt rend la mémoire audio
+    // dès que plus personne ne voit l'écran.
+    LifecycleEventEffect(Lifecycle.Event.ON_START) {
+        viewModel.onAction(CharacterListUiAction.OnStarted)
+    }
+    LifecycleEventEffect(Lifecycle.Event.ON_STOP) {
+        viewModel.onAction(CharacterListUiAction.OnStopped)
+    }
     // Le lanceur vit dans l'écran : il a besoin de l'Activity, pas le ViewModel.
     val requestLocation = rememberLocationRequest { granted, canAskAgain ->
         viewModel.onAction(
