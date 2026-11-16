@@ -19,7 +19,7 @@ La solution est sur la branche `td-22-navigator-solution`.
 2. Dans le même dossier, écris `BackStackNavigator`, qui **possède** la back stack (`mutableStateListOf<NavKey>(ListKey)`) et implémente `Navigator`. Commente la classe : ce qu'elle garde, ce qu'elle cache.
 3. Déclare-la dans `appModule` : un `single` pour `BackStackNavigator`, et le même objet fourni sous le type `Navigator`.
 4. Change les écrans : `CharacterListScreen` et `CharacterDetailScreen` reçoivent un `Navigator`, appellent `goToDetail` et `back`, et n'importent plus rien de `NavBackStack`.
-5. `AppNavigation` affiche `navigator.backStack` et branche `onBack` sur `back()`. `MainActivity` récupère le navigateur avec `by inject()`.
+5. `AppNavigation` affiche `navigator.backStack` et branche `onBack` sur `back()`. `MainActivity` récupère le `BackStackNavigator` avec `by inject<BackStackNavigator>()`.
 6. Vérifie : cherche `NavBackStack` dans le dossier `ui`, il ne doit plus y en avoir. L'app navigue comme avant.
 7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 22"`. Sans ce commit, git refuse de passer au TD suivant.
 
