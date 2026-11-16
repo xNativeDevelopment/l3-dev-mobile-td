@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-22-navigator"
+rootProject.name = "td-23-coroutines"
 include(":app")
