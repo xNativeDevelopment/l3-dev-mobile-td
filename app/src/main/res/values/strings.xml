@@ -19,4 +19,8 @@
     <string name="error_reload_failed">Rechargement impossible, réessaie plus tard.</string>
     <string name="error_network">Réseau indisponible : vérifie la connexion.</string>
     <string name="share_no_app">Aucune application pour partager</string>
+    <string name="list_about">À propos</string>
+    <string name="about_title">À propos du catalogue</string>
+    <string name="about_body">Un catalogue de personnages, construit en couches : écran, ViewModel, repository, service.</string>
+    <string name="about_back">Retour</string>
 </resources>
