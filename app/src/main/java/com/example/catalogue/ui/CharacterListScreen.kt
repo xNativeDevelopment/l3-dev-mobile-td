@@ -1,6 +1,7 @@
 package com.example.catalogue.ui
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -58,7 +59,9 @@ private fun CharacterListContent(
         }
         // LazyColumn ne compose que les cartes visibles ; la clé garde
         // l'identité d'une carte quand le filtre change sa position.
-        LazyColumn {
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
             items(
                 items = uiState.visibleCharacters,
                 key = { it.id },
