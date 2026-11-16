@@ -17,7 +17,7 @@ La solution est sur la branche `td-34-couleurs-solution`.
 
 1. Crée `app/src/main/res/values/colors.xml`. Premier niveau, la palette brute : bleu, vert, jaune, orange, rouge, violet, gris, nommés `palette_<teinte>_<nuance>`.
 2. Deuxième niveau, les couleurs métier : `brand_primary`, `brand_secondary`, `brand_tertiary`, `brand_container`, `on_brand`, `alert`. Chacune pointe sur la palette (`@color/…`).
-3. Troisième niveau, les couleurs de composants : déplace `ic_launcher_background` dans ce fichier, supprime `ic_launcher_background.xml`, et crée `launcher_foreground` pour l'icône.
+3. Troisième niveau, les couleurs de composants : déplace `ic_launcher_background` dans ce fichier, supprime `ic_launcher_background.xml`, et crée `launcher_foreground`, puis fais-le lire par `res/drawable/ic_launcher_foreground.xml` (`android:fillColor="@color/launcher_foreground"`).
 4. Dans `Theme.kt`, retire le schéma sombre écrit par l'assistant, puis nourris `lightColorScheme` avec `colorResource(R.color.…)` sur les couleurs métier. Supprime `Color.kt`.
 5. Dans `StatusBadge`, remplace `Color.White` par un rôle du thème : `onPrimary` (vivant) ou `onError`.
 6. Cherche `Color(0x` et `Color.` dans le code : aucune couleur en dur ne doit rester.
