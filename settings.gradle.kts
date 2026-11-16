@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-38-design-system"
+rootProject.name = "td-39-kdoc-composant"
 include(":app")
