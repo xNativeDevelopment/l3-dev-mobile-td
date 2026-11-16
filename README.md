@@ -10,16 +10,16 @@ Slide : S-20 — Mettre en place la navigation avec Navigation 3 · Dépôt : ht
 ## Point de départ
 
 Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-20-navigation-3` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-20-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 19 (branche `td-19-ecran-solution`) : l'écran de liste existe, et un écran de détail vide (`ui/CharacterDetailScreen.kt`) attend d'être relié.
+Cette branche reprend l'état final du TD 19 (branche `td-19-ecran-solution`) : l'écran de liste existe, et un détail vide (`ui/CharacterDetailScreen.kt`) attend d'être relié.
 La solution est sur la branche `td-20-navigation-3-solution`.
 
 ## Étapes
 
-1. Dans `gradle/libs.versions.toml`, déclare `navigation3-runtime` et `navigation3-ui` (version 1.1.7), `kotlinx-serialization-json` (1.11.0) et le plugin `kotlin-serialization` (même version que Kotlin). Applique le plugin dans `app/build.gradle.kts`, ajoute les trois bibliothèques, synchronise.
-2. Crée `navigation/Keys.kt` : une clé par écran, `ListKey` et `DetailKey`, des `data object` marqués `@Serializable` et qui implémentent `NavKey`.
+1. Dans `gradle/libs.versions.toml`, déclare `navigation3-runtime` et `navigation3-ui` (1.1.7), `kotlinx-serialization-json` (1.11.0) et le plugin `kotlin-serialization` (version de Kotlin). Applique-les dans `app/build.gradle.kts`, puis synchronise.
+2. Crée `navigation/Keys.kt` : `ListKey` et `DetailKey`, des `data object` `@Serializable` qui implémentent `NavKey`.
 3. Crée `navigation/AppNavigation.kt` : une back stack avec `rememberNavBackStack(ListKey)`, puis un `NavDisplay` dont l'`entryProvider` affiche l'écran de chaque clé avec `entry<…>`. Le paramètre `onBack` retire le dernier élément.
 4. Donne la back stack à l'écran de liste (version simple, le TD 22 la rangera) : un bouton ajoute `DetailKey`. Dans le détail, « Retour » retire le dernier élément.
-5. Dans `MainActivity`, remplace l'écran de liste par `AppNavigation`. Ouvre le détail, appuie sur retour système : tu reviens à la liste ; tourne l'écran, la pile est conservée.
+5. Dans `MainActivity`, remplace l'écran de liste par `AppNavigation`. Ouvre le détail, puis retour système : tu reviens à la liste.
 6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 20"`. Sans ce commit, git refuse de passer au TD suivant.
 
 Facultatif, vers ton fork (TD 02) : `git push -u perso td-20-mon-travail`.
@@ -32,7 +32,7 @@ Facultatif, vers ton fork (TD 02) : `git push -u perso td-20-mon-travail`.
 
 ## Pour aller plus loin
 
-- Retirer le plugin `kotlin-serialization`, relancer, noter ce qui se passe (au build ou à l'exécution), puis le remettre : tu reconnaîtras la panne.
+- Retirer le plugin `kotlin-serialization`, relancer, noter ce qui se passe, puis le remettre : tu reconnaîtras la panne.
 
 ## Avec le tuteur
 
