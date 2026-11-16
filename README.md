@@ -1,7 +1,7 @@
 # TD 36 — Jour et nuit
 
 Slide : S-36 — Poser un thème clair et sombre · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-36-theme-clair-sombre
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
