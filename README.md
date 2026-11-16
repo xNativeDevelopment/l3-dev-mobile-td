@@ -1,7 +1,7 @@
 # TD 21 — Vers le détail
 
 Slide : S-21 — Naviguer de la liste au détail avec un argument typé · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-21-argument-type
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
