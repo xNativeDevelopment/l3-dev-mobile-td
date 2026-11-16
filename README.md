@@ -1,7 +1,7 @@
 # TD 23 — Chargement sans gel
 
 Slide : S-23 — Lancer un travail hors du thread principal avec les coroutines · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-23-coroutines
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
