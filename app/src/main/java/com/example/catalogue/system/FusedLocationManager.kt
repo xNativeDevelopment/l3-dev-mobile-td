@@ -3,9 +3,7 @@ package com.example.catalogue.system
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.pm.PackageManager
 import android.location.Location
-import androidx.core.content.ContextCompat
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationTokenSource
@@ -22,7 +20,10 @@ class FusedLocationManager(
     // Le lint ne voit pas notre test de permission, fait dans la fonction.
     @SuppressLint("MissingPermission")
     override suspend fun currentPosition(): Position? {
-        if (!hasPermission()) return null
+        val granted = appContext.hasPermission(
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+        )
+        if (!granted) return null
         return suspendCancellableCoroutine { continuation ->
             val cancellation = CancellationTokenSource()
             // Approximative : un quartier suffit, la précision GPS coûte
@@ -43,10 +44,4 @@ class FusedLocationManager(
     }
 
     private fun Location.toPosition() = Position(latitude, longitude)
-
-    private fun hasPermission(): Boolean =
-        ContextCompat.checkSelfPermission(
-            appContext,
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-        ) == PackageManager.PERMISSION_GRANTED
 }
