@@ -16,7 +16,7 @@ import com.example.catalogue.R
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 /**
- * Card aux couleurs de la marque : coins et fond du thème.
+ * Card de la marque : coins de dimens.xml, fond du thème.
  *
  * À utiliser à la place de [Card] pour tout bloc encadré : on
  * change l'habillage ici, une seule fois, pas dans chaque écran.
