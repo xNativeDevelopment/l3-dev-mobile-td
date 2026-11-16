@@ -12,7 +12,7 @@
     <string name="permission_denied_for_good">Denied for good: allow the location in the app settings.</string>
     <string name="list_locate">Where am I?</string>
     <string name="location_position">Position: %1$.4f, %2$.4f</string>
-    <string name="location_unavailable">Position unavailable: allow the location, then try again.</string>
+    <string name="location_unavailable">Position unavailable: permission missing or no known position.</string>
     <string name="card_share">Share</string>
     <string name="detail_not_found">Character not found</string>
     <string name="detail_back">Back</string>
