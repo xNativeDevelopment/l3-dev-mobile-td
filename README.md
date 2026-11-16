@@ -1,7 +1,7 @@
 # TD 20 — Deux écrans, une back stack
 
 Slide : S-20 — Mettre en place la navigation avec Navigation 3 · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-20-navigation-3
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
