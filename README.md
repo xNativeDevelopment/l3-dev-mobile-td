@@ -19,7 +19,7 @@ La solution est sur la branche `td-31-service-ktor-solution`.
 2. Dans `AndroidManifest.xml`, ajoute la permission `INTERNET` : sans elle, toute requête échoue.
 3. Dans `data`, écris `CharacterService` : une fonction `suspend` par endpoint, `fetchPage(page)` pour `/api/character?page=N` et `fetchCharacter(id)` pour `/api/character/{id}`. Chacune rend la réponse brute avec `bodyAsText()`.
 4. Dans `AppModule`, fournis `HttpClient(Android)` et `CharacterService` avec `single`.
-5. Ajoute `getRawPage()` et `getRawCharacter(id)` à `CharacterRepository`. Écris `ApiCharacterRepository`, qui appelle le service et garde la liste en mémoire pour le reste ; lie-le dans `AppModule`.
+5. Ajoute `getRawPage()` et `getRawCharacter(id)` à `CharacterRepository` ; `FakeCharacterRepository` rend un texte fixe. Écris `ApiCharacterRepository`, qui appelle le service et garde la liste en mémoire pour le reste ; lie-le dans `AppModule`.
 6. Les ViewModels lisent ces textes, l'état les garde et les écrans les affichent. Ils ne connaissent jamais le service.
 7. Lance l'app sur un émulateur : le texte JSON s'affiche. Coupe le réseau : un message remplace le texte.
 8. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 31"`. Sans ce commit, git refuse de passer au TD suivant.
