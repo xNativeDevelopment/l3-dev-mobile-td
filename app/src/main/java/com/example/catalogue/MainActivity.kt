@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CatalogueTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    home_page(modifier = Modifier.padding(innerPadding))
+                    HomeScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -33,16 +33,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun home_page(modifier: Modifier = Modifier) {
+fun HomeScreen(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(text = formatTitle(LabelSource(stringResource(R.string.Hello_Message))))
+        Text(text = formatTitle(LabelSource(stringResource(R.string.hello_message))))
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun preview_home() {
+private fun HomeScreenPreview() {
     CatalogueTheme {
-        home_page()
+        HomeScreen()
     }
 }
