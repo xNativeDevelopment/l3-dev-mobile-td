@@ -55,6 +55,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 27 | Le détail pense seul | [`td-27-viewmodel-detail`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-27-viewmodel-detail) | [`td-27-viewmodel-detail-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-27-viewmodel-detail-solution) |
 | 28 | Message une seule fois | [`td-28-evenement-ponctuel`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-28-evenement-ponctuel) | [`td-28-evenement-ponctuel-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-28-evenement-ponctuel-solution) |
 | 29 | Trois modèles | [`td-29-domaine`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-29-domaine) | [`td-29-domaine-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-29-domaine-solution) |
+| 30 | Mon repository | [`td-30-repository`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-30-repository) | [`td-30-repository-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-30-repository-solution) |
 
 ## Où est la solution
 
@@ -65,5 +66,5 @@ Avec le dossier distribué, les branches solution sont déjà là : pas de `fetc
 ## Crédits
 
 - TD 03 et TD 04 : le tuteur s'inspire de `socratic-tutor` (Jane Street), sous licence MIT : voir `NOTICE-socratic-tutor.md` sur ces branches.
-- TD 10 à TD 28 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
+- TD 10 à TD 30 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
 - Autres TD : aucun contenu tiers.
