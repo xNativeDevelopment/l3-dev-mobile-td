@@ -15,11 +15,11 @@ La solution est sur la branche `td-20-navigation-3-solution`.
 
 ## Étapes
 
-1. Dans `gradle/libs.versions.toml`, déclare `navigation3-runtime` et `navigation3-ui` (1.1.7), `kotlinx-serialization-json` (1.11.0) et le plugin `kotlin-serialization` (version de Kotlin). Applique-les dans `app/build.gradle.kts`, puis synchronise.
+1. Dans `gradle/libs.versions.toml`, déclare `androidx.navigation3:navigation3-runtime` et `androidx.navigation3:navigation3-ui` (1.1.7), `org.jetbrains.kotlinx:kotlinx-serialization-json` (1.11.0) et le plugin `org.jetbrains.kotlin.plugin.serialization` (alias `kotlin-serialization`, version de Kotlin). Applique-les dans `app/build.gradle.kts`, puis synchronise.
 2. Crée `navigation/Keys.kt` : `ListKey` et `DetailKey`, des `data object` `@Serializable` qui implémentent `NavKey`.
 3. Crée `navigation/AppNavigation.kt` : une back stack avec `rememberNavBackStack(ListKey)`, puis un `NavDisplay` dont l'`entryProvider` affiche l'écran de chaque clé avec `entry<…>`. Le paramètre `onBack` retire le dernier élément.
-4. Donne la back stack à l'écran de liste (version simple, le TD 22 la rangera) : un bouton ajoute `DetailKey`. Dans le détail, « Retour » retire le dernier élément.
-5. Dans `MainActivity`, remplace l'écran de liste par `AppNavigation`. Ouvre le détail, puis retour système : tu reviens à la liste.
+4. Donne la back stack à l'écran de liste, en paramètre `backStack: NavBackStack<NavKey>` (version simple, le TD 22 la rangera) : un bouton ajoute `DetailKey`. Dans le détail, « Retour » retire le dernier élément.
+5. Dans `MainActivity`, remplace l'écran de liste par `AppNavigation`, avec `onShare = { shareText(context, it) }` : `onShare` reçoit désormais un `String`.
 6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 20"`. Sans ce commit, git refuse de passer au TD suivant.
 
 Facultatif, vers ton fork (TD 02) : `git push -u perso td-20-mon-travail`.
