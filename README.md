@@ -1,7 +1,7 @@
 # TD 47 — Mon README
 
 Slide : S-47 — Rédiger le README qui présente l'architecture · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-47-readme
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
