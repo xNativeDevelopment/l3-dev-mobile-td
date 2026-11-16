@@ -10,7 +10,7 @@ Slide : S-46 — Nommer selon les conventions Kotlin et passer le lint · Dépô
 ## Point de départ
 
 Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-46-lint-nommage` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-46-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche apporte un projet fourni, volontairement mal nommé : valeurs, classe, fonction, écran et ressource.La solution est sur la branche `td-46-lint-nommage-solution`.
+Cette branche apporte un projet fourni, volontairement mal nommé : valeurs, classe, fonction, écran et ressource. La solution est sur la branche `td-46-lint-nommage-solution`.
 
 ## Étapes
 
@@ -19,7 +19,7 @@ Cette branche apporte un projet fourni, volontairement mal nommé : valeurs, cla
 3. Renomme à la main, avec le refactor de l'IDE (Shift+F6), pas fichier par fichier : la classe, ses propriétés et la fonction que ktlint signale.
 4. Renomme l'écran en `XScreen` et la ressource texte en minuscules séparées par `_`. ktlint ne les signale pas.
 5. Dans Android Studio, lance le lint (Analyze > Inspect Code) et corrige les noms qu'il souligne.
-6. Relance `./gradlew ktlintCheck` jusqu'à zéro alerte, puis la même passe sur ton propre projet : copie `.editorconfig` et le bloc ktlint de `app/build.gradle.kts`.
+6. Relance `./gradlew ktlintCheck` jusqu'à zéro alerte, puis la même passe sur ton propre projet : copie `.editorconfig`, les deux lignes ktlint de `gradle/libs.versions.toml`, puis l'import `Bundling` et le bloc ktlint de `app/build.gradle.kts`.
 7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 46"`. Sans ce commit, git refuse de passer au TD suivant.
 
 Facultatif, vers ton fork (TD 02) : `git push -u perso td-46-mon-travail`.
