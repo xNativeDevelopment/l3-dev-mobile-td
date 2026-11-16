@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="list_item_spacing">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_content_gap">16dp</dimen>
+    <dimen name="avatar_size">48dp</dimen>
+    <dimen name="badge_padding_horizontal">8dp</dimen>
+    <dimen name="badge_padding_vertical">2dp</dimen>
+</resources>
