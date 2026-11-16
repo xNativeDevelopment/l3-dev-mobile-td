@@ -1,43 +1,43 @@
-# TD 29 — Trois modèles
+# TD 30 — Mon repository
 
-Slide : S-29 — Modéliser le domaine à part du DTO et du UiState · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-29-domaine
+Slide : S-30 — Construire un repository et l'injecter dans le ViewModel · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-30-repository
 État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais écrire un modèle de domaine (sealed interface si besoin) distinct de ce que renvoie l'API et de ce qu'affiche l'écran.
+À la fin, je sais écrire un repository derrière une interface, fourni par Koin, qui rend des modèles de domaine.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-29-domaine` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-29-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 28 (branche `td-28-evenement-ponctuel-solution`) : une seule classe `Character` sert à la fois aux données, au métier et à l'écran.
-La solution est sur la branche `td-29-domaine-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-30-repository` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-30-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 29 (branche `td-29-domaine-solution`) : les ViewModels lisent des listes fictives par `CharacterCatalog` et `CharacterProvider`, et la liste se charge avec un `Thread.sleep` qui bloque un thread.
+La solution est sur la branche `td-30-repository-solution`.
 
 ## Étapes
 
-1. Dans `data`, écris `CharacterDto` : ce que l'API renverrait (`id`, `name`, `status`, `species`, `image`). `FakeCharacterProvider` le construit, puis `toDomain()` le convertit en `Character`.
-2. Dans `ui`, écris `CharacterUiState` : ce que l'écran affiche. Ajoute `Character.toUiState()` : les ViewModels convertissent, les écrans ne voient plus que des `CharacterUiState`.
-3. Dans `domain`, transforme `Character` en `sealed interface` : `Preview` pour la liste, `Details` (avec `image`) pour le détail. `toDomain()` produit un `Details`, `CharacterCatalog.all()` rend des `Preview`.
-4. Dans `toUiState()`, traite les deux cas avec un `when` sans `else` : un cas oublié ne compile pas.
-5. Lance l'app : la liste et le détail s'affichent comme avant.
-6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 29"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Dans `domain`, écris l'interface `CharacterRepository` : `getCharacters()` rend des `Character.Preview`, `getCharacter(id)` rend un `Character.Details` ou `null`. Les deux fonctions sont `suspend`.
+2. Dans `data`, écris `FakeCharacterRepository`, qui garde les données en mémoire. Chaque fonction attend avec `delay` : l'attente est derrière le repository.
+3. Dans `AppModule`, lie `CharacterRepository` à `FakeCharacterRepository` avec `single`. Donne-le à `CharacterListViewModel`, puis retire `Thread.sleep` et `withContext`.
+4. Fais de même pour `CharacterDetailViewModel` : il appelle `getCharacter(id)` dans `viewModelScope`. L'état gagne `isLoading`, le détail montre un indicateur pendant la lecture.
+5. Supprime `CharacterProvider`, `FakeCharacterProvider` et `CharacterCatalog` : plus aucun fichier ne les nomme.
+6. Lance l'app : la liste s'affiche après deux secondes sans figer l'écran.
+7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 30"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-29-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-30-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Aucun fichier de `domain` n'importe `data` ni `ui` — `CRIT-DMA-D1-SF-2-M4` couche domaine démontrée.
-- [ ] Chaque couche a son modèle : `CharacterDto` dans `data`, `Character` dans `domain`, `CharacterUiState` dans `ui` — `CRIT-DMA-D1-SE-2-M4` couches nettes.
-- [ ] `CharacterUiState` est immuable et construit par un mapper, jamais à la main dans un écran — `CRIT-DMA-D1-SE-3-M6` State bien formé.
+- [ ] Les ViewModels dépendent de `CharacterRepository`, jamais de `FakeCharacterRepository` — `CRIT-DMA-D1-SF-2-M3` accès aux données dans sa couche.
+- [ ] Aucun écran n'appelle le repository : seuls les ViewModels le font.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajoute un troisième cas à `Character` et lis l'erreur du compilateur.
+- Ajoute à l'interface une fonction qui rend les personnages dont le nom contient un texte.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-29 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-30 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
