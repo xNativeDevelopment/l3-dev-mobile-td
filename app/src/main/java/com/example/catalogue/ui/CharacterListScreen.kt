@@ -7,25 +7,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation3.runtime.NavBackStack
-import androidx.navigation3.runtime.NavKey
 import com.example.catalogue.domain.Character
-import com.example.catalogue.navigation.DetailKey
+import com.example.catalogue.navigation.Navigator
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 // La Screen est la seule fonction publique : c'est elle qu'on branchera
-// plus tard à un ViewModel. Elle reçoit ici la back stack, version simple
-// que le TD 22 remplacera par un Navigator.
+// plus tard à un ViewModel. Elle dit où aller au Navigator, sans savoir
+// comment on y va.
 @Composable
 fun CharacterListScreen(
     characters: List<Character>,
-    backStack: NavBackStack<NavKey>,
+    navigator: Navigator,
     onShare: (Character) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     CharacterListContent(
         characters = characters,
-        onOpenDetail = { id -> backStack.add(DetailKey(id)) },
+        onOpenDetail = navigator::goToDetail,
         onShare = onShare,
         modifier = modifier,
     )

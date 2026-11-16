@@ -9,16 +9,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.catalogue.domain.Character
+import com.example.catalogue.navigation.Navigator
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 // Le personnage est null quand l'identifiant de la clé n'existe pas.
 @Composable
 fun CharacterDetailScreen(
     character: Character?,
-    onBack: () -> Unit,
+    navigator: Navigator,
     modifier: Modifier = Modifier,
 ) {
-    CharacterDetailContent(character, onBack, modifier)
+    CharacterDetailContent(character, navigator::back, modifier)
 }
 
 @Composable

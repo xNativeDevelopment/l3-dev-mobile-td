@@ -3,36 +3,35 @@ package com.example.catalogue.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
-import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.example.catalogue.domain.CharacterCatalog
 import com.example.catalogue.ui.CharacterDetailScreen
 import com.example.catalogue.ui.CharacterListScreen
 
-// La back stack est une liste de clés : le dernier élément est l'écran visible.
+// Seul endroit qui lit la back stack, pour l'afficher.
 @Composable
 fun AppNavigation(
+    navigator: BackStackNavigator,
     catalog: CharacterCatalog,
     onShare: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val backStack = rememberNavBackStack(ListKey)
     NavDisplay(
-        backStack = backStack,
+        backStack = navigator.backStack,
         modifier = modifier,
-        onBack = { backStack.removeLastOrNull() },
+        onBack = navigator::back,
         entryProvider = entryProvider {
             entry<ListKey> {
                 CharacterListScreen(
                     characters = catalog.all(),
-                    backStack = backStack,
+                    navigator = navigator,
                     onShare = { onShare(it.name) },
                 )
             }
             entry<DetailKey> { key ->
                 CharacterDetailScreen(
                     character = catalog.byId(key.id),
-                    onBack = { backStack.removeLastOrNull() },
+                    navigator = navigator,
                 )
             }
         },
