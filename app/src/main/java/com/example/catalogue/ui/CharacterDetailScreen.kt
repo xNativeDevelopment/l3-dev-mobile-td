@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.catalogue.R
@@ -50,7 +51,7 @@ private fun CharacterDetailContent(
         } else if (networkError != null) {
             Text(networkError)
         } else if (character == null) {
-            Text("Personnage introuvable")
+            Text(stringResource(R.string.detail_not_found))
         } else {
             CharacterInfo(
                 character.name,
@@ -59,7 +60,7 @@ private fun CharacterDetailContent(
             )
         }
         Button(onClick = onBack) {
-            Text("Retour")
+            Text(stringResource(R.string.detail_back))
         }
     }
 }

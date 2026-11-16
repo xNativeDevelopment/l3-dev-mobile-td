@@ -22,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.catalogue.R
@@ -69,11 +70,11 @@ private fun CharacterListContent(
             OutlinedTextField(
                 value = uiState.filter,
                 onValueChange = { onAction(CharacterListUiAction.OnFilterChanged(it)) },
-                label = { Text("Filtrer par nom") },
+                label = { Text(stringResource(R.string.list_filter_label)) },
                 modifier = Modifier.fillMaxWidth(),
             )
             Button(onClick = { onAction(CharacterListUiAction.OnReloadClicked) }) {
-                Text("Recharger")
+                Text(stringResource(R.string.list_reload))
             }
             if (uiState.isLoading) {
                 CircularProgressIndicator()

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Catalogue</string>
+    <string name="list_filter_label">Filtrer par nom</string>
+    <string name="list_reload">Recharger</string>
+    <string name="card_share">Partager</string>
+    <string name="detail_not_found">Personnage introuvable</string>
+    <string name="detail_back">Retour</string>
+    <string name="error_reload_failed">Rechargement impossible, réessaie plus tard.</string>
+    <string name="error_network">Réseau indisponible : vérifie la connexion.</string>
+    <string name="share_no_app">Aucune application pour partager</string>
 </resources>

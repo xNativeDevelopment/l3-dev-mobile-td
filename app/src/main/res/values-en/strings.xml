@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Catalogue</string>
+    <string name="list_filter_label">Filter by name</string>
+    <string name="list_reload">Reload</string>
+    <string name="card_share">Share</string>
+    <string name="detail_not_found">Character not found</string>
+    <string name="detail_back">Back</string>
+    <string name="error_reload_failed">Could not reload, try again later.</string>
+    <string name="error_network">Network unavailable: check your connection.</string>
+    <string name="share_no_app">No app available to share</string>
+</resources>
