@@ -3,6 +3,7 @@ package com.example.catalogue.di
 
 import com.example.catalogue.data.ApiCharacterRepository
 import com.example.catalogue.data.CharacterService
+import com.example.catalogue.data.KtorCharacterService
 import com.example.catalogue.domain.CharacterRepository
 import com.example.catalogue.navigation.BackStackNavigator
 import com.example.catalogue.navigation.Navigator
@@ -27,7 +28,7 @@ val appModule = module {
             }
         }
     }
-    single { CharacterService(get()) }
+    single<CharacterService> { KtorCharacterService(get()) }
     // Un seul repository pour toute l'app : les ViewModels le reçoivent.
     single<CharacterRepository> { ApiCharacterRepository(get()) }
     single { BackStackNavigator() }
