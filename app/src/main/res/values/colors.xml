@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Niveau 1 : la palette brute, des teintes sans rôle. -->
+    <color name="palette_blue_100">#BBDEFB</color>
+    <color name="palette_blue_700">#1976D2</color>
+    <color name="palette_green_100">#C8E6C9</color>
+    <color name="palette_green_700">#2E7D32</color>
+    <color name="palette_yellow_500">#FBC02D</color>
+    <color name="palette_orange_700">#EF6C00</color>
+    <color name="palette_red_700">#C62828</color>
+    <color name="palette_violet_700">#6A1B9A</color>
+    <color name="palette_grey_50">#FAFAFA</color>
+    <color name="palette_grey_700">#616161</color>
+
+    <!-- Niveau 2 : les couleurs métier, elles pointent sur la palette. -->
+    <color name="brand_primary">@color/palette_green_700</color>
+    <color name="brand_secondary">@color/palette_grey_700</color>
+    <color name="brand_tertiary">@color/palette_orange_700</color>
+    <color name="brand_container">@color/palette_green_100</color>
+    <color name="on_brand">@color/palette_grey_50</color>
+    <color name="alert">@color/palette_red_700</color>
+
+    <!-- Niveau 3 : les couleurs de composants, elles pointent sur le métier. -->
+    <color name="ic_launcher_background">@color/brand_primary</color>
+    <color name="launcher_foreground">@color/on_brand</color>
+</resources>
