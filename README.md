@@ -44,6 +44,10 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 16 | Quel Context ? | [`td-16-context`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-16-context) | [`td-16-context-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-16-context-solution) |
 | 17 | Partager un personnage | [`td-17-intent`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-17-intent) | [`td-17-intent-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-17-intent-solution) |
 | 18 | Démonter la Card | [`td-18-lego`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-18-lego) | [`td-18-lego-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-18-lego-solution) |
+| 19 | Mon premier écran | [`td-19-ecran`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-19-ecran) | [`td-19-ecran-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-19-ecran-solution) |
+| 20 | Deux écrans, une back stack | [`td-20-navigation-3`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-20-navigation-3) | [`td-20-navigation-3-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-20-navigation-3-solution) |
+| 21 | Vers le détail | [`td-21-argument-type`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-21-argument-type) | [`td-21-argument-type-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-21-argument-type-solution) |
+| 22 | Mon Navigator | [`td-22-navigator`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-22-navigator) | [`td-22-navigator-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-22-navigator-solution) |
 
 ## Où est la solution
 
