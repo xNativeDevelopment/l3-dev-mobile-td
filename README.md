@@ -1,7 +1,7 @@
 # TD 45 — Mon corpus
 
 Slide : S-45 — Tenir son corpus personnel et répliquer un squelette · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-45-corpus
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
