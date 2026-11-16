@@ -36,12 +36,16 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     // Injection de dépendances
     implementation(libs.koin.android)
+    // Obtenir un ViewModel depuis Koin dans un composable
+    implementation(libs.koin.compose.viewmodel)
     // Navigation : back stack, affichage de l'écran du sommet, clés sérialisables
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.kotlinx.serialization.json)
     // ViewModel : l'état de l'écran survit à la rotation
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    // Observer un flux seulement tant que l'écran est visible
+    implementation(libs.androidx.lifecycle.runtime.compose)
     // Coroutines : lancer un travail sans bloquer le thread principal
     implementation(libs.kotlinx.coroutines.android)
     // Aperçus, seulement pour le développement
