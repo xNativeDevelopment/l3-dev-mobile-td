@@ -16,7 +16,7 @@ La solution est sur la branche `td-30-repository-solution`.
 ## Étapes
 
 1. Dans `domain`, écris l'interface `CharacterRepository` : `getCharacters()` rend des `Character.Preview`, `getCharacter(id)` rend un `Character.Details` ou `null`. Les deux fonctions sont `suspend`.
-2. Dans `data`, écris `FakeCharacterRepository`, qui garde les données en mémoire. Chaque fonction attend avec `delay` : l'attente est derrière le repository.
+2. Dans `data`, écris `FakeCharacterRepository`, qui garde les données en mémoire. Chaque fonction attend avec `delay` : `delay(2_000)` pour la liste, `delay(500)` pour le détail ; l'attente est derrière le repository.
 3. Dans `AppModule`, lie `CharacterRepository` à `FakeCharacterRepository` avec `single`. Donne-le à `CharacterListViewModel`, puis retire `Thread.sleep` et `withContext`.
 4. Fais de même pour `CharacterDetailViewModel` : il appelle `getCharacter(id)` dans `viewModelScope`. L'état gagne `isLoading`, le détail montre un indicateur pendant la lecture.
 5. Supprime `CharacterProvider`, `FakeCharacterProvider` et `CharacterCatalog` : plus aucun fichier ne les nomme.
