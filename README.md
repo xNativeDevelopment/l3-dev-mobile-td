@@ -1,7 +1,7 @@
 # TD 28 — Message une seule fois
 
 Slide : S-28 — Émettre un événement ponctuel depuis le ViewModel · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-28-evenement-ponctuel
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
