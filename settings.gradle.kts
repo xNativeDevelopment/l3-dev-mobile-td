@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-18-lego"
+rootProject.name = "td-19-ecran"
 include(":app")
