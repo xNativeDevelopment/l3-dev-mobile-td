@@ -54,6 +54,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 26 | La liste des personnages | [`td-26-liste`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-26-liste) | [`td-26-liste-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-26-liste-solution) |
 | 27 | Le détail pense seul | [`td-27-viewmodel-detail`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-27-viewmodel-detail) | [`td-27-viewmodel-detail-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-27-viewmodel-detail-solution) |
 | 28 | Message une seule fois | [`td-28-evenement-ponctuel`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-28-evenement-ponctuel) | [`td-28-evenement-ponctuel-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-28-evenement-ponctuel-solution) |
+| 29 | Trois modèles | [`td-29-domaine`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-29-domaine) | [`td-29-domaine-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-29-domaine-solution) |
 
 ## Où est la solution
 
