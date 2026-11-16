@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-30-repository"
+rootProject.name = "td-31-service-ktor"
 include(":app")
