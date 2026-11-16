@@ -1,7 +1,7 @@
 # TD 44 — Étendre le Context
 
 Slide : S-44 — Écrire une fonction d'extension sur Context, couronnée d'un en-tête KDoc · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-44-extension-context
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
