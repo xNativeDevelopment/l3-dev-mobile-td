@@ -1,3 +1,4 @@
+// CharacterListScreen.kt
 package com.example.catalogue.ui
 
 import androidx.compose.foundation.clickable

@@ -1,3 +1,4 @@
+// CharacterListViewModel.kt
 package com.example.catalogue.ui
 
 import androidx.lifecycle.ViewModel
