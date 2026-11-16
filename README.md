@@ -70,6 +70,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 42 | Le son du clic | [`td-42-son`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-42-son) | [`td-42-son-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-42-son-solution) |
 | 43 | Où suis-je ? | [`td-43-gps`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-43-gps) | [`td-43-gps-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-43-gps-solution) |
 | 44 | Étendre le Context | [`td-44-extension-context`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-44-extension-context) | [`td-44-extension-context-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-44-extension-context-solution) |
+| 45 | Mon corpus | [`td-45-corpus`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-45-corpus) | [`td-45-corpus-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-45-corpus-solution) |
 
 ## Où est la solution
 
@@ -80,5 +81,5 @@ Avec le dossier distribué, les branches solution sont déjà là : pas de `fetc
 ## Crédits
 
 - TD 03 et TD 04 : le tuteur s'inspire de `socratic-tutor` (Jane Street), sous licence MIT : voir `NOTICE-socratic-tutor.md` sur ces branches.
-- TD 10 à TD 44 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
+- TD 10 à TD 45 : données d'exemple au format de The Rick and Morty API (https://rickandmortyapi.com/).
 - Autres TD : aucun contenu tiers.
