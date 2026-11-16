@@ -9,7 +9,7 @@ Slide : S-36 — Poser un thème clair et sombre · Dépôt : https://github.com
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert, `git switch td-36-theme-clair-sombre`. Crée ta branche de travail : `git switch -c td-36-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert, `git switch td-36-theme-clair-sombre`. Crée ta branche de travail : `git switch -c td-36-mon-travail`. Synchronise Gradle quand Android Studio le propose, puis Run.
 Cette branche reprend l'état final du TD 35 (branche `td-35-dimens-solution`) : le thème n'a qu'un schéma clair, lu dans les couleurs métier de `colors.xml`.
 La solution est sur la branche `td-36-theme-clair-sombre-solution`.
 
