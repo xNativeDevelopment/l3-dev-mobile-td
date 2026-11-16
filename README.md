@@ -1,7 +1,7 @@
 # TD 31 — Le service réseau
 
 Slide : S-31 — Appeler une API par un service Ktor derrière le repository · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-31-service-ktor
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
