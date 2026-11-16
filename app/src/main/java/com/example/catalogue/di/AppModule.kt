@@ -1,18 +1,27 @@
 // AppModule.kt
 package com.example.catalogue.di
 
+import com.example.catalogue.data.ApiCharacterRepository
+import com.example.catalogue.data.CharacterService
 import com.example.catalogue.data.FakeCharacterRepository
 import com.example.catalogue.domain.CharacterRepository
 import com.example.catalogue.navigation.BackStackNavigator
 import com.example.catalogue.navigation.Navigator
 import com.example.catalogue.ui.CharacterDetailViewModel
 import com.example.catalogue.ui.CharacterListViewModel
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.android.Android
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
+    // Un seul client réseau pour toute l'app : Koin le fournit au service.
+    single { HttpClient(Android) }
+    single { CharacterService(get()) }
     // Un seul repository pour toute l'app : les ViewModels le reçoivent.
-    single<CharacterRepository> { FakeCharacterRepository() }
+    single<CharacterRepository> {
+        ApiCharacterRepository(get(), FakeCharacterRepository())
+    }
     single { BackStackNavigator() }
     single<Navigator> { get<BackStackNavigator>() }
     viewModel { CharacterListViewModel(get(), get()) }
