@@ -7,6 +7,8 @@ import com.example.catalogue.data.KtorCharacterService
 import com.example.catalogue.domain.CharacterRepository
 import com.example.catalogue.navigation.BackStackNavigator
 import com.example.catalogue.navigation.Navigator
+import com.example.catalogue.system.AndroidDeviceManager
+import com.example.catalogue.system.DeviceManager
 import com.example.catalogue.ui.CharacterDetailViewModel
 import com.example.catalogue.ui.CharacterListViewModel
 import io.ktor.client.HttpClient
@@ -14,6 +16,7 @@ import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
@@ -32,6 +35,11 @@ val appModule = module {
     single<CharacterService> { KtorCharacterService(get()) }
     // Un seul repository pour toute l'app : les ViewModels le reçoivent.
     single<CharacterRepository> { ApiCharacterRepository(get()) }
+    // Un seul Manager pour toute l'app : Koin lui donne le Context de
+    // l'Application (androidContext), jamais celui d'une Activity.
+    single<DeviceManager> {
+        AndroidDeviceManager(androidContext())
+    }
     single { BackStackNavigator() }
     single<Navigator> { get<BackStackNavigator>() }
     viewModel { CharacterListViewModel(get(), get()) }
