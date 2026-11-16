@@ -10,9 +10,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.example.catalogue.domain.CharacterCatalog
+import com.example.catalogue.navigation.AppNavigation
 import com.example.catalogue.system.Heartbeat
 import com.example.catalogue.system.shareText
-import com.example.catalogue.ui.CharacterListScreen
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.android.ext.android.inject
 
@@ -30,9 +30,9 @@ class MainActivity : ComponentActivity() {
             CatalogueTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     val context = LocalContext.current
-                    CharacterListScreen(
-                        characters = catalog.all(),
-                        onShare = { shareText(context, it.name) },
+                    AppNavigation(
+                        catalog = catalog,
+                        onShare = { shareText(context, it) },
                         modifier = Modifier.padding(innerPadding),
                     )
                 }
