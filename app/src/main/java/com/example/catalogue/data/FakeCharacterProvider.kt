@@ -1,6 +1,5 @@
 package com.example.catalogue.data
 
-import com.example.catalogue.domain.Character
 import com.example.catalogue.domain.CharacterProvider
 
 // Données fictives au format de The Rick and Morty API.

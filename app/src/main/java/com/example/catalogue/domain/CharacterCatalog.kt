@@ -1,8 +1,11 @@
 package com.example.catalogue.domain
 
 class CharacterCatalog(private val provider: CharacterProvider) {
-    fun all(): List<Character> = provider.characters()
+    // La liste n'a besoin que des aperçus.
+    fun all(): List<Character.Preview> =
+        provider.characters().map { it.toPreview() }
 
     // Le détail ne reçoit que l'identifiant : il retrouve le personnage ici.
-    fun byId(id: Int): Character? = all().firstOrNull { it.id == id }
+    fun byId(id: Int): Character.Details? =
+        provider.characters().firstOrNull { it.id == id }
 }
