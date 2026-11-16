@@ -1,43 +1,43 @@
-# TD 23 — Chargement sans gel
+# TD 24 — Screen et ViewModel
 
-Slide : S-23 — Lancer un travail hors du thread principal avec les coroutines · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-23-coroutines
+Slide : S-24 — Brancher un écran sur son ViewModel avec un UiState · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-24-screen-viewmodel
 État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais lancer une coroutine dans `viewModelScope` et envoyer le travail lourd sur `Dispatchers.IO`.
+À la fin, je sais exposer un `StateFlow<UiState>` en lecture seule et l'observer depuis la Screen.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-23-coroutines` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-23-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 22 (branche `td-22-navigator-solution`) et y ajoute un ViewModel minimal, `LoadViewModel`, et un bouton « Charger » sur l'écran de liste. Son chargement simulé dure 2 secondes et bloque le thread principal : appuie sur le bouton, le cercle de chargement se fige et l'écran ne répond plus.
-La solution est sur la branche `td-23-coroutines-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-24-screen-viewmodel` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-24-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 23 (branche `td-23-coroutines-solution`) : l'écran de liste reçoit ses personnages de `AppNavigation`, qui les lit dans le catalogue (données fictives) ; le ViewModel du TD 23 ne sert qu'à un bouton de démonstration.
+La solution est sur la branche `td-24-screen-viewmodel-solution`.
 
 ## Étapes
 
-1. Ajoute la bibliothèque des coroutines dans `gradle/libs.versions.toml` (`kotlinx-coroutines-android`, version 1.11.0, clé `coroutines`), puis dans `app/build.gradle.kts`.
-2. Dans `LoadViewModel`, lance le travail avec `viewModelScope.launch` : la fonction `load()` rend aussitôt la main à l'écran.
-3. Envoie l'attente simulée (`Thread.sleep`) sur `Dispatchers.IO` avec `withContext`, puis remets l'état à jour à la fin.
-4. Ignore un appui sur « Charger » quand un chargement est déjà en cours.
-5. Lance l'app, appuie sur « Charger » : le cercle tourne pendant 2 secondes, puis « Chargé » apparaît. Tourne l'écran en plein chargement : le ViewModel survit à la rotation.
-6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 23"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Ajoute `koin-compose-viewmodel` (clé `koin`) et `lifecycle-runtime-compose` (clé `lifecycle`) au catalogue de versions, puis à `app/build.gradle.kts`.
+2. Écris `CharacterListUiState` : une `data class` avec la liste des personnages et un booléen `isLoading`.
+3. Écris `CharacterListViewModel`, qui reçoit le `CharacterCatalog` par son constructeur. Il garde un `MutableStateFlow` privé et n'expose qu'un `StateFlow` public (`asStateFlow()`). Au démarrage il charge les personnages dans `viewModelScope` et remplace l'état avec `update { it.copy(…) }`.
+4. Déclare-le dans `appModule` avec `viewModel { … }`.
+5. Dans `CharacterListScreen`, obtiens le ViewModel avec `koinViewModel()` et observe son état avec `collectAsStateWithLifecycle()`. Le Content n'affiche que l'état reçu ; `AppNavigation` ne passe plus la liste.
+6. Supprime `LoadViewModel`, puis lance l'app : un cercle, puis la liste.
+7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 24"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-23-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-24-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Pendant le chargement de 2 secondes, le cercle tourne et l'écran reste utilisable.
-- [ ] Le travail bloquant s'exécute sur `Dispatchers.IO`, lancé dans `viewModelScope`.
+- [ ] La Screen observe l'état du ViewModel avec `collectAsStateWithLifecycle` — `CRIT-DMA-D1-SF-3-M4` Screen.kt – ViewModel.kt + UiState.
+- [ ] Le `MutableStateFlow` reste privé et l'état est remplacé avec `copy`, jamais modifié — `CRIT-DMA-D1-SE-3-M6` State bien formé.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Remplace `Thread.sleep` par `delay(2_000)` et compare : que devient le besoin de `Dispatchers.IO` ?
-- Ajoute un bouton « Annuler » qui arrête le chargement en cours.
+- Ajoute un champ `errorMessage: String?` à l'état et affiche-le quand il n'est pas nul.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-23 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-24 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
