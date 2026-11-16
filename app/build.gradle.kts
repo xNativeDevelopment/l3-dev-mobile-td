@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 // ===== Configuration Android =====
@@ -35,6 +36,10 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     // Injection de dépendances
     implementation(libs.koin.android)
+    // Navigation : back stack, affichage de l'écran du sommet, clés sérialisables
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.kotlinx.serialization.json)
     // Aperçus, seulement pour le développement
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)
