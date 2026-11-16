@@ -1,7 +1,7 @@
 # TD 46 — Zéro alerte
 
 Slide : S-46 — Nommer selon les conventions Kotlin et passer le lint · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-46-lint-nommage
-État du build : départ construit · solution construite · lint non exécuté
+État du build : départ construit · solution construite
 
 ## Objectif
 
