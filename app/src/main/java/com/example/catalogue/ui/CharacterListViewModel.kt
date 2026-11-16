@@ -62,7 +62,8 @@ class CharacterListViewModel(
             val characters = withContext(Dispatchers.IO) {
                 // Attente simulée d'un réseau lent, comme au TD 23.
                 Thread.sleep(2_000)
-                catalog.all()
+                // Le ViewModel convertit : l'écran ne voit pas le domaine.
+                catalog.all().map { it.toUiState() }
             }
             // On remplace l'état avec copy : le flux voit un nouvel objet.
             _uiState.update {

@@ -15,7 +15,9 @@ class CharacterDetailViewModel(
     private val navigator: Navigator,
 ) : ViewModel() {
     private val _uiState =
-        MutableStateFlow(CharacterDetailUiState(catalog.byId(id)))
+        MutableStateFlow(
+            CharacterDetailUiState(catalog.byId(id)?.toUiState()),
+        )
     val uiState: StateFlow<CharacterDetailUiState> =
         _uiState.asStateFlow()
 
