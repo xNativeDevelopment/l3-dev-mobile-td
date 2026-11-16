@@ -9,7 +9,7 @@ Slide : S-41 — Demander une permission à l'exécution · Dépôt : https://gi
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert, `git switch td-41-permissions`. Crée ta branche de travail : `git switch -c td-41-mon-travail`. Synchronise Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert, `git switch td-41-permissions`. Ta branche de travail : `git switch -c td-41-mon-travail`. Synchronise Gradle, puis Run.
 Cette branche reprend l'état final du TD 40 (branche `td-40-manager-solution`) : l'écran de la liste a un bouton pour le Manager, mais aucune permission n'est déclarée ni demandée.
 La solution est sur la branche `td-41-permissions-solution`.
 
@@ -20,7 +20,7 @@ La solution est sur la branche `td-41-permissions-solution`.
 3. Dans ce lanceur, dis si la permission est accordée, et si le système accepte encore de la redemander (`shouldShowRequestPermissionRationale`) sur l'Activity, obtenue dans le composable avec `LocalActivity.current`.
 4. Ajoute l'action `OnPermissionAnswered` et un message dans l'état : le ViewModel choisit entre trois messages (accordée, refusée, refusée pour de bon), écrits dans les deux `strings.xml`.
 5. Dans `CharacterListScreen`, ajoute un bouton qui lance la demande, et un texte qui explique avant de demander pourquoi on veut la position.
-6. Lance l'app et essaie les trois réponses : accorder, refuser une fois, refuser encore.
+6. Lance l'app et essaie les trois réponses : accorder, refuser une fois, refuser encore. Pour rejouer, désinstalle l'app ou réinitialise ses autorisations.
 7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 41"`. Sans ce commit, git refuse de passer au TD suivant.
 
 Facultatif, vers ton fork (TD 02) : `git push -u perso td-41-mon-travail`.
@@ -38,7 +38,7 @@ Facultatif, vers ton fork (TD 02) : `git push -u perso td-41-mon-travail`.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-41 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous), puis écris « séance tuteur, slide S-41 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
