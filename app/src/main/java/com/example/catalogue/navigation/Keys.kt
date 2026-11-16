@@ -8,5 +8,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data object ListKey : NavKey
 
+// Seul l'identifiant voyage dans la clé : le détail recharge le reste.
 @Serializable
-data object DetailKey : NavKey
+data class DetailKey(val id: Int) : NavKey
