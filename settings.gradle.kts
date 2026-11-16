@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-40-manager"
+rootProject.name = "td-41-permissions"
 include(":app")
