@@ -1,7 +1,7 @@
 # TD 22 — Mon Navigator
 
 Slide : S-22 — Centraliser la navigation dans un Navigator commenté · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-22-navigator
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
