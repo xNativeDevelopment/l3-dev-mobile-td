@@ -58,21 +58,22 @@ class CharacterListViewModel(
     private fun load() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
-            // La fonction suspend attend sans bloquer : le delay est
-            // dans le repository. Le ViewModel convertit en UiState.
-            val characters = repository.getCharacters().map { it.toUiState() }
-            // On remplace l'état avec copy : le flux voit un nouvel objet.
-            val raw = try {
-                repository.getRawPage()
+            // La fonction suspend attend sans bloquer : l'attente du réseau
+            // est dans le repository. Le ViewModel convertit en UiState.
+            try {
+                val characters =
+                    repository.getCharacters().map { it.toUiState() }
+                // On remplace l'état avec copy : le flux voit un nouvel objet.
+                _uiState.update {
+                    it.copy(characters = characters, isLoading = false)
+                }
             } catch (e: IOException) {
-                "Réseau indisponible : vérifie la connexion."
-            }
-            _uiState.update {
-                it.copy(
-                    characters = characters,
-                    isLoading = false,
-                    rawResponse = raw,
-                )
+                _uiState.update {
+                    it.copy(
+                        isLoading = false,
+                        errorMessage = "Réseau indisponible : vérifie la connexion.",
+                    )
+                }
             }
         }
     }
