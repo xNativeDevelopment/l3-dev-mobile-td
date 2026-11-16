@@ -26,14 +26,18 @@ class CharacterDetailViewModel(
     init {
         // Le repository est suspend : on l'attend sans bloquer le thread principal.
         viewModelScope.launch {
-            // Sans réseau, l'écran montre « Personnage introuvable ».
-            val character = try {
-                repository.getCharacter(id)?.toUiState()
+            try {
+                val character = repository.getCharacter(id)?.toUiState()
+                _uiState.update {
+                    it.copy(character = character, isLoading = false)
+                }
             } catch (e: IOException) {
-                null
-            }
-            _uiState.update {
-                it.copy(character = character, isLoading = false)
+                _uiState.update {
+                    it.copy(
+                        isLoading = false,
+                        networkError = "Réseau indisponible : vérifie la connexion.",
+                    )
+                }
             }
         }
     }
