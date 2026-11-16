@@ -2,6 +2,9 @@
     <string name="app_name">Catalogue</string>
     <string name="list_filter_label">Filtrer par nom</string>
     <string name="list_reload">Recharger</string>
+    <string name="list_manager">Tester le Manager</string>
+    <string name="manager_ready">Le Manager répond.</string>
+    <string name="manager_not_ready">Le Manager n\'est pas prêt.</string>
     <string name="card_share">Partager</string>
     <string name="detail_not_found">Personnage introuvable</string>
     <string name="detail_back">Retour</string>

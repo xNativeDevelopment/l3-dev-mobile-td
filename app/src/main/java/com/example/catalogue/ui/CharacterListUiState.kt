@@ -9,6 +9,7 @@ data class CharacterListUiState(
     val filter: String = "",
     val isLoading: Boolean = false,
     @StringRes val errorMessage: Int? = null,
+    @StringRes val managerMessage: Int? = null,
 ) {
     // Dérivée de l'état : le ViewModel ne la stocke pas.
     val visibleCharacters: List<CharacterUiState>

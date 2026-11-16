@@ -42,7 +42,7 @@ val appModule = module {
     }
     single { BackStackNavigator() }
     single<Navigator> { get<BackStackNavigator>() }
-    viewModel { CharacterListViewModel(get(), get()) }
+    viewModel { CharacterListViewModel(get(), get(), get()) }
     // L'identifiant du personnage arrive par les paramètres de koinViewModel.
     viewModel { params ->
         CharacterDetailViewModel(params.get(), get(), get())
