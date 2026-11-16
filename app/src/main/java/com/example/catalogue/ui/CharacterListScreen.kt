@@ -2,8 +2,11 @@ package com.example.catalogue.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -44,6 +47,14 @@ private fun CharacterListContent(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier.padding(16.dp)) {
+        // Le champ est affiché mais rien n'est branché : le texte tapé
+        // est ignoré et la liste ne change pas.
+        OutlinedTextField(
+            value = "",
+            onValueChange = {},
+            label = { Text("Filtrer par nom") },
+            modifier = Modifier.fillMaxWidth(),
+        )
         if (uiState.isLoading) {
             CircularProgressIndicator()
         }
