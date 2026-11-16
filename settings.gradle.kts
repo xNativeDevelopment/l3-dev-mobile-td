@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-28-evenement-ponctuel"
+rootProject.name = "td-29-domaine"
 include(":app")
