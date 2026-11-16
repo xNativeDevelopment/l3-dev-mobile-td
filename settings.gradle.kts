@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-24-screen-viewmodel"
+rootProject.name = "td-25-ui-action"
 include(":app")
