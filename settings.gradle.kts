@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-19-ecran"
+rootProject.name = "td-20-navigation-3"
 include(":app")
