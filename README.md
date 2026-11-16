@@ -20,7 +20,7 @@ La solution est sur la branche `td-37-textes-langue-solution`.
 3. Dans `ui/`, remplace chaque texte par `stringResource(R.string.…)`.
 4. Dans les ViewModels, l'état porte un `@StringRes Int` (`errorMessage`, `networkError`) que l'écran résout. Dans `Share.kt`, utilise `context.getString`.
 5. Laisse les noms de personnages, `Alive` et les aperçus : ce sont des données d'exemple.
-6. Passe l'émulateur en anglais (Réglages > Système > Langues) et vérifie qu'aucun texte ne reste en français.
+6. Passe l'émulateur en anglais (Paramètres > Système > Langues) et vérifie qu'aucun texte ne reste en français.
 7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 37"`. Sans ce commit, git refuse de passer au TD suivant.
 
 Facultatif, vers ton fork (TD 02) : `git push -u perso td-37-mon-travail`.
