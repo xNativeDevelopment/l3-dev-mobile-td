@@ -7,6 +7,7 @@ import com.example.catalogue.R
 import com.example.catalogue.domain.CharacterRepository
 import com.example.catalogue.navigation.Navigator
 import com.example.catalogue.system.DeviceManager
+import com.example.catalogue.system.LocationManager
 import com.example.catalogue.system.SoundManager
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,6 +25,7 @@ class CharacterListViewModel(
     private val navigator: Navigator,
     private val deviceManager: DeviceManager,
     private val soundManager: SoundManager,
+    private val locationManager: LocationManager,
 ) : ViewModel() {
     private val _uiState =
         MutableStateFlow(CharacterListUiState())
@@ -51,6 +53,7 @@ class CharacterListViewModel(
             CharacterListUiAction.OnErrorShown ->
                 _uiState.update { it.copy(errorMessage = null) }
             CharacterListUiAction.OnManagerClicked -> checkManager()
+            CharacterListUiAction.OnLocateClicked -> locate()
             is CharacterListUiAction.OnPermissionAnswered ->
                 _uiState.update {
                     it.copy(permissionMessage = permissionMessage(action))
@@ -66,6 +69,24 @@ class CharacterListViewModel(
         answer.granted -> R.string.permission_granted
         answer.canAskAgain -> R.string.permission_denied
         else -> R.string.permission_denied_for_good
+    }
+
+    // La fonction suspend attend la position sans bloquer l'écran ; null
+    // veut dire permission manquante ou position inconnue.
+    private fun locate() {
+        viewModelScope.launch {
+            val position = locationManager.currentPosition()
+            _uiState.update {
+                it.copy(
+                    position = position,
+                    locationMessage = if (position == null) {
+                        R.string.location_unavailable
+                    } else {
+                        null
+                    },
+                )
+            }
+        }
     }
 
     // L'écran ne sait pas comment le matériel répond : il lit le message.

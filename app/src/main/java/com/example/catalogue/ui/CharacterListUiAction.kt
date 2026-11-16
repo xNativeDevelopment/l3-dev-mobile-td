@@ -26,6 +26,9 @@ sealed interface CharacterListUiAction {
         val canAskAgain: Boolean,
     ) : CharacterListUiAction
 
+    // Le bouton « Où suis-je ? » : la position se lit dans le Manager.
+    data object OnLocateClicked : CharacterListUiAction
+
     // L'écran a montré le message : il peut sortir de l'état.
     data object OnErrorShown : CharacterListUiAction
 }

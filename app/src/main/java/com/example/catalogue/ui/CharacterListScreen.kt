@@ -110,6 +110,20 @@ private fun CharacterListContent(
                 onClick = onLocationClick,
             )
             uiState.permissionMessage?.let { Text(stringResource(it)) }
+            AppButton(
+                text = stringResource(R.string.list_locate),
+                onClick = { onAction(CharacterListUiAction.OnLocateClicked) },
+            )
+            uiState.position?.let {
+                Text(
+                    stringResource(
+                        R.string.location_position,
+                        it.latitude,
+                        it.longitude,
+                    ),
+                )
+            }
+            uiState.locationMessage?.let { Text(stringResource(it)) }
             if (uiState.isLoading) {
                 CircularProgressIndicator()
             }
