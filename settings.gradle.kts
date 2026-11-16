@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-33-mock"
+rootProject.name = "td-34-couleurs"
 include(":app")
