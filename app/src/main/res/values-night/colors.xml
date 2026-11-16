@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Niveau 2 en mode sombre : les mêmes noms métier, sur d'autres teintes de la palette. -->
+    <color name="brand_primary">@color/palette_green_200</color>
+    <color name="brand_secondary">@color/palette_grey_300</color>
+    <color name="brand_tertiary">@color/palette_orange_200</color>
+    <color name="brand_container">@color/palette_green_900</color>
+    <color name="on_brand">@color/palette_grey_900</color>
+    <color name="alert">@color/palette_red_200</color>
+</resources>
