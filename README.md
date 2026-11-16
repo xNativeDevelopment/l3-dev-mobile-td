@@ -17,7 +17,7 @@ La solution est sur la branche `td-41-permissions-solution`.
 
 1. Dans `AndroidManifest.xml`, déclare `android.permission.ACCESS_COARSE_LOCATION`, avec un commentaire : la position approximative suffit, pas la précision GPS.
 2. Dans `ui/`, crée `LocationPermission.kt` : une fonction composable qui obtient un lanceur avec `rememberLauncherForActivityResult` et le contrat `RequestPermission`, et rend une fonction qui le lance.
-3. Dans ce lanceur, dis si la permission est accordée, et si le système accepte encore de la redemander (`shouldShowRequestPermissionRationale`).
+3. Dans ce lanceur, dis si la permission est accordée, et si le système accepte encore de la redemander (`shouldShowRequestPermissionRationale`) sur l'Activity, obtenue dans le composable avec `LocalActivity.current`.
 4. Ajoute l'action `OnPermissionAnswered` et un message dans l'état : le ViewModel choisit entre trois messages (accordée, refusée, refusée pour de bon), écrits dans les deux `strings.xml`.
 5. Dans `CharacterListScreen`, ajoute un bouton qui lance la demande, et un texte qui explique avant de demander pourquoi on veut la position.
 6. Lance l'app et essaie les trois réponses : accorder, refuser une fois, refuser encore.
