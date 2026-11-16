@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-34-couleurs"
+rootProject.name = "td-35-dimens"
 include(":app")
