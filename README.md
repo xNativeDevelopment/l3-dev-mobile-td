@@ -1,43 +1,44 @@
-# TD 30 — Mon repository
+# TD 31 — Le service réseau
 
-Slide : S-30 — Construire un repository et l'injecter dans le ViewModel · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-30-repository
-État du build : départ construit · solution construite
+Slide : S-31 — Appeler une API par un service Ktor derrière le repository · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-31-service-ktor
+État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais écrire un repository derrière une interface, fourni par Koin, qui rend des modèles de domaine.
+À la fin, je sais déclarer un `HttpClient` Ktor dans un service de la couche données et l'appeler depuis le repository.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-30-repository` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-30-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 29 (branche `td-29-domaine-solution`) : les ViewModels lisent des listes fictives par `CharacterCatalog` et `CharacterProvider`, et la liste se charge avec un `Thread.sleep` qui bloque un thread.
-La solution est sur la branche `td-30-repository-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-31-service-ktor` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-31-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 30 (branche `td-30-repository-solution`) : le repository lit des données en mémoire, rien ne sort de l'appareil.
+La solution est sur la branche `td-31-service-ktor-solution`.
 
 ## Étapes
 
-1. Dans `domain`, écris l'interface `CharacterRepository` : `getCharacters()` rend des `Character.Preview`, `getCharacter(id)` rend un `Character.Details` ou `null`. Les deux fonctions sont `suspend`.
-2. Dans `data`, écris `FakeCharacterRepository`, qui garde les données en mémoire. Chaque fonction attend avec `delay` : l'attente est derrière le repository.
-3. Dans `AppModule`, lie `CharacterRepository` à `FakeCharacterRepository` avec `single`. Donne-le à `CharacterListViewModel`, puis retire `Thread.sleep` et `withContext`.
-4. Fais de même pour `CharacterDetailViewModel` : il appelle `getCharacter(id)` dans `viewModelScope`. L'état gagne `isLoading`, le détail montre un indicateur pendant la lecture.
-5. Supprime `CharacterProvider`, `FakeCharacterProvider` et `CharacterCatalog` : plus aucun fichier ne les nomme.
-6. Lance l'app : la liste s'affiche après deux secondes sans figer l'écran.
-7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 30"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Dans `gradle/libs.versions.toml`, déclare la version `ktor = "3.6.0"` et les bibliothèques `ktor-client-core` et `ktor-client-android` ; ajoute-les dans `app/build.gradle.kts`.
+2. Dans `AndroidManifest.xml`, ajoute la permission `INTERNET` : sans elle, toute requête échoue.
+3. Dans `data`, écris `CharacterService` : une fonction `suspend` par endpoint, `fetchPage(page)` pour `/api/character?page=N` et `fetchCharacter(id)` pour `/api/character/{id}`. Chacune rend la réponse brute avec `bodyAsText()`.
+4. Dans `AppModule`, fournis `HttpClient(Android)` et `CharacterService` avec `single`.
+5. Ajoute `getRawPage()` et `getRawCharacter(id)` à `CharacterRepository`. Écris `ApiCharacterRepository`, qui appelle le service et garde la liste en mémoire pour le reste ; lie-le dans `AppModule`.
+6. Les ViewModels lisent ces textes, l'état les garde et les écrans les affichent. Ils ne connaissent jamais le service.
+7. Lance l'app sur un émulateur : le texte JSON s'affiche. Coupe le réseau : un message remplace le texte.
+8. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 31"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-30-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-31-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Les ViewModels dépendent de `CharacterRepository`, jamais de `FakeCharacterRepository` — `CRIT-DMA-D1-SF-2-M3` accès aux données dans sa couche.
-- [ ] Aucun écran n'appelle le repository : seuls les ViewModels le font.
+- [ ] Seul `CharacterService` connaît Ktor ; les ViewModels passent par `CharacterRepository` — `CRIT-DMA-D1-SF-2-M3` accès aux données dans sa couche.
+- [ ] La permission `INTERNET` est dans le Manifest et le client vient de Koin.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajoute à l'interface une fonction qui rend les personnages dont le nom contient un texte.
+- Ajoute un paramètre de page à `getRawPage` et lis la page 2.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-30 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-31 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
