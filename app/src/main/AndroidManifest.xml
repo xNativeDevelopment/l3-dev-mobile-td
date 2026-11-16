@@ -4,6 +4,11 @@
     <!-- Sans cette permission, toute requête réseau échoue. -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Position approximative : un quartier suffit à l'app, pas la
+         précision GPS. La déclarer ne suffit pas : on la demande aussi
+         à l'exécution. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <!-- Identité de l'app : nom, icônes, thème.
          Android lit ce fichier, puis crée l'Application nommée ici. -->
     <application
