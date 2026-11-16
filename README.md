@@ -1,43 +1,43 @@
-# TD 45 — Mon corpus
+# TD 47 — Mon README
 
-Slide : S-45 — Tenir son corpus personnel et répliquer un squelette · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-45-corpus
+Slide : S-47 — Rédiger le README qui présente l'architecture · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-47-readme
 État du build : départ à vérifier · solution à vérifier
 
 ## Objectif
 
-À la fin, je sais garder une fiche par sous-sujet du deck et en tirer un squelette d'écran que je réplique.
+À la fin, je sais écrire un README qui montre la structure du projet et le rôle de chaque couche.
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-45-corpus` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-45-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 44 (branche `td-44-extension-context-solution`) et ajoute un dossier `corpus/` avec une fiche modèle vide.
-La solution est sur la branche `td-45-corpus-solution`.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-47-readme` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-47-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
+Cette branche reprend l'état final du TD 45 (branche `td-45-corpus-solution`) : le projet fil rouge et ton `corpus/`, sans README d'architecture.
+La solution est sur la branche `td-47-readme-solution`.
+Dans ton propre projet, le texte que tu écris ici est le `README.md` de la racine ; ici il vit dans `docs/README.md`, car ce `README.md`-ci est l'énoncé du TD.
 
 ## Étapes
 
-1. Ouvre `corpus/FICHE-MODELE.md` : trois rubriques, ce que j'ai fait, ce que j'ai compris, le piège rencontré.
-2. Copie-la en `corpus/koin.md` et remplis-la avec tes mots pour le TD 13. Ne recopie pas la slide : reformule.
-3. Fais de même pour quatre autres sous-sujets de ton choix : cinq fiches en tout, une par sous-sujet.
-4. Prends l'écran de détail comme squelette : `Screen`, `ViewModel`, `UiState` et `UiAction` dans `ui/`. Réplique-le pour un écran « À propos » (`AboutScreen`, `AboutViewModel`, `AboutUiState`, `AboutUiAction`).
-5. Branche l'écran : une clé dans `navigation/`, son entrée dans `AppNavigation`, son `viewModel` dans `di/AppModule.kt`, ses textes en français et en anglais, un bouton dans la liste.
-6. Lance l'app : ouvre l'écran, puis reviens à la liste.
-7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 45"`. Sans ce commit, git refuse de passer au TD suivant.
+1. Crée `docs/README.md`. Commence par le but de l'app, en deux ou trois phrases.
+2. Écris l'arborescence par couche : `data`, `di`, `domain`, `navigation`, `system`, `ui`. Pour chaque dossier, une ligne qui dit son rôle.
+3. Décris le flux d'un geste : Screen, puis ViewModel, puis repository, puis service. Un petit schéma en texte suffit.
+4. Liste les choix techniques (Koin, Navigation 3, Ktor, Compose) avec, pour chacun, la raison.
+5. Relis : chaque fichier ou dossier cité doit dire pourquoi il est là, pas seulement qu'il existe.
+6. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 47"`. Sans ce commit, git refuse de passer au TD suivant.
 
-Facultatif, vers ton fork (TD 02) : `git push -u perso td-45-mon-travail`.
+Facultatif, vers ton fork (TD 02) : `git push -u perso td-47-mon-travail`.
 
 ## Critères de réussite
 
-- [ ] Cinq fiches existent dans `corpus/`, chacune avec ses trois rubriques et écrite avec tes mots.
-- [ ] Le nouvel écran suit le squelette : une `Screen` publique, un `Content` privé, un `ViewModel` qui écrit l'état.
+- [ ] `docs/README.md` présente le but de l'app, l'arborescence par couche, le flux et les choix techniques — `CRIT-DMA-D1-SE-2-M1` README qui explique l'architecture
+- [ ] Chaque choix technique a sa raison, chaque couche son rôle.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
 
-- Ajoute une sixième fiche pour le sous-sujet où tu as perdu le plus de temps.
+- Ajoute une section « Ce que je ferais ensuite » de trois lignes.
 
 ## Avec le tuteur
 
-Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-45 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
+Facultatif. Colle le contenu de `SKILL.md` (lien ci-dessous) au début d'une conversation avec ton assistant, puis écris « séance tuteur, slide S-47 » ; reprends ton état avec `resume from:` et ton `TUTOR-STATE.md`.
 Le tuteur : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-04-tuteur-android/tuteur-android
 Sans tuteur : la routine en quatre temps et l'invite courte du TD 03.
 
