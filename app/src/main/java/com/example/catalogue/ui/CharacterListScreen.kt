@@ -4,6 +4,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -54,14 +56,21 @@ private fun CharacterListContent(
         if (uiState.isLoading) {
             CircularProgressIndicator()
         }
-        uiState.visibleCharacters.forEach { character ->
-            CharacterCard(
-                character,
-                Modifier.clickable {
-                    onAction(CharacterListUiAction.OnCharacterClicked(character.id))
-                },
-                onShare = { onShare(character) },
-            )
+        // LazyColumn ne compose que les cartes visibles ; la clé garde
+        // l'identité d'une carte quand le filtre change sa position.
+        LazyColumn {
+            items(
+                items = uiState.visibleCharacters,
+                key = { it.id },
+            ) { character ->
+                CharacterCard(
+                    character,
+                    Modifier.clickable {
+                        onAction(CharacterListUiAction.OnCharacterClicked(character.id))
+                    },
+                    onShare = { onShare(character) },
+                )
+            }
         }
     }
 }
