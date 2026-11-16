@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-20-navigation-3"
+rootProject.name = "td-21-argument-type"
 include(":app")
