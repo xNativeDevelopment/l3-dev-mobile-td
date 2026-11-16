@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-42-son"
+rootProject.name = "td-43-gps"
 include(":app")
