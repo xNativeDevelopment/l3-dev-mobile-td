@@ -8,9 +8,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.catalogue.R
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
@@ -43,7 +44,7 @@ private fun CharacterDetailContent(
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Column(modifier.padding(16.dp)) {
+    Column(modifier.padding(dimensionResource(R.dimen.screen_padding))) {
         if (isLoading) {
             CircularProgressIndicator()
         } else if (networkError != null) {

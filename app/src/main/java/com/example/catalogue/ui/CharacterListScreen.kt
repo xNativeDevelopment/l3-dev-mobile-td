@@ -21,9 +21,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.catalogue.R
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -64,7 +65,7 @@ private fun CharacterListContent(
         }
     }
     Box(modifier) {
-        Column(Modifier.padding(16.dp)) {
+        Column(Modifier.padding(dimensionResource(R.dimen.screen_padding))) {
             OutlinedTextField(
                 value = uiState.filter,
                 onValueChange = { onAction(CharacterListUiAction.OnFilterChanged(it)) },
@@ -80,7 +81,7 @@ private fun CharacterListContent(
             // LazyColumn ne compose que les cartes visibles ; la clé garde
             // l'identité d'une carte quand le filtre change sa position.
             LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.list_item_spacing)),
             ) {
                 items(
                     items = uiState.visibleCharacters,
