@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-29-domaine"
+rootProject.name = "td-30-repository"
 include(":app")
