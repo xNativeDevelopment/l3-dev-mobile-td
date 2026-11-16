@@ -59,6 +59,7 @@ Android Studio propose alors de synchroniser le projet Gradle : accepter, attend
 | 31 | Le service réseau | [`td-31-service-ktor`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-31-service-ktor) | [`td-31-service-ktor-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-31-service-ktor-solution) |
 | 32 | Du JSON au domaine | [`td-32-json-dto`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-32-json-dto) | [`td-32-json-dto-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-32-json-dto-solution) |
 | 33 | Le mock de secours | [`td-33-mock`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-33-mock) | [`td-33-mock-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-33-mock-solution) |
+| 34 | Des couleurs rangées | [`td-34-couleurs`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-34-couleurs) | [`td-34-couleurs-solution`](https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-34-couleurs-solution) |
 
 ## Où est la solution
 
