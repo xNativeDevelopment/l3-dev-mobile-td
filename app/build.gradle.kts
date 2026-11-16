@@ -56,6 +56,8 @@ dependencies {
     // Décoder le JSON reçu : le plugin Ktor et son format kotlinx
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
+    // Position : le client « fused » de Google Play services
+    implementation(libs.play.services.location)
     // Aperçus, seulement pour le développement
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)
