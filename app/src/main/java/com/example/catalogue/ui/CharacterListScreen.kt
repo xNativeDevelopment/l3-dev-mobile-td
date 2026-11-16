@@ -14,16 +14,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.catalogue.domain.Character
-import com.example.catalogue.navigation.Navigator
 import com.example.catalogue.ui.theme.CatalogueTheme
 import org.koin.compose.viewmodel.koinViewModel
 
-// La Screen est la seule fonction publique : elle obtient son ViewModel
-// et observe son état. Elle dit où aller au Navigator, sans savoir
-// comment on y va.
+// La Screen est la seule fonction publique : elle obtient son ViewModel,
+// observe son état et lui renvoie les actions. Elle ne connaît plus
+// le Navigator : c'est le ViewModel qui décide où aller.
 @Composable
 fun CharacterListScreen(
-    navigator: Navigator,
     onShare: (Character) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: CharacterListViewModel = koinViewModel(),
@@ -32,36 +30,36 @@ fun CharacterListScreen(
         .collectAsStateWithLifecycle()
     CharacterListContent(
         uiState = uiState,
-        onOpenDetail = navigator::goToDetail,
+        onAction = viewModel::onAction,
         onShare = onShare,
         modifier = modifier,
     )
 }
 
-// Le Content ne fait qu'afficher l'état reçu : aucune logique métier.
+// Le Content ne fait qu'afficher l'état reçu et remonter des actions.
 @Composable
 private fun CharacterListContent(
     uiState: CharacterListUiState,
-    onOpenDetail: (Int) -> Unit,
+    onAction: (CharacterListUiAction) -> Unit,
     onShare: (Character) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier.padding(16.dp)) {
-        // Le champ est affiché mais rien n'est branché : le texte tapé
-        // est ignoré et la liste ne change pas.
         OutlinedTextField(
-            value = "",
-            onValueChange = {},
+            value = uiState.filter,
+            onValueChange = { onAction(CharacterListUiAction.OnFilterChanged(it)) },
             label = { Text("Filtrer par nom") },
             modifier = Modifier.fillMaxWidth(),
         )
         if (uiState.isLoading) {
             CircularProgressIndicator()
         }
-        uiState.characters.forEach { character ->
+        uiState.visibleCharacters.forEach { character ->
             CharacterCard(
                 character,
-                Modifier.clickable { onOpenDetail(character.id) },
+                Modifier.clickable {
+                    onAction(CharacterListUiAction.OnCharacterClicked(character.id))
+                },
                 onShare = { onShare(character) },
             )
         }
@@ -80,7 +78,7 @@ private fun CharacterListPreview() {
                     Character(2, "Morty Smith", "Alive", "Human"),
                 ),
             ),
-            onOpenDetail = {},
+            onAction = {},
             onShare = {},
         )
     }

@@ -23,7 +23,6 @@ fun AppNavigation(
         entryProvider = entryProvider {
             entry<ListKey> {
                 CharacterListScreen(
-                    navigator = navigator,
                     onShare = { onShare(it.name) },
                 )
             }
