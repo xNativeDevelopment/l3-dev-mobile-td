@@ -10,16 +10,16 @@ Slide : S-32 — Décoder la réponse JSON en DTO et la convertir en domaine · 
 ## Point de départ
 
 Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert dans Android Studio, `git switch td-32-json-dto` (pas de nouveau clone). Crée ta branche de travail : `git switch -c td-32-mon-travail`. Synchroniser Gradle quand Android Studio le propose, puis Run.
-Cette branche reprend l'état final du TD 31 (branche `td-31-service-ktor-solution`) : le service rend le texte brut de l'API et les écrans l'affichent tel quel.
+Cette branche reprend l'état final du TD 31 (`td-31-service-ktor-solution`) : les écrans affichent le JSON brut.
 La solution est sur la branche `td-32-json-dto-solution`.
 
 ## Étapes
 
-1. Vérifie que le plugin `kotlin-serialization` et `kotlinx-serialization-json` sont déjà dans le catalogue. Ajoute `ktor-client-content-negotiation` et `ktor-serialization-kotlinx-json` (version `ktor`), puis dans `app/build.gradle.kts`.
+1. Vérifie que le plugin `kotlin-serialization` et `kotlinx-serialization-json` sont déjà dans le catalogue. Ajoute `io.ktor:ktor-client-content-negotiation` et `io.ktor:ktor-serialization-kotlinx-json` (version `ktor`), puis dans `app/build.gradle.kts`.
 2. Dans `data`, marque `CharacterDto` avec `@Serializable`. Écris `CharactersPageDto` : `info` (`count`, `pages`, `next` et `prev` nullables) et `results`. Garde `toDomain()`.
-3. Dans `AppModule`, configure `HttpClient(Android)` : `install(ContentNegotiation)` avec `json(Json { ignoreUnknownKeys = true })`, et `expectSuccess = true`.
+3. Dans `AppModule`, configure `HttpClient(Android)` : `install(ContentNegotiation)` avec `json(Json { ignoreUnknownKeys = true })` (import `io.ktor.serialization.kotlinx.json.json`), et `expectSuccess = true`.
 4. `CharacterService` rend maintenant des DTO avec `body()`, plus du texte.
-5. Remplace le texte brut dans le repository : retire `getRawPage` et `getRawCharacter`, supprime `FakeCharacterRepository`. `ApiCharacterRepository` appelle le service puis `toDomain()` ; un personnage inconnu (erreur 404, `catch (e: ClientRequestException)`) donne `null`.
+5. Dans le repository, retire `getRawPage` et `getRawCharacter`, supprime `FakeCharacterRepository`. `ApiCharacterRepository` appelle le service puis `toDomain()` ; un personnage inconnu (erreur 404, `catch (e: ClientRequestException)`, import `io.ktor.client.plugins.ClientRequestException`) donne `null`.
 6. Dans les ViewModels et les écrans, retire le texte brut et affiche un message si le réseau manque. Lance l'app : les vrais personnages s'affichent.
 7. Garde ton travail : `git add -A`, puis `git commit -m "feat: finish TD 32"`. Sans ce commit, git refuse de passer au TD suivant.
 
@@ -29,6 +29,7 @@ Facultatif, vers ton fork (TD 02) : `git push -u perso td-32-mon-travail`.
 
 - [ ] Aucune classe de DTO n'apparaît hors du paquet `data` — `CRIT-DMA-D1-SF-2-M3` accès aux données dans sa couche.
 - [ ] Un champ inconnu dans le JSON ne fait pas planter le décodage.
+- [ ] Réseau coupé, la liste et le détail affichent un message.
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
