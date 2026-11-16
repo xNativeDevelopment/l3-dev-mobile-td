@@ -13,6 +13,8 @@ sealed interface CharacterListUiAction {
 
     data object OnReloadClicked : CharacterListUiAction
 
+    data object OnManagerClicked : CharacterListUiAction
+
     // L'écran a montré le message : il peut sortir de l'état.
     data object OnErrorShown : CharacterListUiAction
 }

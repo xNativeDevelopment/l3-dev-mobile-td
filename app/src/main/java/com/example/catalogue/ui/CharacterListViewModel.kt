@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.catalogue.R
 import com.example.catalogue.domain.CharacterRepository
 import com.example.catalogue.navigation.Navigator
+import com.example.catalogue.system.DeviceManager
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,9 +17,11 @@ import java.io.IOException
 
 // Le ViewModel écrit l'état ; l'écran ne peut que le lire.
 // Il reçoit le Navigator par son constructeur : l'écran n'y touche plus.
+// Le DeviceManager arrive de la même façon : c'est lui qui parle au matériel.
 class CharacterListViewModel(
     private val repository: CharacterRepository,
     private val navigator: Navigator,
+    private val deviceManager: DeviceManager,
 ) : ViewModel() {
     private val _uiState =
         MutableStateFlow(CharacterListUiState())
@@ -39,7 +42,18 @@ class CharacterListViewModel(
             CharacterListUiAction.OnReloadClicked -> reload()
             CharacterListUiAction.OnErrorShown ->
                 _uiState.update { it.copy(errorMessage = null) }
+            CharacterListUiAction.OnManagerClicked -> checkManager()
         }
+    }
+
+    // L'écran ne sait pas comment le matériel répond : il lit le message.
+    private fun checkManager() {
+        val message = if (deviceManager.isReady()) {
+            R.string.manager_ready
+        } else {
+            R.string.manager_not_ready
+        }
+        _uiState.update { it.copy(managerMessage = message) }
     }
 
     // Échec simulé : le rechargement échoue toujours après une seconde.
