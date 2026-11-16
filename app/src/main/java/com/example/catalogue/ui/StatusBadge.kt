@@ -7,7 +7,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.catalogue.ui.theme.CatalogueTheme
@@ -15,9 +14,10 @@ import com.example.catalogue.ui.theme.CatalogueTheme
 // Brique 2 : le badge de statut, vert si le personnage est vivant.
 @Composable
 fun StatusBadge(status: String, modifier: Modifier = Modifier) {
+    val alive = status == "Alive"
     Surface(
         modifier,
-        color = if (status == "Alive") {
+        color = if (alive) {
             MaterialTheme.colorScheme.primary
         } else {
             MaterialTheme.colorScheme.error
@@ -27,7 +27,11 @@ fun StatusBadge(status: String, modifier: Modifier = Modifier) {
         Text(
             status,
             Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
-            color = Color.White,
+            color = if (alive) {
+                MaterialTheme.colorScheme.onPrimary
+            } else {
+                MaterialTheme.colorScheme.onError
+            },
         )
     }
 }
