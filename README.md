@@ -9,7 +9,7 @@ Slide : S-44 — Écrire une fonction d'extension sur Context, couronnée d'un e
 
 ## Point de départ
 
-Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert, `git switch td-44-extension-context`. Crée ta branche de travail : `git switch -c td-44-mon-travail`. Synchronise Gradle, puis Run.
+Cloner une fois, changer de branche : dans le dossier `l3-dev-mobile-td` déjà ouvert, `git switch td-44-extension-context`. Ta branche de travail : `git switch -c td-44-mon-travail`. Synchronise Gradle, puis Run.
 Cette branche reprend l'état final du TD 43 (branche `td-43-gps-solution`) : le `FusedLocationManager` y teste la permission lui-même, dans une fonction privée.
 La solution est sur la branche `td-44-extension-context-solution`.
 
@@ -29,7 +29,7 @@ Facultatif, vers ton fork (TD 02) : `git push -u perso td-44-mon-travail`.
 - [ ] `Context.hasPermission` existe et sert au Manager — `CRIT-DMA-D1-SF-4-M3` extension sur le Context
 - [ ] Son en-tête KDoc porte `@param`, `@return` et `@see` — `CRIT-DMA-D1-SE-4-M4` extension du Context avec en-tête KDoc
 - [ ] L'extension est écrite sur `Context` — `CRIT-DMA-D1-SF-1-M6` extension sur ViewModel, Context ou Intent
-- [ ] Le Manager n'a plus sa propre vérification de permission — `CRIT-DMA-D1-SE-1-M5` fonction d'extension avec en-tête KDoc
+- [ ] Le Manager vérifie la permission par l'extension documentée en KDoc — `CRIT-DMA-D1-SE-1-M5` fonction d'extension avec en-tête KDoc
 - [ ] Le projet se construit (Build > Make Project) sans erreur.
 
 ## Pour aller plus loin
