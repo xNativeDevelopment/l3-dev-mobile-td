@@ -5,6 +5,11 @@
     <string name="list_manager">Test the Manager</string>
     <string name="manager_ready">The Manager answers.</string>
     <string name="manager_not_ready">The Manager is not ready.</string>
+    <string name="location_why">The approximate location places the app near you: GPS precision is not requested.</string>
+    <string name="list_location">Allow location</string>
+    <string name="permission_granted">Approximate location allowed.</string>
+    <string name="permission_denied">Denied: tap the button to try again.</string>
+    <string name="permission_denied_for_good">Denied for good: allow the location in the app settings.</string>
     <string name="card_share">Share</string>
     <string name="detail_not_found">Character not found</string>
     <string name="detail_back">Back</string>

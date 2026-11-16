@@ -43,7 +43,21 @@ class CharacterListViewModel(
             CharacterListUiAction.OnErrorShown ->
                 _uiState.update { it.copy(errorMessage = null) }
             CharacterListUiAction.OnManagerClicked -> checkManager()
+            is CharacterListUiAction.OnPermissionAnswered ->
+                _uiState.update {
+                    it.copy(permissionMessage = permissionMessage(action))
+                }
         }
+    }
+
+    // Trois réponses, trois messages : accordée, refusée (on peut
+    // redemander) et refusée pour de bon (il reste les réglages).
+    private fun permissionMessage(
+        answer: CharacterListUiAction.OnPermissionAnswered,
+    ): Int = when {
+        answer.granted -> R.string.permission_granted
+        answer.canAskAgain -> R.string.permission_denied
+        else -> R.string.permission_denied_for_good
     }
 
     // L'écran ne sait pas comment le matériel répond : il lit le message.
