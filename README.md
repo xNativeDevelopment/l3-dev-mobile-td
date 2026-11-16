@@ -1,7 +1,7 @@
 # TD 37 — Deux langues
 
 Slide : S-37 — Externaliser ses textes et ajouter une variante de langue · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-37-textes-langue
-État du build : à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
