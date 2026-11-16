@@ -1,7 +1,7 @@
 # TD 33 — Le mock de secours
 
 Slide : S-33 — Remplacer le service par un mock quand l'API manque · Dépôt : https://github.com/xNativeDevelopment/l3-dev-mobile-td/tree/td-33-mock
-État du build : départ à vérifier · solution à vérifier
+État du build : départ construit · solution construite
 
 ## Objectif
 
