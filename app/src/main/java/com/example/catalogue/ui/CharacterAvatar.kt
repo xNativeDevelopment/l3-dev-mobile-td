@@ -9,8 +9,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import com.example.catalogue.R
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 // Brique 1 : la pastille ronde avec l'initiale du personnage.
@@ -18,7 +19,7 @@ import com.example.catalogue.ui.theme.CatalogueTheme
 fun CharacterAvatar(name: String, modifier: Modifier = Modifier) {
     Box(
         modifier
-            .size(48.dp)
+            .size(dimensionResource(R.dimen.avatar_size))
             .background(MaterialTheme.colorScheme.primaryContainer, CircleShape),
         contentAlignment = Alignment.Center,
     ) {

@@ -9,8 +9,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import com.example.catalogue.R
 import com.example.catalogue.ui.theme.CatalogueTheme
 
 // La Card n'assemble plus que ses briques : données et lambdas, rien d'autre.
@@ -22,7 +23,7 @@ fun CharacterCard(
 ) {
     Card(modifier.fillMaxWidth()) {
         Row(
-            Modifier.padding(16.dp),
+            Modifier.padding(dimensionResource(R.dimen.card_padding)),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             CharacterAvatar(character.name)
@@ -30,7 +31,9 @@ fun CharacterCard(
                 character.name,
                 character.species,
                 character.status,
-                Modifier.weight(1f).padding(start = 16.dp),
+                Modifier.weight(1f).padding(
+                    start = dimensionResource(R.dimen.card_content_gap),
+                ),
             )
             TextButton(onClick = onShare) {
                 Text("Partager")
