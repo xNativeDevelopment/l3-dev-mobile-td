@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-23-coroutines"
+rootProject.name = "td-24-screen-viewmodel"
 include(":app")
