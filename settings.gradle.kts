@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "td-45-corpus"
+rootProject.name = "td-47-readme"
 include(":app")
